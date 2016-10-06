@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "icons";
+  src: url('../fonts/icons.eot');
+  src: url('../fonts/icons.eot?#iefix') format('eot'),
+       url('../fonts/icons.woff') format('woff'),
+       url('../fonts/icons.ttf') format('truetype'),
+       url('../fonts/icons.svg#icons') format('svg');
+}
+
+%icon {
+  position: relative;
+  display:inline-block;
+  vertical-align: middle;
+  font-family:"icons";
+  font-style:normal;
+  font-weight:normal;
+  line-height:1;
+  speak:none;
+  text-decoration:inherit;
+  text-transform:none;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == add {
+    $char: "\E001";
+  }
+  @if $filename == arrow-down {
+    $char: "\E002";
+  }
+  @if $filename == arrow-up {
+    $char: "\E003";
+  }
+  @if $filename == caret-down {
+    $char: "\E004";
+  }
+  @if $filename == check {
+    $char: "\E005";
+  }
+  @if $filename == chevron-down {
+    $char: "\E006";
+  }
+  @if $filename == comment {
+    $char: "\E007";
+  }
+  @if $filename == eye {
+    $char: "\E008";
+  }
+  @if $filename == heart {
+    $char: "\E009";
+  }
+  @if $filename == next-step {
+    $char: "\E00A";
+  }
+  @if $filename == photo {
+    $char: "\E00B";
+  }
+  @if $filename == play-circle {
+    $char: "\E00C";
+  }
+  @if $filename == search {
+    $char: "\E00D";
+  }
+  @if $filename == video {
+    $char: "\E00E";
+  }
+
+  @return $char;
+}
+
+@mixin icon($filename) {
+  content: icon-char($filename);
+}
+
+[class*="icon-"] {
+  @extend %icon;
+}
+
+
+.icon-add{
+  &::before {
+    @include icon(add);
+  }
+}
+%icon-add {
+  @include icon(add);
+}
+
+.icon-arrow-down{
+  &::before {
+    @include icon(arrow-down);
+  }
+}
+%icon-arrow-down {
+  @include icon(arrow-down);
+}
+
+.icon-arrow-up{
+  &::before {
+    @include icon(arrow-up);
+  }
+}
+%icon-arrow-up {
+  @include icon(arrow-up);
+}
+
+.icon-caret-down{
+  &::before {
+    @include icon(caret-down);
+  }
+}
+%icon-caret-down {
+  @include icon(caret-down);
+}
+
+.icon-check{
+  &::before {
+    @include icon(check);
+  }
+}
+%icon-check {
+  @include icon(check);
+}
+
+.icon-chevron-down{
+  &::before {
+    @include icon(chevron-down);
+  }
+}
+%icon-chevron-down {
+  @include icon(chevron-down);
+}
+
+.icon-comment{
+  &::before {
+    @include icon(comment);
+  }
+}
+%icon-comment {
+  @include icon(comment);
+}
+
+.icon-eye{
+  &::before {
+    @include icon(eye);
+  }
+}
+%icon-eye {
+  @include icon(eye);
+}
+
+.icon-heart{
+  &::before {
+    @include icon(heart);
+  }
+}
+%icon-heart {
+  @include icon(heart);
+}
+
+.icon-next-step{
+  &::before {
+    @include icon(next-step);
+  }
+}
+%icon-next-step {
+  @include icon(next-step);
+}
+
+.icon-photo{
+  &::before {
+    @include icon(photo);
+  }
+}
+%icon-photo {
+  @include icon(photo);
+}
+
+.icon-play-circle{
+  &::before {
+    @include icon(play-circle);
+  }
+}
+%icon-play-circle {
+  @include icon(play-circle);
+}
+
+.icon-search{
+  &::before {
+    @include icon(search);
+  }
+}
+%icon-search {
+  @include icon(search);
+}
+
+.icon-video{
+  &::before {
+    @include icon(video);
+  }
+}
+%icon-video {
+  @include icon(video);
+}
+
