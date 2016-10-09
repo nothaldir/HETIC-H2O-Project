@@ -1,8 +1,9 @@
 {
   "name": "HETIC-P2019-18",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "Alex Berneau",
-  "private": true,
+  "description": "A school project about water treatment",
+  "private": false,
   "devDependencies": {
     "browser-sync": "^2.10.0",
     "colors": "^1.1.2",
