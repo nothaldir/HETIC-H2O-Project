@@ -15,7 +15,7 @@ module.exports = {
     sassOpts: {
       includePaths: [
         bourbon.includePaths,
-        'node_modules/materialize-css/sass'
+        //'node_modules/materialize-css/sass'
       ]
     },
     autoprefixerOpts: {
@@ -59,10 +59,8 @@ module.exports = {
   },
 
   images: {
-    src: appSrc + '/assets/img/data/*.{jpg,png,gif,svg}',
-    dest: appDest + '/img/data/',
-    src: appSrc + '/assets/img/skin/*.{jpg,png,gif,svg}',
-    dest: appDest + '/img/skin/',
+    src: appSrc + '/assets/img/**/*.{jpg,png,gif,svg}',
+    dest: appDest + '/img/',
     opts: {
       progressive: true,
       svgoPlugins: [{removeViewBox: false}]
