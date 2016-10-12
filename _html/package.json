@@ -35,8 +35,7 @@
     "node-bourbon": "^4.2.3",
     "normalize.scss": "^0.1.0",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.4",
-    "yargs": "^4.6.0"
+    "run-sequence": "^1.1.4"
   },
   "dependencies": {
     "jquery": "^2.1.4"
