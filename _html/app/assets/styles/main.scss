@@ -1,34 +1,22 @@
+// Reset
+@import '../../../node_modules/normalize.scss/normalize';
+
 // Bourbon
 @import 'bourbon';
 
 // Base
-@import 'base/variables';
+@import 'base/animations';
 @import 'base/fonts';
 @import 'base/icons';
-@import 'base/animations';
 @import 'base/mixins';
+@import 'base/variables';
 
 // Vendors
+
+// Global
+@import 'global/layout';
 
 // Components
 @import 'components/Component';
 @import 'components/Header';
 @import 'components/Loader';
-
-
-// Main elements
-body {
-  background-color: #303f9f;
-  margin: 0;
-  padding: 0;
-}
-.container {
-  background-color: #fff;
-  width: 860px;
-  margin: auto;
-  height: 500px;
-  text-align: center;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 3px 10px 0px;
-}

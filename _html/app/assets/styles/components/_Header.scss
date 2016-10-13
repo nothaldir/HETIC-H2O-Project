@@ -1,7 +1,8 @@
 .Header {
-  &-title {
-    text-align: center;
-    font-family: "Waterlily";
-    color: #fff;
+    display: flex;
+    &-title {
+        text-align: center;
+        font-family: "Waterlily";
+        color: #fff;
   }
 }
