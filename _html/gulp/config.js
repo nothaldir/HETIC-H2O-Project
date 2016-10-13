@@ -36,9 +36,6 @@ module.exports = {
     ],
     vendorSrc: [
       'node_modules/jquery/dist/jquery.min.js',
-      'node_modules/materialize-css/js/*.js',
-      'node_modules/materialize-css/js/date_picker/picker.js',
-      'node_modules/materialize-css/js/date_picker/picker.date.js',
       appSrc + '/assets/scripts/vendors/*.js',
       appSrc + '/assets/scripts/vendors/**/*.js'
     ],
