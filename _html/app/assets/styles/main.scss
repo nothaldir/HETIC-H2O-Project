@@ -1,0 +1,22 @@
+// Reset
+@import '../../../node_modules/normalize.scss/normalize';
+
+// Bourbon
+@import 'bourbon';
+
+// Base
+@import 'base/animations';
+@import 'base/fonts';
+@import 'base/icons';
+@import 'base/mixins';
+@import 'base/variables';
+
+// Vendors
+
+// Global
+@import 'global/layout';
+
+// Components
+@import 'components/Component';
+@import 'components/Header';
+@import 'components/Loader';

@@ -1,0 +1,43 @@
+{
+  "name": "HETIC-P2019-18",
+  "version": "1.0.0",
+  "author": "Alex Berneau",
+  "description": "A school project about water treatment",
+  "private": false,
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "colors": "^1.1.2",
+    "del": "^2.0.2",
+    "eslint": "^2.11.0",
+    "eslint-watch": "^2.1.11",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cache": "^0.4.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect-php": "0.0.7",
+    "gulp-csso": "^1.0.1",
+    "gulp-empty": "^0.1.1",
+    "gulp-filter": "^3.0.1",
+    "gulp-iconfont": "^5.0.1",
+    "gulp-iconfont-css": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jshint": "^1.12.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-processhtml": "^1.1.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "imagemin-pngquant": "^4.2.0",
+    "minimist": "^1.2.0",
+    "node-bourbon": "^4.2.3",
+    "normalize.scss": "^0.1.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.4"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}
