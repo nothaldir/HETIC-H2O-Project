@@ -1,0 +1,32 @@
+.Home {
+  text-align: center;
+  &-title {
+
+  }
+  &-subtitle {
+
+  }
+  &-instructions {
+    color: $color-blue;
+  }
+  &-command {
+    color: #fff;
+  }
+}
+
+.space {
+  background-color: #fff;
+  height: 50px; width: 50px;
+}
+
+.spacebar {
+  margin: 50px auto;
+  background-color: #fff;
+  height: 5px;
+  width: 0px;
+  transition: 2s ease-in-out;
+}
+
+.spacebar.filling {
+  width: 200px;
+}

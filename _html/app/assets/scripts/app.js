@@ -1,5 +1,38 @@
 console.log('hi');
 
+window.onkeydown = function(e) {
+  if (e.keyCode == 32 && e.target == document.body) {
+    e.preventDefault();
+    console.log('hihi');
+    document.querySelector('.spacebar').classList.add('filling');
+  }
+};
+
+$("button").mousedown(function() {
+  $(".partybar").addClass("animate");
+  $("#theparty").removeClass("party");
+  $(".enabled").removeClass("visible");
+  audio.pause();
+  if (this.innerHTML == 'HOLD TO PARTY') {
+    this.innerHTML = 'LOADING PARTY...';
+  } else {
+    this.innerHTML = 'HOLD TO PARTY';
+  }
+  $timeout = setTimeout(function() {
+    $("#theparty").addClass("party");
+    audio.play();
+    $(".enabled").addClass("visible");
+  }, 2000);
+}).bind("mouseup mouseleave", function() {
+  clearTimeout($timeout);
+  this.innerHTML = 'HOLD TO PARTY';
+  $(".partybar").removeClass("animate");
+});
+
+
+
+
+/*
 $(window).load(function(temp) {
 	console.log(temp);
 	// Animate loader off screen
@@ -14,9 +47,6 @@ $(window).load(function() {
 		top: -200
 	}, 1500);
 });
-
-
-
 
 ow.c.Loader = (function() {
   'use strict';
@@ -77,3 +107,9 @@ ow.c.Loader = (function() {
   };
 
 })();
+
+window.onload = function () {
+    var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart;
+    console.log('Page load time is '+ loadTime);
+}
+*/

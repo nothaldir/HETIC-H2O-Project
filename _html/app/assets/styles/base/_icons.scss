@@ -26,6 +26,9 @@
   @if $filename == check {
     $char: "\E001";
   }
+  @if $filename == keyboard {
+    $char: "\E002";
+  }
 
   @return $char;
 }
@@ -46,5 +49,14 @@
 }
 %icon-check {
   @include icon(check);
+}
+
+.icon-keyboard{
+  &::before {
+    @include icon(keyboard);
+  }
+}
+%icon-keyboard {
+  @include icon(keyboard);
 }
 

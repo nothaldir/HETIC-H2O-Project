@@ -1,54 +1,12 @@
-.Loader-water {
-  width: 200px;
-  height: 200px;
-  background-image: url("../img/skin/wave.png");
-  border-radius: 100%;
-  margin: 50px auto;
-  background-repeat: repeat-x;
-  background-size: 200px;
-  animation: waving 3.5s linear forwards ;
-}
-
-@keyframes waving {
-  0% {
-    background-position: 0px 0px;
-  }
-  20% {
-    background-position: 200px 40px;
-  }
-  40% {
-  background-position: 400px 80px;
-  }
-  60% {
-  background-position: 600px 120px;
-  }
-  80% {
-      background-position: 800px 160px;
-  }
-  100% {
-    background-position: 1000px 200px;
-  }
-}
-
-#loader { 
-  display: block; 
-  position: absolute; 
-  left: 200px; 
-  top: 200px;
-}
-
 .Loader {
-  z-index: 99;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #f8f8f8;
-  top: 0; left: 0;
-  display: flex;
-  &-image {
+  &-water {
+    width: 200px;
+    height: 200px;
+    background-image: url("../img/skin/wave.png");
+    border-radius: 100%;
+    margin: 50px auto;
+    background-repeat: repeat-x;
+    background-size: 200px;
+    animation: waving 3.5s linear forwards ;
   }
-}
-
-body {
-  overflow: hidden;
 }
