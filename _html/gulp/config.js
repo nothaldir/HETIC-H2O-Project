@@ -15,6 +15,7 @@ module.exports = {
     sassOpts: {
       includePaths: [
         bourbon.includePaths,
+        'node_modules/normalize.scss/normalize.scss',
         //'node_modules/materialize-css/sass'
       ]
     },
