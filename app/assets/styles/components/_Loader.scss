@@ -1,41 +1,52 @@
 .Loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  width: 100%; height: 100%;
+  background-color: $color-background;
+  &-title {
+    font-family: $lato;
+    color: $color-blue-lighter;
+    font-weight: 700;
+    font-size: rem(250);
+    letter-spacing: rem(20);
     position: relative;
-    &-title {
-        font-family: $lato;
-        color: $color-blue-lighter;
-        font-weight: 700;
-        font-size: rem(250);
-        letter-spacing: rem(20);
-    }
-    &-subtitle {
-        position: absolute;
-        bottom: -10px;
-        margin-left: 65px;
-        color: $color-blue-lighter;
-    }
-    &-waves {
-        overflow: hidden;
-        position: relative;
-        width: 200px; height: 200px;
-        border-radius: 100%;
-    }
-    &-wave--one {
-        position: absolute;
-        width: 200px; height: 200px;
-        background-image: url("../img/skin/wave-one.png");
-        background-repeat: repeat-x;
-        background-size: 200px;
-        animation: waving 4.5s linear forwards;
-    }
-    &-wave--two {
-        position: absolute;
-        width: 200px; height: 200px;
-        background-image: url("../img/skin/wave-two.png");
-        background-repeat: repeat-x;
-        background-size: 200px;
-        animation: waving-reverse 4.5s linear forwards;
-    }
+  }
+  &-subtitle {
+    letter-spacing: normal;
+    font-weight: 400;
+    font-size: rem(16);
+    position: absolute;
+    bottom: rem(-10);
+    margin-left: rem(75);
+    color: $color-blue-lighter;
+  }
+  &-waves {
+    overflow: hidden;
+    position: relative;
+    width: rem(200);
+    height: rem(200);
+    border-radius: 100%;
+  }
+  &-wave--one {
+    position: absolute;
+    width: rem(200);
+    height: rem(200);
+    background-image: url("../img/skin/wave-one.png");
+    background-repeat: repeat-x;
+    background-size: rem(200);
+    animation: waving 4.5s linear forwards;
+  }
+  &-wave--two {
+    position: absolute;
+    width: rem(200);
+    height: rem(200);
+    background-image: url("../img/skin/wave-two.png");
+    background-repeat: repeat-x;
+    background-size: rem(200);
+    animation: waving-reverse 4.5s linear forwards;
+  }
 }

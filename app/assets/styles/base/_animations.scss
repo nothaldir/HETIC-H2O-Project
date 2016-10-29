@@ -39,3 +39,14 @@
     background-position: -1000px 200px;
   }
 }
+
+.fadeIn {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: 1s ease;
+}
+
+.slideOutLeft {
+  transform: translateX(-100%);
+  transition: .5s ease-in;
+}

@@ -1,4 +1,12 @@
 console.log('hi');
+$(window).load(function(){
+  console.log('loaded');
+  $('.Loader').addClass('fadeIn');
+  setTimeout(function(){
+    console.log('after');
+    $('.Loader').addClass('slideOutLeft');
+  }, 4500);
+})
 
 window.onkeydown = function(e) {
   if (e.keyCode == 32 && e.target == document.body) {
@@ -28,8 +36,6 @@ $("button").mousedown(function() {
   this.innerHTML = 'HOLD TO PARTY';
   $(".partybar").removeClass("animate");
 });
-
-
 
 
 /*
@@ -108,8 +114,4 @@ ow.c.Loader = (function() {
 
 })();
 
-window.onload = function () {
-    var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart;
-    console.log('Page load time is '+ loadTime);
-}
 */
