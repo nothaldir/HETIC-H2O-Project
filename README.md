@@ -56,10 +56,10 @@ gulp
 type(scope): subject
 
 Allowed <type> values:
-  feat (new feature for the user, not a new feature for build script)
-  fix (bug fix for the user, not a fix to a build script)
-  change (change/update to an existing feature)
-  docs (changes to the documentation)
+* feat (new feature)
+* fix (bug fix)
+* change (changes/updates to an existing feature)
+* docs (changes to the documentation) 
 
 ### CSS naming convention
 
