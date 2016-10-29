@@ -33,11 +33,11 @@
     "imagemin-pngquant": "^4.2.0",
     "minimist": "^1.2.0",
     "node-bourbon": "^4.2.3",
-    "normalize.scss": "^0.1.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4"
   },
   "dependencies": {
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "reset-css": "^2.2.0"
   }
 }

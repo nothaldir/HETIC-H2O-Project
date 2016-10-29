@@ -1,12 +1,41 @@
 .Loader {
-  &-water {
-    width: 200px;
-    height: 200px;
-    background-image: url("../img/skin/wave.png");
-    border-radius: 100%;
-    margin: 50px auto;
-    background-repeat: repeat-x;
-    background-size: 200px;
-    animation: waving 3.5s linear forwards ;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &-title {
+        font-family: $lato;
+        color: $color-blue-lighter;
+        font-weight: 700;
+        font-size: rem(250);
+        letter-spacing: rem(20);
+    }
+    &-subtitle {
+        position: absolute;
+        bottom: -10px;
+        margin-left: 65px;
+        color: $color-blue-lighter;
+    }
+    &-waves {
+        overflow: hidden;
+        position: relative;
+        width: 200px; height: 200px;
+        border-radius: 100%;
+    }
+    &-wave--one {
+        position: absolute;
+        width: 200px; height: 200px;
+        background-image: url("../img/skin/wave-one.png");
+        background-repeat: repeat-x;
+        background-size: 200px;
+        animation: waving 4.5s linear forwards;
+    }
+    &-wave--two {
+        position: absolute;
+        width: 200px; height: 200px;
+        background-image: url("../img/skin/wave-two.png");
+        background-repeat: repeat-x;
+        background-size: 200px;
+        animation: waving-reverse 4.5s linear forwards;
+    }
 }
