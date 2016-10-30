@@ -58,8 +58,8 @@ type(scope): subject
 Allowed <type> values:
   feat (new feature for the user, not a new feature for build script)
   add (new elements (fonts, images ...))
-  fix (bug fix for the user, not a fix to a build script)
   change (change/update to an existing feature)
+  fix (bug fix for the user, not a fix to a build script)
   docs (changes to the documentation)
 
 ### CSS naming convention
