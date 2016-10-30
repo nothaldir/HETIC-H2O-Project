@@ -1,0 +1,25 @@
+.Popup {
+	transition: .3s ease;
+	overflow: hidden;
+	position: absolute;
+	width: 0%;
+	height: 0%;
+	background-color: $color-grey-darker;
+	top: 50%; left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	display: flex;
+	align-items: center;
+	&-content {
+		color: #fff;
+		display: inline-block;
+	}
+	&-content:before {
+		content: "_";
+	}
+}
+
+.Popup--open {
+	padding: 0 rem(30);
+	width: 60%;
+	height: 70%;
+}

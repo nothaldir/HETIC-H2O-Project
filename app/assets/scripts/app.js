@@ -1,12 +1,22 @@
-console.log('hi');
 $(window).load(function(){
   console.log('loaded');
-  $('.Loader').addClass('fadeIn');
-  setTimeout(function(){
-    console.log('after');
-    $('.Loader').addClass('slideOutLeft');
-  }, 4500);
-})
+  homeGuidelines();
+});
+
+function homeGuidelines() {
+  console.log('homeGuidelines');
+  var test = 'lorem';
+
+  $('.Logo-wave--back').bind('webkitAnimationEnd', function(){
+    $('.Popup').addClass('Popup--open');
+    setTimeout(function(){
+      $(".Popup-content").typed({
+        strings: ["init h2o_project.sh", "Second sentence.", test],
+        typeSpeed: 10
+      });
+    }, 500);
+  });
+}
 
 window.onkeydown = function(e) {
   if (e.keyCode == 32 && e.target == document.body) {
@@ -16,26 +26,23 @@ window.onkeydown = function(e) {
   }
 };
 
-$("button").mousedown(function() {
-  $(".partybar").addClass("animate");
-  $("#theparty").removeClass("party");
-  $(".enabled").removeClass("visible");
-  audio.pause();
-  if (this.innerHTML == 'HOLD TO PARTY') {
-    this.innerHTML = 'LOADING PARTY...';
-  } else {
-    this.innerHTML = 'HOLD TO PARTY';
-  }
-  $timeout = setTimeout(function() {
-    $("#theparty").addClass("party");
-    audio.play();
-    $(".enabled").addClass("visible");
-  }, 2000);
-}).bind("mouseup mouseleave", function() {
-  clearTimeout($timeout);
-  this.innerHTML = 'HOLD TO PARTY';
-  $(".partybar").removeClass("animate");
+
+
+
+
+$.getJSON( "ajax/test.json", function( data ) {
+  var items = [];
+  $.each( data, function( key, val ) {
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "body" );
 });
+
+
 
 
 /*
