@@ -57,6 +57,7 @@ type(scope): subject
 
 Allowed <type> values:
   feat (new feature for the user, not a new feature for build script)
+  add (new elements (fonts, images ...))
   fix (bug fix for the user, not a fix to a build script)
   change (change/update to an existing feature)
   docs (changes to the documentation)
