@@ -87,6 +87,11 @@ module.exports = {
     dest: appDest + '/fonts/'
   },
 
+  datas: {
+    src: appSrc + '/assets/datas/*',
+    dest: appDest + '/datas/'
+  },
+
   clean: {
     src: [
       appDest + '/*'
@@ -99,5 +104,4 @@ module.exports = {
       directory: true
     }
   }
-
 };

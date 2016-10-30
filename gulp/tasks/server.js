@@ -7,7 +7,7 @@ gulp.task('php', function(){
   php.server(config.php);
 });
 
-gulp.task('server', ['copy:fonts', 'views', 'styles:vendors', 'styles:app', 'scripts:vendors', 'scripts:app', 'images'], function(){
+gulp.task('server', ['copy:fonts', 'copy:datas', 'views', 'styles:vendors', 'styles:app', 'scripts:vendors', 'scripts:app', 'images'], function(){
   browserSync(config.browserSync);
   var reload = browserSync.reload;
 
