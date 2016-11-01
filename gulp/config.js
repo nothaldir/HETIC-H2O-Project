@@ -92,6 +92,11 @@ module.exports = {
     dest: appDest + '/datas/'
   },
 
+  medias: {
+    src: appSrc + '/assets/medias/*',
+    dest: appDest + '/medias/'
+  },
+
   clean: {
     src: [
       appDest + '/*'
