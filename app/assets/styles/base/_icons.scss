@@ -29,6 +29,9 @@
   @if $filename == keyboard {
     $char: "\E002";
   }
+  @if $filename == speaker {
+    $char: "\E003";
+  }
 
   @return $char;
 }
@@ -58,5 +61,14 @@
 }
 %icon-keyboard {
   @include icon(keyboard);
+}
+
+.icon-speaker{
+  &::before {
+    @include icon(speaker);
+  }
+}
+%icon-speaker {
+  @include icon(speaker);
 }
 

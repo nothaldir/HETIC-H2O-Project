@@ -1,0 +1,17 @@
+.Audio{
+	&-controls {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		height: 50px; width: 50px;
+		display: block;
+		color: #fff;
+		i.icon-speaker {
+			cursor: pointer;
+			font-size: rem(30);
+		}
+	}
+	&-controls--paused {
+		color: #bbb;
+	}
+}

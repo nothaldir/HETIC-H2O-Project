@@ -1,17 +1,36 @@
 $(window).load(function(){
-  console.log('loaded');
+  console.log('window loaded');
+  backgroundMusic();
   homeGuidelines();
 });
 
+function backgroundMusic() {
+  $audio = $('.Audio-music')[0];
+  $audio.volume = 0.2;
+  $audio.play();
+  $('.Audio-controls').click(function(){
+    $(this).toggleClass('Audio-controls--paused');
+    if ($audio.paused==true) $audio.play();
+    else if ($audio.paused==false) $audio.pause();
+  })
+}
+
 function homeGuidelines() {
   console.log('homeGuidelines');
-  var test = 'lorem';
 
   $('.Logo-wave--back').bind('webkitAnimationEnd', function(){
     $('.Popup').addClass('Popup--open');
     setTimeout(function(){
       $(".Popup-content").typed({
-        strings: ["init h2o_project.sh", "Second sentence.", test],
+        strings: [
+          "init h2o_project.sh", 
+          "In 2010, NASA developed and launched satellites based artificially intelligent named H2O Project that would analyse Earth. ^1000", 
+          "The studies reported terrible predictions for Mankind. ^1000",
+          "NASA warned the world’s leaders. ^1000",
+          "^750 But Men did nothing to prevent these ravishing prospects ^500 and the most vital resource to life disappeared: clean drinking water. ^1000",
+          "Indeed, humans can survive 30 days without eating but only 3 days without drinking. ^1000",
+          "Yet, on Earth, every human being did not have access to clean drinking water. ^1000",
+          "In 2084, mankind among many species vanished off the face of the Earth."],
         typeSpeed: 10
       });
     }, 500);
@@ -26,11 +45,12 @@ window.onkeydown = function(e) {
   }
 };
 
+/*$.getJSON( "../datas/home_guidelines.json", function( json ) {
+  console.log( "JSON Data: " + json[0] );
+ });
 
 
-
-
-$.getJSON( "ajax/test.json", function( data ) {
+$.getJSON( "../datas/home_guidelines.json", function( data ) {
   var items = [];
   $.each( data, function( key, val ) {
     items.push( "<li id='" + key + "'>" + val + "</li>" );
@@ -42,7 +62,15 @@ $.getJSON( "ajax/test.json", function( data ) {
   }).appendTo( "body" );
 });
 
-
+$.getJSON( "test.js")
+  .done(function( json ) {
+    console.log( "JSON Data: " + json.users[ 3 ].name );
+  })
+  .fail(function( jqxhr, textStatus, error ) {
+    var err = textStatus + ", " + error;
+    console.log( "Request Failed: " + err );
+});
+*/
 
 
 /*
