@@ -37,6 +37,7 @@
     "run-sequence": "^1.1.4"
   },
   "dependencies": {
+    "countup.js": "^1.7.1",
     "jquery": "^2.1.4",
     "reset-css": "^2.2.0"
   }

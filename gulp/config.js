@@ -36,6 +36,7 @@ module.exports = {
     ],
     vendorSrc: [
       'node_modules/jquery/dist/jquery.min.js',
+      'node_modules/countup.js/dist/countUp.min.js',
       appSrc + '/assets/scripts/vendors/*.js',
       appSrc + '/assets/scripts/vendors/**/*.js'
     ],
