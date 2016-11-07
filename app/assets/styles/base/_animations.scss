@@ -46,28 +46,24 @@
   transition: 1s ease;
 }
 
+.fadeOut {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: 1s ease;
+}
+
 .slideOutLeft {
   transform: translateX(-100%);
   transition: .5s ease-in;
 }
 
+// Typing cursor
 .typed-cursor{
     opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
+    color: #fff;
 }
 @keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
