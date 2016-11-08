@@ -25,8 +25,11 @@ function introGuidelines() {
 
     $(".Popup-content").typed({
         stringsElement: $('.intro-guidelines'),
-        typeSpeed: 10,
-        cursorChar: "_",
+        typeSpeed: 0, // typing speed
+        startDelay: 0, // time before typing starts
+        backSpeed: 0, // backspacing speed
+        backDelay: 1000, // time before backspacing
+        cursorChar: "|",
         callback: function(){
           introCountdown();
         }
