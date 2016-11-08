@@ -31,8 +31,15 @@ function introGuidelines() {
           introCountdown();
         }
     });
+
+    $('.Popup-skip').click(function(e){
+      e.preventDefault();
+      // TO-DO : break countdown
+      introCountdown();
+    });
+
   });
-}
+};
 
 function introCountdown(){
   $('.Popup-countdown').addClass('fadeIn');
@@ -46,7 +53,7 @@ function introCountdown(){
     prefix : '',
     suffix : ''
   };
-  var countdown = new CountUp("myTargetElement", 2084, 2016, 0, 7, countdownOptions);
+  var countdown = new CountUp("countdown", 2084, 2016, 0, 7, countdownOptions);
   countdown.start();
 };
 
