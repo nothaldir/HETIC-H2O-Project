@@ -19,14 +19,21 @@
   height: 50px; width: 50px;
 }
 
+
+
+
+// space bar gala
 .spacebar {
   margin: 50px auto;
   background-color: #fff;
   height: 5px;
   width: 0px;
-  transition: 2s ease-in-out;
-}
-
-.spacebar.filling {
-  width: 200px;
+  transition: .75s ease-in-out;
+  &--filling {
+    width: 200px;
+    transition: 2s ease-in-out;
+  }
+  &--filled {
+    width: 200px;
+  }
 }

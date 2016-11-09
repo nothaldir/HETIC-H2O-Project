@@ -1,41 +1,40 @@
-$(window).load(function(){
+$(window).load(function() {
   console.log('window loaded');
   backgroundMusic();
-  introGuidelines();
+  //introStory();
 });
 
 function backgroundMusic() {
   $audio = $('.Audio-music')[0];
   $audio.volume = 0.2;
   $audio.play();
-  $('.Audio-controls').click(function(){
+  $('.Audio-controls').click(function() {
     $(this).toggleClass('Audio-controls--paused');
-    if ($audio.paused==true) $audio.play();
-    else if ($audio.paused==false) $audio.pause();
+    if ($audio.paused == true) $audio.play();
+    else if ($audio.paused == false) $audio.pause();
   })
 }
 
-function introGuidelines() {
-  console.log('start introGuidelines');
+function introStory() {
+  $('.Logo-wave--back').bind('webkitAnimationEnd', function() {
 
-  $('.Logo-wave--back').bind('webkitAnimationEnd', function(){
-
+    console.log('start introStory');
     $('.Popup-skip').addClass('fadeIn');
     $('.Popup').addClass('Popup--open');
 
     $(".Popup-content").typed({
-        stringsElement: $('.intro-guidelines'),
-        typeSpeed: 0, // typing speed
-        startDelay: 0, // time before typing starts
-        backSpeed: 0, // backspacing speed
-        backDelay: 1000, // time before backspacing
-        cursorChar: "|",
-        callback: function(){
-          introCountdown();
-        }
+      stringsElement: $('.intro-story'),
+      typeSpeed: 0, // typing speed
+      startDelay: 0, // time before typing starts
+      backSpeed: 0, // backspacing speed
+      backDelay: 1000, // time before backspacing
+      cursorChar: "|",
+      callback: function() {
+        introCountdown();
+      }
     });
 
-    $('.Popup-skip').click(function(e){
+    $('.Popup-skip').click(function(e) {
       e.preventDefault();
       // TO-DO : break countdown
       introCountdown();
@@ -44,29 +43,65 @@ function introGuidelines() {
   });
 };
 
-function introCountdown(){
+function introCountdown() {
   $('.Popup-countdown').addClass('fadeIn');
   $('.Popup-content, .typed-cursor').addClass('fadeOut');
 
-  var countdownOptions = {
-    useEasing : true,
-    useGrouping : false,
-    separator : '',
-    decimal : '',
-    prefix : '',
-    suffix : ''
+  var countdownOptions = {  
+    useEasing: true,
+      useGrouping: false,
+      separator: '',
+      decimal: '',
+      prefix: '',
+      suffix: ''
   };
   var countdown = new CountUp("countdown", 2084, 2016, 0, 7, countdownOptions);
-  countdown.start();
+  setTimeout(function() {
+    countdown.start(function() {
+      // TO-DO : only execute once
+      console.log('countdown complete');
+      introBegin();
+    });
+  }, 1000)
 };
 
-window.onkeydown = function(e) {
-  if (e.keyCode == 32 && e.target == document.body) {
-    e.preventDefault();
-    console.log('hihi');
-    document.querySelector('.spacebar').classList.add('filling');
-  }
+function introBegin() {
+  $('.Popup').removeClass('Popup--open');
 };
+
+
+
+
+spaceBar();
+// gala space bar
+function spaceBar() {
+  var space = 0;
+  $(document).keyup(function(evt) {
+    if (evt.keyCode == 32) {
+      space = space - space;
+      console.log(space);
+      $('.spacebar').removeClass('spacebar--filling');
+    }
+  }).keydown(function(evt) {
+    if (evt.keyCode == 32) {
+      space++;
+      console.log(space);
+      $('.spacebar').addClass('spacebar--filling');
+      if (space >= 20) {
+        console.log('boom');
+        $('.spacebar').addClass('spacebar--filled');
+      }
+    }
+  });
+};
+
+
+
+
+
+
+
+
 
 /*$.getJSON( "../datas/intro_guidelines.json", function( json ) {
   console.log( "JSON Data: " + json[0] );
