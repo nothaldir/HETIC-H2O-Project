@@ -1,5 +1,8 @@
 # HETIC-P2019-18
 
+## About
+School project made in 2016.
+
 ## Installation
 
 ### Install NodeJs
