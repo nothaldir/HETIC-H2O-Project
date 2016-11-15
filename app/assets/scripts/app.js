@@ -1,7 +1,7 @@
 $(window).load(function() {
   console.log('window loaded');
   backgroundMusic();
-  //introStory();
+  introStory();
 });
 
 function backgroundMusic() {
@@ -44,52 +44,55 @@ function introStory() {
 };
 
 function introCountdown() {
-  $('.Popup-countdown').addClass('fadeIn');
-  $('.Popup-content, .typed-cursor').addClass('fadeOut');
+  var run_once = false;
+  if (run_once == false) {
+    $('.Popup-countdown').addClass('fadeIn');
+    $('.Popup-content, .typed-cursor').addClass('fadeOut');
 
-  var countdownOptions = {  
-    useEasing: true,
-      useGrouping: false,
-      separator: '',
-      decimal: '',
-      prefix: '',
-      suffix: ''
-  };
-  var countdown = new CountUp("countdown", 2084, 2016, 0, 7, countdownOptions);
-  setTimeout(function() {
-    countdown.start(function() {
-      // TO-DO : only execute once
-      console.log('countdown complete');
-      introBegin();
-    });
-  }, 1000)
+    var countdownOptions = {  
+      useEasing: true,
+        useGrouping: false,
+        separator: '',
+        decimal: '',
+        prefix: '',
+        suffix: ''
+    };
+    var countdown = new CountUp("countdown", 2084, 2016, 0, 7, countdownOptions);
+    setTimeout(function() {
+      countdown.start(function() {
+        console.log('countdown complete');
+        introBegin();
+      });
+    }, 1000)
+    run_once = true;
+  }
 };
 
 function introBegin() {
+  $('.Popup-skip').addClass('fadeOut');
   $('.Popup').removeClass('Popup--open');
+  setTimeout(function(){
+    $('.Home-begin').addClass('fadeIn')
+    spaceBar();
+  },800);
 };
 
-
-
-
-spaceBar();
-// gala space bar
 function spaceBar() {
   var space = 0;
   $(document).keyup(function(evt) {
     if (evt.keyCode == 32) {
       space = space - space;
       console.log(space);
-      $('.spacebar').removeClass('spacebar--filling');
+      $('.Home-spacebar').removeClass('Home-spacebar--filling');
     }
   }).keydown(function(evt) {
     if (evt.keyCode == 32) {
       space++;
       console.log(space);
-      $('.spacebar').addClass('spacebar--filling');
-      if (space >= 20) {
+      $('.Home-spacebar').addClass('Home-spacebar--filling');
+      if (space >= 25) {
         console.log('boom');
-        $('.spacebar').addClass('spacebar--filled');
+        $('.Home-spacebar').addClass('Home-spacebar--filled');
       }
     }
   });

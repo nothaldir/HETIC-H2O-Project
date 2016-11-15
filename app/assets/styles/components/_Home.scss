@@ -1,39 +1,32 @@
 .Home {
+  margin-top: rem(150);
   text-align: center;
-  &-title {
-
-  }
-  &-subtitle {
-
-  }
   &-instructions {
     color: $color-blue;
   }
   &-command {
     color: #fff;
   }
-}
-
-.space {
-  background-color: #fff;
-  height: 50px; width: 50px;
-}
-
-
-
-
-// space bar gala
-.spacebar {
-  margin: 50px auto;
-  background-color: #fff;
-  height: 5px;
-  width: 0px;
-  transition: .75s ease-in-out;
-  &--filling {
-    width: 200px;
-    transition: 2s ease-in-out;
+  &-spaceicon {
+    margin-top: rem(50);
+    width: rem(50);
   }
-  &--filled {
-    width: 200px;
+  &-begin {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &-spacebar {
+    margin: 50px auto;
+    background-color: #fff;
+    height: 5px;
+    width: 0px;
+    transition: .5s ease-in-out;
+    &--filling {
+      width: 200px;
+      transition: 2s ease-in-out;
+    }
+    &--filled {
+      width: 200px;      
+    }
   }
 }
