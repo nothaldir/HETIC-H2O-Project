@@ -1,0 +1,51 @@
+.Region {
+  margin-top: rem(150);
+  text-align: center;
+    &-container {
+        margin-top: rem(200);
+        margin-left: rem(250);
+        width: rem(570);
+        &-name {
+          color: #fff;
+          font-size: rem(28);
+          font-family: "Helvetica Neue";
+          font-weight: 100;
+          margin-bottom: rem(34);
+        }
+        &-title {
+          color: $color-blue-turquoise;
+          font-size: rem(48);
+          font-family: "Helvetica Neue";
+          margin-bottom: rem(30);
+        }
+        &-subtitle {
+          color: #fff;
+          font-size: rem(28);
+          font-family: "Helvetica Neue";
+          line-height: rem(40);
+          margin-bottom: rem(40);
+          font-weight: 200;
+        }
+        &-text {
+          color: #fff;
+          font-size: rem(18);
+          font-family: "Helvetica Neue";
+          line-height: rem(20);
+          margin-bottom: rem(24);
+          opacity: 0.58;
+          @media screen and (min-width: $mq-m) {
+
+          }
+        }
+        &-watchButton {
+          width: rem(225);
+          height: rem(54);
+          border-radius: rem(10);
+          border: none;
+          background-color: $color-blue-button;
+          color: $color-blue-turquoise;
+          font-size: rem(24);
+          font-weight: 500;
+        }
+    }
+}
