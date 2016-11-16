@@ -1,0 +1,16 @@
+.Map {
+	position: relative;
+	height: 100vh;
+	margin: 0 rem(30);
+	&-title {
+		color: #fff;
+		font-size: rem(20);
+		position: absolute;
+	}
+	&-image {
+		width: 100%;
+		position: absolute;
+		top: 50%; left: 0;
+		transform: translateY(-50%);
+	}
+}

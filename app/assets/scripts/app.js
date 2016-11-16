@@ -98,6 +98,13 @@ function spaceBar() {
   });
 };
 
+map();
+function map(){
+  $('.Zones path').click(function(){
+    console.log($(this).attr('id'))  
+  });
+};
+
 
 
 
