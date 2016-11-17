@@ -1,10 +1,27 @@
+.Quick-navigation {
+  position: fixed;
+  right:rem(80);
+  margin-top: rem(360);
+  font-size: 0;
+    &-bubble {
+      width:rem(12);
+      height:rem(12);
+      margin: 10px;
+      border-radius: 100%;
+      background-color: #fff;
+      opacity: .5;
+    }
+}
+
 .Region {
-  margin-top: rem(150);
   text-align: center;
     &-container {
-        margin-top: rem(200);
         margin-left: rem(250);
         width: rem(570);
+        &-section {
+          padding-top: rem(200);
+          padding-bottom: rem(200);
+        }
         &-name {
           color: #fff;
           font-size: rem(28);
@@ -46,6 +63,8 @@
           color: $color-blue-turquoise;
           font-size: rem(24);
           font-weight: 500;
+          letter-spacing: rem(2);
         }
     }
+
 }

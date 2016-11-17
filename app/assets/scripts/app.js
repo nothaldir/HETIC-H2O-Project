@@ -1,7 +1,9 @@
 $(window).load(function() {
-  console.log('window loaded');
-  backgroundMusic();
-  introStory();
+    console.log('window loaded');
+    // backgroundMusic();
+    introStory();
+    checkMenu();
+    scrollRegionSection();
 });
 
 function backgroundMusic() {
@@ -13,7 +15,7 @@ function backgroundMusic() {
     if ($audio.paused == true) $audio.play();
     else if ($audio.paused == false) $audio.pause();
   })
-}
+};
 
 function introStory() {
   $('.Logo-wave--back').bind('webkitAnimationEnd', function() {
@@ -96,6 +98,57 @@ function spaceBar() {
       }
     }
   });
+};
+
+
+
+function checkMenu() {
+  $('.Toolbar-menuIcon').on("click touchstart",function(){
+      $('.Toolbar-menu').removeClass('Toolbar-menu--closed');
+      $('.Toolbar-buttons').hide();
+      $('.Quick-navigation').hide();
+  })
+
+    $('.Toolbar-menu-closeButton').on("click touchstart",function(){
+        $('.Toolbar-menu').addClass('Toolbar-menu--closed');
+        $('.Toolbar-buttons').show();
+        $('.Quick-navigation').show();
+    })
+
+    if(!$('.Toolbar-menu').hasClass('Toolbar-menu--closed')) {
+        $('html,body').on("click",function () {
+            console.log('YOURE IN');
+            $('.Toolbar-menu').addClass('Toolbar-menu--closed');
+            $('.Toolbar-buttons').show();
+            $('.Quick-navigation').show();
+        })
+        $('.Toolbar-menu').click(function(event){
+            event.stopPropagation();
+        });
+    }
+};
+
+
+function scrollRegionSection() {
+    var hashTagActive = "";
+    $(".scroll").on("click touchstart", function (event) {
+        if(hashTagActive != this.hash) {
+            event.preventDefault();
+            $('.Quick-navigation-bubble').css("opacity","1");
+
+            var dest = 0;
+            if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+                dest = $(document).height() - $(window).height();
+            } else {
+                dest = $(this.hash).offset().top;
+            }
+
+            $('html,body').animate({
+                scrollTop: dest
+            }, 2000, 'swing');
+            hashTagActive = this.hash;
+        }
+    });
 };
 
 
