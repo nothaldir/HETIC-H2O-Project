@@ -100,12 +100,18 @@ function spaceBar() {
 
 map();
 function map(){
-  $('.Zones path').click(function(){
+  $('.Map #world_map g').click(function(){
     console.log($(this).attr('id'))  
   });
+  $('.Map #world_map g').hover(
+    function(){
+      $id = $(this).attr('id');
+      $('.Map-location').html('[ '+$id+' ]');
+      console.log('enter');
+    }, function(){
+      $('.Map-location').html('[ ]');
+    });
 };
-
-
 
 
 

@@ -1,16 +1,36 @@
 .Map {
 	position: relative;
 	height: 100vh;
-	margin: 0 rem(30);
 	&-title {
 		color: #fff;
 		font-size: rem(20);
 		position: absolute;
+		top: rem(75); left: rem(50);
 	}
-	&-image {
-		width: 100%;
+	&-location {
 		position: absolute;
-		top: 50%; left: 0;
-		transform: translateY(-50%);
+		bottom: rem(75); left: 50%;
+		transform: translateX(-50%);
+		padding: rem(5);
+		text-transform: uppercase;
+		font-size: rem(30);
+		background-color: $color-grey-darker;
+	}
+	#world_map {
+		overflow: unset;
+		g {
+			fill: #434F67;
+			stroke: #434F67; 
+			cursor: pointer;
+			position: absolute;
+			transform-origin: 50%;
+			transition: .3s ease;
+		}
+		g:hover {
+			stroke: #000 !important;
+			fill: red !important;
+			transform: scale(1.01);
+			fill: #5B6C8E !important;
+		}
 	}
 }
