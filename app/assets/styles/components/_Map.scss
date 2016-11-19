@@ -1,0 +1,80 @@
+.Map {
+	position: relative;
+	height: 100vh;
+	&-title {
+		color: #fff;
+		font-size: rem(20);
+		position: absolute;
+		top: rem(75); left: rem(50);
+	}
+	&-location {
+		position: absolute;
+		bottom: rem(75); left: 50%;
+		transform: translateX(-50%);
+		padding: rem(5);
+		text-transform: uppercase;
+		font-size: rem(30);
+		background-color: $color-grey-darker;
+	}
+	&-popup {
+		position: absolute;
+		padding: rem(25);
+		background-color: rgba(0,0,0,0.5);
+		border-radius: 10px;
+		transition: .3s ease;
+		transform-origin: 0% 0%;
+		overflow: hidden;
+		transform: scale(0,0);
+		&-title {
+			color: #fff;
+			margin-bottom: rem(15);
+		}
+		&-descr {
+
+		}
+	}
+	&-popup--open {
+		transform: scale(1,1);
+	}
+	&-world {
+		width: 100%;
+	}
+	#world_map {
+		overflow: unset;
+		g {
+			fill: #434F67;
+			stroke: #434F67;
+			cursor: pointer;
+			transform-origin: 50%;
+			transition: .3s ease;
+		}
+		g:hover {
+			stroke: #000 !important;
+			fill: red !important;
+			transform: scale(1.01);
+			fill: #5B6C8E !important;
+		}
+	}
+	#countries {
+		g {
+			cursor: pointer;
+			transition: .3s ease;
+		  transform-origin: 50% 50%;
+			fill: #FF2B38;
+			&:hover {
+				 transform: scale(2);
+				 circle {
+					 fill: #5FC8BC;
+				 }
+			}
+		}
+		@-moz-document url-prefix() {
+			g {
+				transform: scale(1);
+				&:hover {
+					transform: scale(1);
+				}
+			}
+		}
+	}
+}

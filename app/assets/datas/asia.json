@@ -1,0 +1,57 @@
+{
+  "asia" : {
+    "id" : "Asia",
+    "title" : "Running out of time",
+    "subtitle" : "Food production essentially depends on agriculture, a sector that consume a lot of water.",
+    "content" : "There is a strong expansion of irrigated crops, whose area doubled between 1961 and 2003.  Asia is particularly affected because the Himalayan glaciers that serve as sources for most of the major rivers of Asia. They are currently melting at breakneck speed.",
+  }/*,
+
+  "south" : {
+  	"id" : "South",
+  	"subtitle" : "On one side, the largest water tower on the planet; On the other, the most populous continent in the world.",
+  	"content" : "Global warming and its impact on the melting of Himalayan glaciers has increased the risk of flooding in the short term, but not just the rise of geopolitical conflicts fueled by the scarcity of water resources.",
+  	"keydata" : [
+  	{
+  		"number" : 134,
+  		"text" : "Million of inhabitants without access to clean water living in South Asia"
+  	},
+  	{
+  		"number" : 400,
+  		"text" : "Dams, dikes and other hydraulic installations in the Himalayas"
+  	}
+    ]
+  },
+
+  "central" : {
+  	"id" : "Central",
+  	"subtitle" : "National egoism overrided considerations of economic rationality and regional security.",
+  	"content" : "The states of Central Asia have declared themselves capable of solving these problems themselves, the fact is that since their attainment of independence they have not been able to get closer to the creation of a common regime of self-use of water.",
+  	"keydata" : [
+  	{
+  		"number" : 65,
+  		"text" : "Million of people living in Central Asia without access to clean water"
+  	},
+  	{
+  		"number" : 337,
+  		"text" : "Population in million without access to sanitation living in Central Asia"
+  	}
+    ]
+  },
+
+  "south_east" : {
+  	"id" : "South East",
+  	"subtitle" : "In Asia, the stakes of blue gold are reflected in a geopolitics marked by the emergence of potential economic powers.",
+  	"content" : "The rice fields have long been an integral part of the monsoon landscapes of Southeast Asia, which develops to the consumption of water. Agriculture is the sector where most of the water is used.",
+  	"keydata" : [
+  	{
+  		"number" : 61,
+  		"text" : "Million of people living in Southeast Asia without access to clean water"
+  	},
+  	{
+  		"number" : 176,
+  		"text" : "Population in million without access to sanitation living in Southeast Asian"
+  	}
+    ]
+  },*/
+
+}
