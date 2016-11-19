@@ -139,7 +139,21 @@ function move(){
 
 
 
+var httpRequest = new XMLHttpRequest()
+httpRequest.onreadystatechange = function (asia) {
+  // code
+}
+httpRequest.open('GET', '../datas/asia.json')
+httpRequest.send()
 
+// Vanilla
+function success(data) {
+  // code
+}
+var asia = document.createElement('script')
+asia.src = '../datas/asia.json'
+document.body.appendChild(asia)
+console.log(asia)
 
 
 
