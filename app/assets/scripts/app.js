@@ -138,22 +138,58 @@ function move(){
 }*/
 
 
+// Remember XHMLHTTP requests are asynchronous!!
+function getJSON(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onload = function (e) {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              var res = xhr.responseText;
+              // Executes your callback with the
+              // response already parsed into JSON
+                callback(JSON.parse(res));
+            } else { // Server responded with some error
+                console.error(xhr.statusText);
+            } // End of verifying response status
+        }
+    }; // End of what to do when the response is answered
 
-var httpRequest = new XMLHttpRequest()
-httpRequest.onreadystatechange = function (asia) {
-  // code
-}
-httpRequest.open('GET', '../datas/asia.json')
-httpRequest.send()
+    // What to do if there's an error with the request
+    xhr.onerror = function (e) {
+      console.error(xhr.statusText);
+    }; // End of error handling
 
-// Vanilla
-function success(data) {
-  // code
-}
-var asia = document.createElement('script')
-asia.src = '../datas/asia.json'
-document.body.appendChild(asia)
-console.log(asia)
+    // Send the request to the server
+    xhr.send(null);
+} // End of getJSON function
+
+
+var apiURL = "http://localhost:3000/datas/asia.json";
+
+getJSON(apiURL, function(asia) {
+    console.log(asia);
+}); // End of request
+
+// -> You should now see an object that contains info
+// about my github account profile.
+
+
+
+// var httpRequest = new XMLHttpRequest()
+// httpRequest.onreadystatechange = function (asia) {
+//   // code
+// }
+// httpRequest.open('GET', '../datas/asia.json')
+// httpRequest.send()
+
+// // Vanilla
+// function success(asia) {
+//   console.log(asia)
+// }
+// var asia = document.createElement('script')
+// asia.src = '../datas/asia.json'
+// document.body.appendChild(asia)
 
 
 
