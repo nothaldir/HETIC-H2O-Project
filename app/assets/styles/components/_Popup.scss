@@ -1,4 +1,4 @@
-.Popup {
+.Home-popup {
 	transition: .3s ease;
 	overflow: hidden;
 	position: absolute;
@@ -36,7 +36,7 @@
 	}
 }
 
-.Popup--open {
+.Home-popup--open {
 	padding: rem(200) rem(350) rem(200) rem(50);
 	width: calc(40% - 50px);
 	height: calc(40% - 200px);

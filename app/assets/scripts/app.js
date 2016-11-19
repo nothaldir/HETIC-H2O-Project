@@ -1,6 +1,6 @@
 $(window).load(function() {
   console.log('window loaded');
-  backgroundMusic();
+  //backgroundMusic();
   introStory();
 });
 
@@ -19,10 +19,10 @@ function introStory() {
   $('.Logo-wave--back').bind('webkitAnimationEnd', function() {
 
     console.log('start introStory');
-    $('.Popup-skip').addClass('fadeIn');
-    $('.Popup').addClass('Popup--open');
+    $('.Home-popup-skip').addClass('fadeIn');
+    $('.Home-popup').addClass('Home-popup--open');
 
-    $(".Popup-content").typed({
+    $(".Home-popup-content").typed({
       stringsElement: $('.intro-story'),
       typeSpeed: 0, // typing speed
       startDelay: 0, // time before typing starts
@@ -34,7 +34,7 @@ function introStory() {
       }
     });
 
-    $('.Popup-skip').click(function(e) {
+    $('.Home-popup-skip').click(function(e) {
       e.preventDefault();
       // TO-DO : break countdown
       introCountdown();
@@ -46,8 +46,8 @@ function introStory() {
 function introCountdown() {
   var run_once = false;
   if (run_once == false) {
-    $('.Popup-countdown').addClass('fadeIn');
-    $('.Popup-content, .typed-cursor').addClass('fadeOut');
+    $('.Home-popup-countdown').addClass('fadeIn');
+    $('.Home-popup-content, .typed-cursor').addClass('fadeOut');
 
     var countdownOptions = {  
       useEasing: true,
@@ -69,8 +69,8 @@ function introCountdown() {
 };
 
 function introBegin() {
-  $('.Popup-skip').addClass('fadeOut');
-  $('.Popup').removeClass('Popup--open');
+  $('.Home-popup-skip').addClass('fadeOut');
+  $('.Home-popup').removeClass('Home-popup--open');
   setTimeout(function(){
     $('.Home-begin').addClass('fadeIn')
     spaceBar();
@@ -100,18 +100,42 @@ function spaceBar() {
 
 map();
 function map(){
-  $('.Map #world_map g').click(function(){
-    console.log($(this).attr('id'))  
+  $('.Map #world_map g, .Map #countries g').click(function(){
+    $id = $(this).attr('id');
   });
   $('.Map #world_map g').hover(
     function(){
       $id = $(this).attr('id');
       $('.Map-location').html('[ '+$id+' ]');
-      console.log('enter');
     }, function(){
       $('.Map-location').html('[ ]');
     });
+    $('.Map #countries g').hover(
+      function(e) {
+        $('.Map-popup').css('left',e.pageX);
+        $('.Map-popup').css('top',e.pageY);
+        setTimeout(function(){
+          $('.Map-popup').addClass('Map-popup--open');
+        },200)
+      }, function(){
+        $('.Map-popup').removeClass('Map-popup--open');
+      }
+    )
 };
+
+/*move();
+function move(){
+  $("#world_map").mousemove(function ( e ) {
+      var pos   = $(this).offset();
+      var elPos = { X:pos.left , Y:pos.top };
+      var mPos  = { X:e.clientX-elPos.X, Y:e.clientY-elPos.Y };
+      var mapX = $(this).get(0).getBBox().width;
+      var mapY = $(this).get(0).getBBox().height;
+      console.log(mapX + ' ' + mapY),
+
+      console.log("Mouse position x:"+ mPos.X +" y:"+ mPos.Y);
+  });
+}*/
 
 
 
