@@ -1,32 +1,68 @@
 .Home {
-  margin-top: rem(150);
+  margin-top: rem(100);
+  @media screen and (min-width: $mq-m) {
+    margin-top: rem(150);
+  }
+  @media screen and (min-width: $mq-l) {
+    margin-top: rem(250);
+  }
   text-align: center;
   &-instructions {
     color: $color-blue;
   }
   &-command {
     color: #fff;
+    @media screen and (min-width: $mq-l) {
+      display: none;
+    }
+  }
+  &-command--large {
+    display: none;
+    color: #fff;
+    @media screen and (min-width: $mq-l) {
+      display: inline;
+    }
   }
   &-spaceicon {
     margin-top: rem(50);
     width: rem(50);
+    display: none;
+    @media screen and (min-width: $mq-l) {
+      display: inline;
+    }
   }
   &-begin {
+    padding: 0 rem(20);
     visibility: hidden;
     opacity: 0;
+    margin-top: rem(50);
+    line-height: rem(18);
+    .icon-fingerprint {
+      font-size: rem(60);
+      margin-top: rem(50);
+      color: #fff;
+      margin-bottom: rem(50);
+      @media screen and (min-width: $mq-l) {
+        display: none;
+      }
+    }
   }
   &-spacebar {
-    margin: 50px auto;
+    display: none;
+    @media screen and (min-width: $mq-l) {
+      display: block;
+    }
+    margin: rem(50) auto;
     background-color: #fff;
-    height: 5px;
-    width: 0px;
+    height: rem(5);
+    width: rem(0);
     transition: .5s ease-in-out;
     &--filling {
-      width: 200px;
+      width: rem(200);
       transition: 2s ease-in-out;
     }
     &--filled {
-      width: 200px;      
+      width: rem(200);      
     }
   }
 }

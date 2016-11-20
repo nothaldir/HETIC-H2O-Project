@@ -2,15 +2,20 @@
 	transition: .3s ease;
 	overflow: hidden;
 	position: absolute;
-	width: 0%;
-	height: 0%;
+	width: 0%; height: 0%;
 	background-color: $color-grey-darker;
 	top: 50%; left: 50%;
 	transform: translateX(-50%) translateY(-50%);
 	&-content {
 		color: #fff;
-		display: inline;
+		display: block;
+		width: 80%;
 		line-height: rem(23);
+		margin: auto;
+		padding: rem(50) rem(20);
+		@media screen and (min-width: $mq-m) {
+			padding: rem(100) rem(50);
+		}
 	}
 	&-skip {
 		visibility: hidden;
@@ -32,14 +37,25 @@
 		top: 50%; left: 50%;
 		transform: translateY(-50%) translateX(-50%);
 		color: #fff;
-		font-size: rem(130);
+		font-size: rem(75);
+		@media screen and (min-width: $mq-m) {
+			font-size: rem(130);
+		}
 	}
 }
 
 .Home-popup--open {
-	padding: rem(200) rem(350) rem(200) rem(50);
-	width: calc(40% - 50px);
-	height: calc(40% - 200px);
+	height: 100%; width: 100%;
+	overflow-x: hidden; overflow-y: hidden;
+	@media screen and (min-width: $mq-m) {
+		//padding: rem(200) rem(350) rem(200) rem(50);
+		width: 80%;
+		height: 70%;
+	}
+	@media screen and (min-width: $mq-l) {
+		width: 50%;
+		height: 60%;
+	}
 }
 
 .intro-story{
