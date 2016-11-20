@@ -1,15 +1,10 @@
 $(window).load(function() {
-<<<<<<< HEAD
-    console.log('window loaded');
-    // backgroundMusic();
-    introStory();
-    checkMenu();
-    scrollRegionSection();
-=======
+  console.log('window loaded');
+  introStory();
+  checkMenu();
+  scrollRegionSection();
   console.log('window loaded');
   //backgroundMusic();
-  introStory();
->>>>>>> 5dc92af2d11b1163f13ca7b4e7c4bd3a8daac002
 });
 
 function backgroundMusic() {
@@ -109,7 +104,9 @@ function spaceBar() {
 map();
 function map(){
   $('.Map #world_map g, .Map #countries g').click(function(){
-    $id = $(this).attr('id');
+    var mapId = $(this).attr('id').split('-');
+    console.log(mapId[0]+','+mapId[1]);
+    gala(arr);
   });
   $('.Map #world_map g').hover(
     function(){
@@ -150,13 +147,13 @@ function checkMenu() {
       $('.Toolbar-menu').removeClass('Toolbar-menu--closed');
       $('.Toolbar-buttons').hide();
       $('.Quick-navigation').hide();
-  })
+  });
 
-    $('.Toolbar-menu-closeButton').on("click touchstart",function(){
-        $('.Toolbar-menu').addClass('Toolbar-menu--closed');
-        $('.Toolbar-buttons').show();
-        $('.Quick-navigation').show();
-    })
+  $('.Toolbar-menu-closeButton').on("click touchstart",function(){
+      $('.Toolbar-menu').addClass('Toolbar-menu--closed');
+      $('.Toolbar-buttons').show();
+      $('.Quick-navigation').show();
+  });
 
     if(!$('.Toolbar-menu').hasClass('Toolbar-menu--closed')) {
         $('html,body').on("click",function () {
