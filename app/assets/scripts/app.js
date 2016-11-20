@@ -1,19 +1,19 @@
-$(window).load(function() {
+window.onload = function() {
     console.log('window loaded');
-    // backgroundMusic();
+    backgroundMusic();
     introStory();
     checkMenu();
     scrollRegionSection();
-});
+};
 
 function backgroundMusic() {
-  $audio = $('.Audio-music')[0];
-  $audio.volume = 0.2;
-  $audio.play();
-  $('.Audio-controls').click(function() {
-    $(this).toggleClass('Audio-controls--paused');
-    if ($audio.paused == true) $audio.play();
-    else if ($audio.paused == false) $audio.pause();
+  var audio = document.querySelector('.Audio-music');
+  audio.volume = 0.2;
+  audio.play();
+  document.querySelector('.Audio-controls').addEventListener('click', function() {
+    this.classList.toggle('Audio-controls--paused');
+    if (audio.paused == true) audio.play();
+    else if (audio.paused == false) audio.pause();
   })
 };
 
@@ -29,7 +29,8 @@ function introStory() {
       typeSpeed: 0, // typing speed
       startDelay: 0, // time before typing starts
       backSpeed: 0, // backspacing speed
-      backDelay: 1000, // time before backspacing
+      backDelay: 1000, // time before backspacing-
+      showCursor: false,
       cursorChar: "|",
       callback: function() {
         introCountdown();
@@ -76,6 +77,9 @@ function introBegin() {
   setTimeout(function(){
     $('.Home-begin').addClass('fadeIn')
     spaceBar();
+    $('.Home-begin .icon-fingerprint').click(function(){
+      window.location.href = 'map.html';
+    })
   },800);
 };
 
@@ -93,8 +97,9 @@ function spaceBar() {
       console.log(space);
       $('.Home-spacebar').addClass('Home-spacebar--filling');
       if (space >= 25) {
-        console.log('boom');
+        console.log('spaceBar filled');
         $('.Home-spacebar').addClass('Home-spacebar--filled');
+        window.location.href = 'map.html';
       }
     }
   });
