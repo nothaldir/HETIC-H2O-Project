@@ -106,12 +106,11 @@ function map(){
   $('.Map #world_map g, .Map #countries g').click(function(){
     mapId = $(this).attr('id').split('-');
     console.log(mapId[0]+','+mapId[1]);
-    getJSON("/datas/"+mapId[0]+".json", function(data){
-      var continent = mapId[0],
-          subdatas = mapId[1];
-      console.log(mapId);
-      console.log(continent);
-      console.log(data.continent.subdatas.subtitle);
+    getJSON("/datas/"+mapId[0]+".json", function(data) {
+      console.log(data.continent[0].id_continent);
+      for (var i=1; i <= (data.continent.length - 1); i++) {
+        console.log(data.continent[i].id_country);
+      }
     });
   });
   $('.Map #world_map g').hover(
@@ -132,6 +131,11 @@ function map(){
         $('.Map-popup').removeClass('Map-popup--open');
       }
     )
+};
+
+
+function initRegion() {
+
 };
 
 /*move();
