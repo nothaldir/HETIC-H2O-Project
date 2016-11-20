@@ -1,69 +1,162 @@
 .Quick-navigation {
+  display: none;
   position: fixed;
-  right:rem(80);
+  right:rem(20);
   margin-top: rem(360);
   font-size: 0;
-    &-bubble {
-      width:rem(12);
-      height:rem(12);
-      margin: 10px;
-      border-radius: 100%;
-      background-color: #fff;
-      opacity: .5;
+  @media screen and (min-width: $mq-m) {
+    display: block;
+  }
+    &-item {
+      @media screen and (min-width: $mq-l) {
+        display: block;
+        width:rem(12);
+        height:rem(12);
+        margin: 10px;
+        border-radius: 100%;
+        background-color: #fff;
+        opacity: .5;
+        cursor:pointer;
+      }
+      &-active {
+        opacity: 1;
+      }
     }
 }
 
 .Region {
   text-align: center;
     &-container {
-        margin-left: rem(250);
-        width: rem(570);
-        &-section {
-          padding-top: rem(200);
-          padding-bottom: rem(200);
+        width: rem(315);
+        margin: 0 auto;
+        @media screen and (min-width: $mq-m) {
+          margin-left: rem(100);
+          width: rem(500);
         }
-        &-name {
-          color: #ff0000;
+        @media screen and (min-width: $mq-l) {
+          margin-left: rem(250);
+          width: rem(570);
+        }
+        &-section {
+          padding-top: rem(30);
+          padding-bottom: rem(0);
+          @media screen and (min-width: $mq-m) {
+            padding-top: rem(200);
+            padding-bottom: rem(200);
+          }
+        }
+        &-continent {
+          display: none;
+          color: #fff;
           font-size: rem(28);
+          text-align: center;
+          text-transform: uppercase;
           font-family: "Helvetica Neue";
           font-weight: 100;
           margin-bottom: rem(34);
+          @media screen and (min-width: $mq-m) {
+            display: block;
+            position: inherit;
+            text-transform: capitalize;
+            text-align: left;
+            font-size: rem(28);
+            margin-bottom: rem(34);
+          }
         }
-        &-title {
-          color: $color-blue-turquoise;
-          font-size: rem(48);
-          font-family: "Helvetica Neue";
-          margin-bottom: rem(30);
+        &-continent--fixed {
+          width: 100%;
+          top:0;
+          padding-top: rem(35);
+          padding-bottom: rem(35);
+          display: block;
+          position: fixed;
+          line-height: rem(28);
+          left: 0;
+          right: 0;
+          background-color: $color-background;
+          z-index: 99;
+
         }
-        &-subtitle {
+        &-info{
+          padding-top: rem(40);
+        }
+        &-country {
           color: #fff;
           font-size: rem(28);
           font-family: "Helvetica Neue";
-          line-height: rem(40);
-          margin-bottom: rem(40);
+          text-align: center;
+          font-weight: 100;
+          margin-bottom: rem(14);
+          @media screen and (min-width: $mq-m) {
+            font-size: rem(28);
+            text-align: left;
+            margin-bottom: rem(40);
+          }
+        }
+        &-title {
+          //padding-top: rem(100);
+          color: $color-blue-turquoise;
+          font-size: rem(20);
+          text-align: center;
+          font-family: "Helvetica Neue";
+          letter-spacing: 1px;
+          margin-bottom: rem(20);
+          @media screen and (min-width: $mq-m) {
+            font-size: rem(48);
+            text-align: left;
+            font-family: "Helvetica Neue";
+            margin-bottom: rem(30);
+          }
+        }
+        &-subtitle {
+          color: #fff;
+          font-size: rem(17);
+          text-align: left;
+          font-family: "Helvetica Neue";
+          line-height: 20px;
+          margin-bottom: rem(10);
           font-weight: 200;
+          @media screen and (min-width: $mq-m) {
+            font-size: rem(28);
+            text-align: left;
+            line-height: rem(40);
+            margin-bottom: rem(40);
+          }
         }
         &-text {
           color: #fff;
-          font-size: rem(18);
+          font-size: rem(15);
           font-family: "Helvetica Neue";
-          line-height: rem(20);
+          line-height: rem(30);
           margin-bottom: rem(24);
           opacity: 0.58;
           @media screen and (min-width: $mq-m) {
-
+            font-size: rem(18);
+            line-height: rem(20);
+            margin-bottom: rem(24);
+            opacity: 0.58;
           }
         }
         &-watchButton {
-          width: rem(225);
-          height: rem(54);
+          width: rem(315);
+          height: rem(44);
           border-radius: rem(10);
-          border: none;
-          background-color: $color-blue-button;
+          border-style: solid;
+          border-width: 1px;
           color: $color-blue-turquoise;
-          font-size: rem(24);
-          font-weight: 500;
+          background-color: rgba(0, 0, 0, 0);
+          font-size: rem(20);
+          font-weight: 100;
           letter-spacing: rem(2);
+          @media screen and (min-width: $mq-m) {
+            width: rem(225);
+            height: rem(54);
+            border: none;
+            background-color: $color-blue-button;
+            color: $color-blue-turquoise;
+            font-size: rem(24);
+            font-weight: 500;
+          }
         }
     }
 
