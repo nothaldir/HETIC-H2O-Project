@@ -4,6 +4,8 @@
 	&-title {
 		color: #fff;
 		font-size: rem(20);
+		font-family: $orbit;
+		font-weight: 100;
 		position: absolute;
 		top: rem(75); left: rem(50);
 	}
@@ -11,6 +13,7 @@
 		position: absolute;
 		bottom: rem(75); left: 50%;
 		transform: translateX(-50%);
+        font-family: $orbit;
 		padding: rem(5);
 		text-transform: uppercase;
 		font-size: rem(30);
@@ -59,7 +62,7 @@
 		g {
 			cursor: pointer;
 			transition: .3s ease;
-		  transform-origin: 50% 50%;
+		  	transform-origin: 50% 50%;
 			fill: #FF2B38;
 			&:hover {
 				 transform: scale(2);

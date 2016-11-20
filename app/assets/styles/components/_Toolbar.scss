@@ -14,10 +14,9 @@
   }
   &-buttons {
     margin-top: rem(20);
-
     @media screen and (min-width: $mq-m) {
-      margin-top: rem(90);
-      margin-right: rem(80);
+      margin-top: rem(50);
+      margin-right: rem(50);
     }
   }
   &-backButton {
@@ -60,14 +59,14 @@
     background-color: rgba(91, 108, 142, 0.95);
     font-size: rem(30);
     transition: .3s ease;
-    font-family: 'Helvetica Neue';
+    font-family: $orbit;
     font-weight: 200;
     opacity: 1;
     z-index:99;
     @media screen and (min-width: $mq-m) {
       height:2000px;
       width: rem(337);
-      background-color: rgba(91, 108, 142, 0.3);
+      background-color: rgba(91, 108, 142, 0.7);
       font-size: rem(40);
     }
     &--closed{
