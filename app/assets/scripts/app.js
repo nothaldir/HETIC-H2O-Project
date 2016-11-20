@@ -101,11 +101,12 @@ function spaceBar() {
 };
 
 map();
+var mapId;
 function map(){
   $('.Map #world_map g, .Map #countries g').click(function(){
-    var mapId = $(this).attr('id').split('-');
+    mapId = $(this).attr('id').split('-');
     console.log(mapId[0]+','+mapId[1]);
-    gala(arr);
+    getJSON("datas/"+mapId[0]+".json");
   });
   $('.Map #world_map g').hover(
     function(){
@@ -214,12 +215,11 @@ function getJSON(url, callback) {
     xhr.send();
 } // End of getJSON function
 
-var apiURL = "http://localhost:3000/datas/asia.json";
+//var apiURL = "datas/"+mapId[0]+".json";
 
-var map-id = "europe-france";
-
-getJSON(apiURL, function(data) {
+/*getJSON(apiURL, function(data) {
   var region = apiURL.substring(apiURL.indexOf("=")+1); //simulate api query for each region
+  console.log(apiURL);
   console.log(region);
     console.log(data);
     console.log(data.asia.info.title);
@@ -237,7 +237,7 @@ getJSON(apiURL, function(data) {
     console.log(data.asia.central.content);
     console.log(data.asia.central.keydata);//array object
   }//etc...
-}); // End of request
+}); // End of request */
 
 
 
