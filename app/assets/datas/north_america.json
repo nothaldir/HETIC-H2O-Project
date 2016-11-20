@@ -1,57 +1,59 @@
 {
   "north_america" : {
-    "id" : "North America",
-    "title" : "A ressource in profusion",
-    "subtitle" : "If you lived in North America, turns out you’d have been much more likely to have access to clean water if you were wealthy, white and didn’t live in a rural area or a First Nations’s community. ",
-    "content" : "As North America was considered as one of the richest part of earth, the notion of a community without access to clean water seemed like something that would only exist in a far-off, undeveloped country in the eyes of the rest of the world.",
-  },
+    
+    "info" : {
+      "id" : "North America",
+      "title" : "A ressource in profusion",
+      "subtitle" : "If you lived in North America, turns out you’d have been much more likely to have access to clean water if you were wealthy, white and didn’t live in a rural area or a First Nations’s community. ",
+      "content" : "As North America was considered as one of the richest part of earth, the notion of a community without access to clean water seemed like something that would only exist in a far-off, undeveloped country in the eyes of the rest of the world.",
+    },
 
-  "canada" : {
-  	"id" : "Canada",
-  	"subtitle" : "Did you know that Canada was one of the largest per capita users of fresh water in the world ?",
-  	"content" : "Canada's water ressources represented about 7% of renewable water in the world. Yet thousands of individuals from Native communities did not have access to drinking water in Canada, sometimes for decades, due to defective processing plants or contaminated sources.",
-  	"keydata" : [
-  	{
-  		"number" : "2nd",
-  		"text" : "Country in the world offering the easiest access to clean water"
-  	},
-  	{
-  		"number" : "9 %",
-  		"text" : "Of the entire world’s renewable water resources were flowing in Canada’s water streams"
-  	}
-    ]
-  },
+    "canada" : {
+    	"id" : "Canada",
+    	"subtitle" : "Did you know that Canada was one of the largest per capita users of fresh water in the world ?",
+    	"content" : "Canada's water ressources represented about 7% of renewable water in the world. Yet thousands of individuals from Native communities did not have access to drinking water in Canada, sometimes for decades, due to defective processing plants or contaminated sources.",
+    	"keydata" : [
+    	{
+    		"number" : "2nd",
+    		"text" : "Country in the world offering the easiest access to clean water"
+    	},
+    	{
+    		"number" : "9 %",
+    		"text" : "Of the entire world’s renewable water resources were flowing in Canada’s water streams"
+    	}
+      ]
+    },
 
-  "the_us" : {
-  	"id" : "The US",
-  	"subtitle" : "Because of massive industries releasing toxic chemicals, water was extremely contaminated in certain regions of the country, leading to serious illnesses.",
-  	"content" : "Individual american citizens used more water than anyone else on the planet. The average American used 80-100 gallons of water per day, from cooking to cleaning to flushing the toilet.",
-  	"keydata" : [
-  	{
-  		"number" : "1/6",
-  		"text" : "Of the drinking water supplies were wasted because of leaks in the water system"
-  	},
-  	{
-  		"number" : 2000,
-  		"text" : "Water networks accross the US contained abnormal level of leaks, known to be toxic"
-  	}
-    ]
-  },
+    "the_us" : {
+    	"id" : "The US",
+    	"subtitle" : "Because of massive industries releasing toxic chemicals, water was extremely contaminated in certain regions of the country, leading to serious illnesses.",
+    	"content" : "Individual american citizens used more water than anyone else on the planet. The average American used 80-100 gallons of water per day, from cooking to cleaning to flushing the toilet.",
+    	"keydata" : [
+    	{
+    		"number" : "1/6",
+    		"text" : "Of the drinking water supplies were wasted because of leaks in the water system"
+    	},
+    	{
+    		"number" : 2000,
+    		"text" : "Water networks accross the US contained abnormal level of leaks, known to be toxic"
+    	}
+      ]
+    },
 
-  "mexico" : {
-  	"id" : "Mexico",
-  	"subtitle" : "Mexico was the second highest bottled water consumer.",
-  	"content" : "Agriculture is the major water consumer of Mexico, in fact it uses up to 78% of the country’s resources. As for consumption, it was recommended in this country to disinfect water before using it in order to be safe from poisoning.",
-  	"keydata" : [
-  	{
-  		"number" : 9.1,
-  		"text" : "Out of 100 persons did not have access to clean and drinkable water"
-  	},
-  	{
-  		"number" : "54 %",
-  		"text" : "Of water losses are due to agriculture irrigation"
-  	}
-    ]
-  },
-
+    "mexico" : {
+    	"id" : "Mexico",
+    	"subtitle" : "Mexico was the second highest bottled water consumer.",
+    	"content" : "Agriculture is the major water consumer of Mexico, in fact it uses up to 78% of the country’s resources. As for consumption, it was recommended in this country to disinfect water before using it in order to be safe from poisoning.",
+    	"keydata" : [
+    	{
+    		"number" : 9.1,
+    		"text" : "Out of 100 persons did not have access to clean and drinkable water"
+    	},
+    	{
+    		"number" : "54 %",
+    		"text" : "Of water losses are due to agriculture irrigation"
+    	}
+      ]
+    }
+  }
 }

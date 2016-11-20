@@ -106,7 +106,13 @@ function map(){
   $('.Map #world_map g, .Map #countries g').click(function(){
     mapId = $(this).attr('id').split('-');
     console.log(mapId[0]+','+mapId[1]);
-    getJSON("datas/"+mapId[0]+".json");
+    getJSON("/datas/"+mapId[0]+".json", function(data){
+      var continent = mapId[0],
+          subdatas = mapId[1];
+      console.log(mapId);
+      console.log(continent);
+      console.log(data.continent.subdatas.subtitle);
+    });
   });
   $('.Map #world_map g').hover(
     function(){
@@ -213,58 +219,6 @@ function getJSON(url, callback) {
     }; // End of error handling
     // Send the request to the server
     xhr.send();
+    console.log(mapId);
 } // End of getJSON function
 
-//var apiURL = "datas/"+mapId[0]+".json";
-
-/*getJSON(apiURL, function(data) {
-  var region = apiURL.substring(apiURL.indexOf("=")+1); //simulate api query for each region
-  console.log(apiURL);
-  console.log(region);
-    console.log(data);
-    console.log(data.asia.info.title);
-    console.log(data.asia.info.subtitle);
-    console.log(data.asia.info.content);
-    //regions
-    if(region=="south"){
-    console.log(data.asia.south);
-    console.log(data.asia.south.subtitle);
-    console.log(data.asia.south.content);
-    console.log(data.asia.south.keydata);//array object
-  } else if(region="central"){
-    console.log(data.asia.central);
-    console.log(data.asia.central.subtitle);
-    console.log(data.asia.central.content);
-    console.log(data.asia.central.keydata);//array object
-  }//etc...
-}); // End of request */
-
-
-
-
-/*$.getJSON( "../datas/intro_guidelines.json", function( json ) {
-  console.log( "JSON Data: " + json[0] );
- });
-
-
-$.getJSON( "../datas/home_guidelines.json", function( data ) {
-  var items = [];
-  $.each( data, function( key, val ) {
-    items.push( "<li id='" + key + "'>" + val + "</li>" );
-  });
-
-  $( "<ul/>", {
-    "class": "my-new-list",
-    html: items.join( "" )
-  }).appendTo( "body" );
-});
-
-$.getJSON( "test.js")
-  .done(function( json ) {
-    console.log( "JSON Data: " + json.users[ 3 ].name );
-  })
-  .fail(function( jqxhr, textStatus, error ) {
-    var err = textStatus + ", " + error;
-    console.log( "Request Failed: " + err );
-});
-*/
