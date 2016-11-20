@@ -1,15 +1,12 @@
 $(window).load(function() {
-<<<<<<< HEAD
     console.log('window loaded');
     // backgroundMusic();
     introStory();
     checkMenu();
     scrollRegionSection();
-=======
   console.log('window loaded');
   //backgroundMusic();
   introStory();
->>>>>>> 5dc92af2d11b1163f13ca7b4e7c4bd3a8daac002
 });
 
 function backgroundMusic() {
@@ -195,9 +192,6 @@ function scrollRegionSection() {
 };
 
 
-
-
-// Remember XHMLHTTP requests are asynchronous!!
 function getJSON(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
@@ -213,42 +207,39 @@ function getJSON(url, callback) {
             } // End of verifying response status
         }
     }; // End of what to do when the response is answered
-
     // What to do if there's an error with the request
     xhr.onerror = function (e) {
       console.error(xhr.statusText);
     }; // End of error handling
-
     // Send the request to the server
-    xhr.send(null);
+    xhr.send();
 } // End of getJSON function
-
 
 var apiURL = "http://localhost:3000/datas/asia.json";
 
-getJSON(apiURL, function(asia) {
-    console.log(asia);
+var map-id = "europe-france";
+
+getJSON(apiURL, function(data) {
+  var region = apiURL.substring(apiURL.indexOf("=")+1); //simulate api query for each region
+  console.log(region);
+    console.log(data);
+    console.log(data.asia.info.title);
+    console.log(data.asia.info.subtitle);
+    console.log(data.asia.info.content);
+    //regions
+    if(region=="south"){
+    console.log(data.asia.south);
+    console.log(data.asia.south.subtitle);
+    console.log(data.asia.south.content);
+    console.log(data.asia.south.keydata);//array object
+  } else if(region="central"){
+    console.log(data.asia.central);
+    console.log(data.asia.central.subtitle);
+    console.log(data.asia.central.content);
+    console.log(data.asia.central.keydata);//array object
+  }//etc...
 }); // End of request
 
-// -> You should now see an object that contains info
-// about my github account profile.
-
-
-
-// var httpRequest = new XMLHttpRequest()
-// httpRequest.onreadystatechange = function (asia) {
-//   // code
-// }
-// httpRequest.open('GET', '../datas/asia.json')
-// httpRequest.send()
-
-// // Vanilla
-// function success(asia) {
-//   console.log(asia)
-// }
-// var asia = document.createElement('script')
-// asia.src = '../datas/asia.json'
-// document.body.appendChild(asia)
 
 
 

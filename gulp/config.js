@@ -89,8 +89,12 @@ module.exports = {
   },
 
   datas: {
+    watchSrc: appSrc + '/assets/datas/*',
     src: appSrc + '/assets/datas/*',
-    dest: appDest + '/datas/'
+    dest: appDest + '/datas/',
+    opts: {
+      pretty: true
+    }
   },
 
   medias: {
