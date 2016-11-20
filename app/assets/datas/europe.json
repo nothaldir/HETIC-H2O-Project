@@ -1,72 +1,74 @@
 {
-  "europe" : {
-    "id" : "Europe",
-    "title" : "A drinking water mess",
-    "subtitle" : "Europe is running out of fresh water and overexploit water supplies.",
-    "content" : "Europeans are extracting too much from rivers, lakes and underground water sources, which can take millennia to be replenished, according to an EEA report published at the World Water Forum in Istanbul. This has so far disguised the continent’s water shortage, but it is only a stop-gap as supplies will run out.",
-  },
+  "europe": {
+    "info" : {
+      "id" : "Europe",
+      "title" : "A drinking water mess",
+      "subtitle" : "Europe is running out of fresh water and overexploit water supplies.",
+      "content" : "Europeans are extracting too much from rivers, lakes and underground water sources, which can take millennia to be replenished, according to an EEA report published at the World Water Forum in Istanbul. This has so far disguised the continent’s water shortage, but it is only a stop-gap as supplies will run out.",
+    },
 
-  "france" : {
-  	"id" : "France",
-  	"subtitle" : "Did you know that France used to be the  country the most pain killer addicted in Europe ?",
-  	"content" : "With its inhabitants consumming more anti-depressive than their neighbours, clean water has become, despite all the efforts to purify it and the investiments in infrastructures, toxic.",
-  	"keydata" : [
-  	{
-  		"number" : 3303,
-  		"text" : "The amount of paracetamol consummed per year (in molecules tons)"
-  	},
-  	{
-  		"number" : 65,
-  		"text" : "Anti-depressive boxes sold per year"
-  	}
-    ]
-  },
+    "france" : {
+    	"id" : "France",
+    	"subtitle" : "Did you know that France used to be the  country the most pain killer addicted in Europe ?",
+    	"content" : "With its inhabitants consumming more anti-depressive than their neighbours, clean water has become, despite all the efforts to purify it and the investiments in infrastructures, toxic.",
+    	"keydata" : [
+    	{
+    		"number" : 3303,
+    		"text" : "The amount of paracetamol consummed per year (in molecules tons)"
+    	},
+    	{
+    		"number" : 65,
+    		"text" : "Anti-depressive boxes sold per year"
+    	}
+      ]
+    },
 
-  "spain" : {
-  	"id" : "Spain",
-  	"subtitle" : "In Spain, water was considered a major factor of development and its rarity as a disability.",
-  	"content" : "The country was the largest consumer of water per capita, although it was among the least endowed with water resources country.",
-  	"keydata" : [
-  	{
-  		"number" : "20 %",
-  		"text" : "Spain exploited more than 20% of its long-term ressources per year"
-  	},
-  	{
-  		"number" : "72 %",
-  		"text" : "Water mostly used for irrigation for intensive agriculture export oriented"
-  	}
-    ]
-  },
+    "spain" : {
+    	"id" : "Spain",
+    	"subtitle" : "In Spain, water was considered a major factor of development and its rarity as a disability.",
+    	"content" : "The country was the largest consumer of water per capita, although it was among the least endowed with water resources country.",
+    	"keydata" : [
+    	{
+    		"number" : "20 %",
+    		"text" : "Spain exploited more than 20% of its long-term ressources per year"
+    	},
+    	{
+    		"number" : "72 %",
+    		"text" : "Water mostly used for irrigation for intensive agriculture export oriented"
+    	}
+      ]
+    },
 
-  "the_uk" : {
-  	"id" : "The UK",
-  	"subtitle" : "In the UK, the fear of a shortage of drinking water was perplexing.",
-  	"content" : "Yet the drought as well as the explosion of the consumption of cocaine in the Channel where traces of this drug were found in drinking water from the tap fueled this shortage.",
-  	"keydata" : [
-  	{
-  		"number" : "38 %",
-  		"text" : "Only water consumed in the United Kingdom came from its own rivers, lakes and groundwater reserves. The rest was caught in the streams of many countries around the world."
-  	},
-  	{
-  		"number" : 300,
-  		"text" : "Olympic swimming pools a day lost because of dilapidation distribution network (leak)."
-  	}
-    ]
-  },
+    "the_uk" : {
+    	"id" : "The UK",
+    	"subtitle" : "In the UK, the fear of a shortage of drinking water was perplexing.",
+    	"content" : "Yet the drought as well as the explosion of the consumption of cocaine in the Channel where traces of this drug were found in drinking water from the tap fueled this shortage.",
+    	"keydata" : [
+    	{
+    		"number" : "38 %",
+    		"text" : "Only water consumed in the United Kingdom came from its own rivers, lakes and groundwater reserves. The rest was caught in the streams of many countries around the world."
+    	},
+    	{
+    		"number" : 300,
+    		"text" : "Olympic swimming pools a day lost because of dilapidation distribution network (leak)."
+    	}
+      ]
+    },
 
-  "finland" : {
-  	"id" : "Finland",
-  	"subtitle" : "In Finland, few water was used in agriculture. The production of cellulose and paper had a high consumption of water.",
-  	"content" : "Finland was the \"land of a thousand lakes\", forming a real labyrinth. The lakes and rivers as well as the Baltic Sea were very sensitive to pollution due to their shallow depth and cold climate.",
-  	"keydata" : [
-  	{
-  		"number" : 100,
-  		"text" : "People declared to suffer from gastrointestinal symptoms due to water contamination in 2016."
-  	},
-  	{
-  		"number" : 50,
-  		"text" : "Times higher than normal radioactive emissions were recorded in waters near the Talvivaara nickel mine."
-  	}
-    ]
+    "finland" : {
+    	"id" : "Finland",
+    	"subtitle" : "In Finland, few water was used in agriculture. The production of cellulose and paper had a high consumption of water.",
+    	"content" : "Finland was the \"land of a thousand lakes\", forming a real labyrinth. The lakes and rivers as well as the Baltic Sea were very sensitive to pollution due to their shallow depth and cold climate.",
+    	"keydata" : [
+    	{
+    		"number" : 100,
+    		"text" : "People declared to suffer from gastrointestinal symptoms due to water contamination in 2016."
+    	},
+    	{
+    		"number" : 50,
+    		"text" : "Times higher than normal radioactive emissions were recorded in waters near the Talvivaara nickel mine."
+    	}
+      ]
+    }
   }
 }

@@ -1,41 +1,43 @@
 {
   "oceania" : {
-    "id" : "Oceania",
-    "title" : "How to distribute cleverly",
-    "subtitle" : "Industries would waste huge amount of water for the sake of their production.",
-    "content" : "The majority (70%) of this huge country-continent was desert or semi-desert. 21 million Australians lived in houses and many of them had a swimming pool. But it was not the men or the industry that used the most water.",
-  },
 
-  "australia" : {
-  	"id" : "Australia",
-  	"subtitle" : "Over the 2000s, Australia has experienced a drought that has damaged the economical and social system of entire areas.",
-  	"content" : "Australia  was using too much of its resources. They became more and more scarce; many of these rivers were polluted, they flowed only intermittently; and the flora and fauna in suffering the consequences.",
-  	"keydata" : [
-  	{
-  		"number" : "5th",
-  		"text" : "Australians are the fifth biggest water consumers in the world !"
-  	},
-  	{
-  		"number" : 21,
-  		"text" : "Millions of people living in houses with swimming pools"
-  	}
-    ]
-  },
+    "info" : {
+      "id" : "Oceania",
+      "title" : "How to distribute cleverly",
+      "subtitle" : "Industries would waste huge amount of water for the sake of their production.",
+      "content" : "The majority (70%) of this huge country-continent was desert or semi-desert. 21 million Australians lived in houses and many of them had a swimming pool. But it was not the men or the industry that used the most water.",
+    },
 
-  "new_zealand" : {
-  	"id" : "New Zealand",
-  	"subtitle" : "The dairy industry boom in the country affected the quality of water resources.",
-  	"content" : "New Zealand, a small country historically oriented towards the export of agricultural raw materials, sought to avail itself of its abundant water resources to position itself as a reliable supplier of meat and dairy products.",
-  	"keydata" : [
-  	{
-  		"number" : 2,
-  		"text" : "In 20 years, the amount of cows for dairy production has doubled in the country"
-  	},
-  	{
-  		"number" : "45 %",
-  		"text" : "This is the rate of worldwide sheep farmingconcentrated"
-  	}
-    ]
-  },
+    "australia" : {
+    	"id" : "Australia",
+    	"subtitle" : "Over the 2000s, Australia has experienced a drought that has damaged the economical and social system of entire areas.",
+    	"content" : "Australia  was using too much of its resources. They became more and more scarce; many of these rivers were polluted, they flowed only intermittently; and the flora and fauna in suffering the consequences.",
+    	"keydata" : [
+    	{
+    		"number" : "5th",
+    		"text" : "Australians are the fifth biggest water consumers in the world !"
+    	},
+    	{
+    		"number" : 21,
+    		"text" : "Millions of people living in houses with swimming pools"
+    	}
+      ]
+    },
 
+    "new_zealand" : {
+    	"id" : "New Zealand",
+    	"subtitle" : "The dairy industry boom in the country affected the quality of water resources.",
+    	"content" : "New Zealand, a small country historically oriented towards the export of agricultural raw materials, sought to avail itself of its abundant water resources to position itself as a reliable supplier of meat and dairy products.",
+    	"keydata" : [
+    	{
+    		"number" : 2,
+    		"text" : "In 20 years, the amount of cows for dairy production has doubled in the country"
+    	},
+    	{
+    		"number" : "45 %",
+    		"text" : "This is the rate of worldwide sheep farmingconcentrated"
+    	}
+      ]
+    }
+  }
 }

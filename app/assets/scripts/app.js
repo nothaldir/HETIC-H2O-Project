@@ -1,12 +1,10 @@
 $(window).load(function() {
-
     console.log('window loaded');
     // backgroundMusic();
     introStory();
     checkMenu();
     regionNav();
     hideContinent();
-
 });
 
 function backgroundMusic() {
@@ -104,9 +102,18 @@ function spaceBar() {
 };
 
 map();
+var mapId;
 function map(){
   $('.Map #world_map g, .Map #countries g').click(function(){
-    $id = $(this).attr('id');
+    mapId = $(this).attr('id').split('-');
+    console.log(mapId[0]+','+mapId[1]);
+    getJSON("/datas/"+mapId[0]+".json", function(data){
+      var continent = mapId[0],
+          subdatas = mapId[1];
+      console.log(mapId);
+      console.log(continent);
+      console.log(data.continent.subdatas.subtitle);
+    });
   });
   $('.Map #world_map g').hover(
     function(){
@@ -144,17 +151,17 @@ function move(){
 
 // Displays menu and surrounding elements
 function checkMenu() {
-      $('.Toolbar-menuIcon').on("click touchstart",function(){
-          $('.Toolbar-menu').removeClass('Toolbar-menu--closed');
-          $('.Toolbar-buttons').hide();
-          $('.Quick-navigation').hide();
-      })
+  $('.Toolbar-menuIcon').on("click touchstart",function(){
+      $('.Toolbar-menu').removeClass('Toolbar-menu--closed');
+      $('.Toolbar-buttons').hide();
+      $('.Quick-navigation').hide();
+  });
 
-    $('.Toolbar-menu-closeButton').on("click touchstart",function(){
-        $('.Toolbar-menu').addClass('Toolbar-menu--closed');
-        $('.Toolbar-buttons').show();
-        $('.Quick-navigation').show();
-    })
+  $('.Toolbar-menu-closeButton').on("click touchstart",function(){
+      $('.Toolbar-menu').addClass('Toolbar-menu--closed');
+      $('.Toolbar-buttons').show();
+      $('.Quick-navigation').show();
+  });
 
     if(!$('.Toolbar-menu').hasClass('Toolbar-menu--closed')) {
         $('html,body').on("click",function () {
@@ -187,10 +194,6 @@ function hideContinent() {
 };
 
 
-
-
-
-// Remember XHMLHTTP requests are asynchronous!!
 function getJSON(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
@@ -206,68 +209,12 @@ function getJSON(url, callback) {
             } // End of verifying response status
         }
     }; // End of what to do when the response is answered
-
     // What to do if there's an error with the request
     xhr.onerror = function (e) {
       console.error(xhr.statusText);
     }; // End of error handling
-
     // Send the request to the server
-    xhr.send(null);
+    xhr.send();
+    console.log(mapId);
 } // End of getJSON function
 
-
-var apiURL = "http://localhost:3000/datas/asia.json";
-
-getJSON(apiURL, function(asia) {
-    console.log(asia);
-}); // End of request
-
-// -> You should now see an object that contains info
-// about my github account profile.
-
-
-
-// var httpRequest = new XMLHttpRequest()
-// httpRequest.onreadystatechange = function (asia) {
-//   // code
-// }
-// httpRequest.open('GET', '../datas/asia.json')
-// httpRequest.send()
-
-// // Vanilla
-// function success(asia) {
-//   console.log(asia)
-// }
-// var asia = document.createElement('script')
-// asia.src = '../datas/asia.json'
-// document.body.appendChild(asia)
-
-
-
-/*$.getJSON( "../datas/intro_guidelines.json", function( json ) {
-  console.log( "JSON Data: " + json[0] );
- });
-
-
-$.getJSON( "../datas/home_guidelines.json", function( data ) {
-  var items = [];
-  $.each( data, function( key, val ) {
-    items.push( "<li id='" + key + "'>" + val + "</li>" );
-  });
-
-  $( "<ul/>", {
-    "class": "my-new-list",
-    html: items.join( "" )
-  }).appendTo( "body" );
-});
-
-$.getJSON( "test.js")
-  .done(function( json ) {
-    console.log( "JSON Data: " + json.users[ 3 ].name );
-  })
-  .fail(function( jqxhr, textStatus, error ) {
-    var err = textStatus + ", " + error;
-    console.log( "Request Failed: " + err );
-});
-*/
