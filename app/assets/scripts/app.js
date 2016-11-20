@@ -3,7 +3,8 @@ $(window).load(function() {
     // backgroundMusic();
     introStory();
     checkMenu();
-    scrollRegionSection();
+    regionNav();
+    hideContinent();
 });
 
 function backgroundMusic() {
@@ -152,6 +153,7 @@ function move(){
   });
 }*/
 
+// Displays menu and surrounding elements
 function checkMenu() {
   $('.Toolbar-menuIcon').on("click touchstart",function(){
       $('.Toolbar-menu').removeClass('Toolbar-menu--closed');
@@ -167,7 +169,6 @@ function checkMenu() {
 
     if(!$('.Toolbar-menu').hasClass('Toolbar-menu--closed')) {
         $('html,body').on("click",function () {
-            console.log('YOURE IN');
             $('.Toolbar-menu').addClass('Toolbar-menu--closed');
             $('.Toolbar-buttons').show();
             $('.Quick-navigation').show();
@@ -178,27 +179,22 @@ function checkMenu() {
     }
 };
 
+// Highlights the position on navigation bar
+function regionNav(){
+    $('.Quick-navigation-item').on("click",function(){
+        $(this).addClass('Quick-navigation-item-active').siblings().removeClass('Quick-navigation-item-active')
+    })
+};
 
-function scrollRegionSection() {
-    var hashTagActive = "";
-    $(".scroll").on("click touchstart", function (event) {
-        if(hashTagActive != this.hash) {
-            event.preventDefault();
-            $('.Quick-navigation-bubble').css("opacity","1");
-
-            var dest = 0;
-            if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
-                dest = $(document).height() - $(window).height();
-            } else {
-                dest = $(this.hash).offset().top;
-            }
-
-            $('html,body').animate({
-                scrollTop: dest
-            }, 2000, 'swing');
-            hashTagActive = this.hash;
-        }
-    });
+// Modifies features' display on smaller devices
+function hideContinent() {
+    if($('.Region-container-continent').is(':hidden')){
+        // stick continent name on top
+        $("#section1 .Region-container-continent").addClass('Region-container-continent--fixed');
+        // adapt page
+        $("#section1 .Region-container-info").css("padding-top","90px");
+        $("section:last-child").css("margin-bottom","100px");
+    }
 };
 
 
