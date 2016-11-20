@@ -222,3 +222,30 @@ function getJSON(url, callback) {
     console.log(mapId);
 } // End of getJSON function
 
+
+/* 
+var continent = document.getElementsByClassName(Region-container-continent);
+continent.innerHTML = data.continent[0].id_continent;
+
+document.getElementsByClassName(Region-container-continent).innerHTML = data.continent[0].id_continent;
+
+var title = document.getElementsByClassName(Region-container-title);
+title.innerHTML = data.continent[0].title;
+var subtitle = document.getElementsByClassName(Region-container-title);
+subtitle.innerHTML = data.continent[0].subtitlt;
+var text = document.getElementsByClassName(Region-container-title);
+text.innerHTML = data.continent[0].content;
+
+boucle for
+
+document.createElement("section").classList.add('Region-container-section');
+p.appendChild(document.)
+document.getElementById("container").appendChild(p);
+
+var continent = document.getElementsByClassName(Region-container-continent);
+continent.innerHTML = data.continent[0].id_continent;
+
+var nav = document.createElement("nav").classList.add('Quick-navigation');
+document.getElementByClassName('Region-container').insertBefore(nav);
+
+*/
