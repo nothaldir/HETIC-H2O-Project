@@ -2,7 +2,7 @@ $(window).load(function() {
     console.log('window loaded');
     // backgroundMusic();
     introStory();
-    checkMenu();
+    menu();
     regionNav();
     hideContinent();
 });
@@ -107,6 +107,7 @@ function map(){
   $('.Map #world_map g, .Map #countries g').click(function(){
     mapId = $(this).attr('id').split('-');
     console.log(mapId[0]+','+mapId[1]);
+      initRegion();
     getJSON("/datas/"+mapId[0]+".json", function(data) {
       console.log(data.continent[0].id_continent);
       for (var i=1; i <= (data.continent.length - 1); i++) {
@@ -134,9 +135,10 @@ function map(){
     )
 };
 
-
+// initialize region page with data
 function initRegion() {
-
+        $('.Region').addClass('Region--open');
+        $('.Map').hide();
 };
 
 /*move();
@@ -154,18 +156,26 @@ function move(){
 }*/
 
 // Displays menu and surrounding elements
-function checkMenu() {
-  $('.Toolbar-menuIcon').on("click touchstart",function(){
+function menu() {
+    $('.Toolbar-backButton').on("click touchstart",function(){
+        if($('.Region').hasClass('Region--open')){
+            $('.Map').show();
+            $('.Region').removeClass('Region--open');
+        } else {
+        }
+    });
+
+    $('.Toolbar-menuIcon').on("click touchstart",function(){
       $('.Toolbar-menu').removeClass('Toolbar-menu--closed');
       $('.Toolbar-buttons').hide();
       $('.Quick-navigation').hide();
-  });
+    });
 
-  $('.Toolbar-menu-closeButton').on("click touchstart",function(){
+    $('.Toolbar-menu-closeButton').on("click touchstart",function(){
       $('.Toolbar-menu').addClass('Toolbar-menu--closed');
       $('.Toolbar-buttons').show();
       $('.Quick-navigation').show();
-  });
+    });
 
     if(!$('.Toolbar-menu').hasClass('Toolbar-menu--closed')) {
         $('html,body').on("click",function () {
@@ -188,13 +198,14 @@ function regionNav(){
 
 // Modifies features' display on smaller devices
 function hideContinent() {
-    if($('.Region-container-continent').is(':hidden')){
+    if($(window).width() < 768)
+    {
         // stick continent name on top
         $("#section1 .Region-container-continent").addClass('Region-container-continent--fixed');
         // adapt page
         $("#section1 .Region-container-info").css("padding-top","90px");
         $("section:last-child").css("margin-bottom","100px");
-    }
+    } else {}
 };
 
 
