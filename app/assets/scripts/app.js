@@ -4,6 +4,9 @@ window.onload = function() {
     introStory();
     checkMenu();
     scrollRegionSection();
+    menu();
+    regionNav();
+    hideContinent();
 };
 
 function backgroundMusic() {
@@ -111,12 +114,12 @@ function map(){
   $('.Map #world_map g, .Map #countries g').click(function(){
     mapId = $(this).attr('id').split('-');
     console.log(mapId[0]+','+mapId[1]);
-    getJSON("/datas/"+mapId[0]+".json", function(data){
-      var continent = mapId[0],
-          subdatas = mapId[1];
-      console.log(mapId);
-      console.log(continent);
-      console.log(data.continent.subdatas.subtitle);
+      initRegion();
+    getJSON("/datas/"+mapId[0]+".json", function(data) {
+      console.log(data.continent[0].id_continent);
+      for (var i=1; i <= (data.continent.length - 1); i++) {
+        console.log(data.continent[i].id_country);
+      }
     });
   });
   $('.Map #world_map g').hover(
@@ -139,6 +142,12 @@ function map(){
     )
 };
 
+// initialize region page with data
+function initRegion() {
+        $('.Region').addClass('Region--open');
+        $('.Map').hide();
+};
+
 /*move();
 function move(){
   $("#world_map").mousemove(function ( e ) {
@@ -153,22 +162,30 @@ function move(){
   });
 }*/
 
-function checkMenu() {
-  $('.Toolbar-menuIcon').on("click touchstart",function(){
+// Displays menu and surrounding elements
+function menu() {
+    $('.Toolbar-backButton').on("click touchstart",function(){
+        if($('.Region').hasClass('Region--open')){
+            $('.Map').show();
+            $('.Region').removeClass('Region--open');
+        } else {
+        }
+    });
+
+    $('.Toolbar-menuIcon').on("click touchstart",function(){
       $('.Toolbar-menu').removeClass('Toolbar-menu--closed');
       $('.Toolbar-buttons').hide();
       $('.Quick-navigation').hide();
-  });
+    });
 
-  $('.Toolbar-menu-closeButton').on("click touchstart",function(){
+    $('.Toolbar-menu-closeButton').on("click touchstart",function(){
       $('.Toolbar-menu').addClass('Toolbar-menu--closed');
       $('.Toolbar-buttons').show();
       $('.Quick-navigation').show();
-  });
+    });
 
     if(!$('.Toolbar-menu').hasClass('Toolbar-menu--closed')) {
         $('html,body').on("click",function () {
-            console.log('YOURE IN');
             $('.Toolbar-menu').addClass('Toolbar-menu--closed');
             $('.Toolbar-buttons').show();
             $('.Quick-navigation').show();
@@ -179,27 +196,23 @@ function checkMenu() {
     }
 };
 
+// Highlights the position on navigation bar
+function regionNav(){
+    $('.Quick-navigation-item').on("click",function(){
+        $(this).addClass('Quick-navigation-item-active').siblings().removeClass('Quick-navigation-item-active')
+    })
+};
 
-function scrollRegionSection() {
-    var hashTagActive = "";
-    $(".scroll").on("click touchstart", function (event) {
-        if(hashTagActive != this.hash) {
-            event.preventDefault();
-            $('.Quick-navigation-bubble').css("opacity","1");
-
-            var dest = 0;
-            if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
-                dest = $(document).height() - $(window).height();
-            } else {
-                dest = $(this.hash).offset().top;
-            }
-
-            $('html,body').animate({
-                scrollTop: dest
-            }, 2000, 'swing');
-            hashTagActive = this.hash;
-        }
-    });
+// Modifies features' display on smaller devices
+function hideContinent() {
+    if($(window).width() < 768)
+    {
+        // stick continent name on top
+        $("#section1 .Region-container-continent").addClass('Region-container-continent--fixed');
+        // adapt page
+        $("#section1 .Region-container-info").css("padding-top","90px");
+        $("section:last-child").css("margin-bottom","100px");
+    } else {}
 };
 
 

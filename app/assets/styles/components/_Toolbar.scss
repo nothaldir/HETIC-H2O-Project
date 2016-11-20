@@ -1,25 +1,48 @@
 .Toolbar {
-  right:rem(75);
+  width:100%;
   top:0;
-  right: 0;
   font-size: 0;
   position: fixed;
+  z-index: 300;
+  @media screen and (min-width: $mq-m) {
+    width: auto;
+    right:rem(75);
+    top:0;
+    right: 0;
+    font-size: 0;
+    position: fixed;
+  }
   &-buttons {
-    margin-top: rem(90);
-    margin-right: rem(80);
+    margin-top: rem(20);
+    @media screen and (min-width: $mq-m) {
+      margin-top: rem(50);
+      margin-right: rem(50);
+    }
   }
   &-backButton {
-    padding-right: rem(20);
+    float: left;
+    padding-left: rem(25);
     opacity: 0.26;
     transition: 0.2s;
+    @media screen and (min-width: $mq-m) {
+      position: relative;
+      padding-right: rem(20);
+      opacity: 0.26;
+      transition: 0.2s;
+    }
     &:hover {
       opacity: 1;
       transition: 0.2s;
     }
   }
   &-menuIcon {
+    float: right;
+    padding-right: rem(25);
     opacity: 0.26;
     transition: 0.2s;
+    @media screen and (min-width: $mq-m) {
+      position: relative;
+    }
     &:hover {
       opacity: 1;
       transition: 0.2s;
@@ -30,37 +53,62 @@
     position: absolute;
     text-align: center;
     top:0;
-    right:0;
+    right:0px;
     height:1000px;
-    width: rem(337);
-    background-color: rgba(91, 108, 142, 0.3);
-    font-size: rem(40);
-    transition:right .5s cubic-bezier(0, 0, 0, 0.64);
-    font-family: 'Helvetica Neue';
+    width: 100%;
+    background-color: rgba(91, 108, 142, 0.95);
+    font-size: rem(30);
+    transition: .3s ease;
+    font-family: $orbit;
     font-weight: 200;
     opacity: 1;
+    z-index:99;
+    @media screen and (min-width: $mq-m) {
+      height:2000px;
+      width: rem(337);
+      background-color: rgba(91, 108, 142, 0.7);
+      font-size: rem(40);
+    }
     &--closed{
-      opacity: 0;
-      right:rem(-337);
+      transition: .3s ease;
+      opacity: 1;
+      right:rem(-400);
+      @media screen and (min-width: $mq-m) {
+        transition: .3s ease;
+        opacity: 1;
+        right:rem(-337);
+      }
     }
     &-closeButton {
-      float: right;
-      margin-right: rem(75);
+      text-align: center;
       margin-top: rem(90);
-      opacity: .26;
+      opacity: .5;
       transition: 0.2s;
+      @media screen and (min-width: $mq-m) {
+        float: right;
+        margin-right: rem(75);
+        margin-top: rem(90);
+        opacity: .26;
+        transition: 0.2s;
+      }
       &:hover {
         opacity: .9;
         transition: 0.2s;
       }
     }
     &-list {
-      margin-top: rem(300);
+      margin-top: rem(80);
       width: 100%;
       position: absolute;
       text-align: center;
       line-height: rem(70);
-
+      @media screen and (min-width: $mq-m) {
+        margin-top: rem(300);
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        line-height: rem(70);
+      }
       &-item{
         line-height: 20px;
         color: #fff;
