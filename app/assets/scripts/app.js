@@ -1,13 +1,25 @@
 window.onload = function() {
     console.log('window loaded');
-    backgroundMusic();
-    introStory();
-    checkMenu();
+    //introStory();
+    //checkMenu();
     scrollRegionSection();
     menu();
     regionNav();
     hideContinent();
+    backgroundMusic();
 };
+
+smallMap();
+function smallMap() {
+  //$('.SmallMap-carousel').css('height', $(window).height() + 'px');
+  $('.SmallMap-carousel').slick({
+    infinite: true,
+    slidesToShow: 1,
+    vertical: true,
+    verticalSwiping: true,
+    adaptiveHeight: true
+  })
+}
 
 function backgroundMusic() {
   var audio = document.querySelector('.Audio-music');
