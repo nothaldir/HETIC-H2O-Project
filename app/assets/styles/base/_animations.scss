@@ -2,20 +2,8 @@
   0% {
     background-position: 0px 0px;
   }
-  20% {
-    background-position: 200px 40px;
-  }
-  40% {
-  background-position: 400px 80px;
-  }
-  60% {
-  background-position: 600px 120px;
-  }
-  80% {
-      background-position: 800px 160px;
-  }
   100% {
-    background-position: 1000px 200px;
+    background-position: 400px 75px;
   }
 }
 
@@ -23,17 +11,23 @@
   0% {
     background-position: 0px 0px;
   }
-  20% {
-    background-position: -200px 40px;
+  100% {
+    background-position: -400px 75px;
   }
-  40% {
-  background-position: -400px 80px;
+}
+
+@keyframes waving-large {
+  0% {
+    background-position: 0px 0px;
   }
-  60% {
-  background-position: -600px 120px;
+  100% {
+    background-position: 1000px 200px;
   }
-  80% {
-      background-position: -800px 160px;
+}
+
+@keyframes waving-reverse-large {
+  0% {
+    background-position: 0px 0px;
   }
   100% {
     background-position: -1000px 200px;
@@ -41,6 +35,7 @@
 }
 
 .fadeIn {
+  display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   transition: 1s ease;
@@ -55,16 +50,4 @@
 .slideOutLeft {
   transform: translateX(-100%);
   transition: .5s ease-in;
-}
-
-// Typing cursor
-.typed-cursor{
-    opacity: 1;
-    animation: blink 0.7s infinite;
-    color: #fff;
-}
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
 }

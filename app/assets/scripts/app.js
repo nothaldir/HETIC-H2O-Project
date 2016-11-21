@@ -1,20 +1,22 @@
-$(window).load(function() {
+window.onload = function() {
     console.log('window loaded');
-    // backgroundMusic();
+    backgroundMusic();
     introStory();
+    checkMenu();
+    scrollRegionSection();
     menu();
     regionNav();
     hideContinent();
-});
+};
 
 function backgroundMusic() {
-  $audio = $('.Audio-music')[0];
-  $audio.volume = 0.2;
-  $audio.play();
-  $('.Audio-controls').click(function() {
-    $(this).toggleClass('Audio-controls--paused');
-    if ($audio.paused == true) $audio.play();
-    else if ($audio.paused == false) $audio.pause();
+  var audio = document.querySelector('.Audio-music');
+  audio.volume = 0.2;
+  audio.play();
+  document.querySelector('.Audio-controls').addEventListener('click', function() {
+    this.classList.toggle('Audio-controls--paused');
+    if (audio.paused == true) audio.play();
+    else if (audio.paused == false) audio.pause();
   })
 };
 
@@ -30,7 +32,8 @@ function introStory() {
       typeSpeed: 0, // typing speed
       startDelay: 0, // time before typing starts
       backSpeed: 0, // backspacing speed
-      backDelay: 1000, // time before backspacing
+      backDelay: 1000, // time before backspacing-
+      showCursor: false,
       cursorChar: "|",
       callback: function() {
         introCountdown();
@@ -77,6 +80,9 @@ function introBegin() {
   setTimeout(function(){
     $('.Home-begin').addClass('fadeIn')
     spaceBar();
+    $('.Home-begin .icon-fingerprint').click(function(){
+      window.location.href = 'map.html';
+    })
   },800);
 };
 
@@ -94,8 +100,9 @@ function spaceBar() {
       console.log(space);
       $('.Home-spacebar').addClass('Home-spacebar--filling');
       if (space >= 25) {
-        console.log('boom');
+        console.log('spaceBar filled');
         $('.Home-spacebar').addClass('Home-spacebar--filled');
+        window.location.href = 'map.html';
       }
     }
   });
@@ -323,40 +330,20 @@ function getJSON(url, callback) {
 } // End of getJSON function
 
 
-/* 
+$(window).on('mousemove', function(e) {
+    var w = $(window).width();
+    var h = $(window).height();
+    var offsetX = 0.5 - e.pageX / w;
+    var offsetY = 0.5 - e.pageY / h;
 
+    $(".parallax").each(function(i, el) {
+        var offset = parseInt($(el).data('offset'));
+        var translate = "translate3d(" + Math.round(offsetX * offset) + "px," + Math.round(offsetY * offset) + "px, 0px)";
 
-boucle for
-
-document.createElement("section").classList.add('Region-container-section');
-p.appendChild(document.)
-document.getElementById("container").appendChild(p);
-
-var continent = document.getElementsByClassName(Region-container-continent);
-continent.innerHTML = data.continent[0].id_continent;
-
-document.getElementByClassName('Region-container').insertBefore(nav);
-var nav = document.createElement("nav").classList.add('Quick-navigation');
-
-<!-- <section id="section2" class="Region-container-section">
-            <h2 class="Region-container-continent">Europe</h2>
-            <div class="Region-container-info">
-                <h2 class="Region-container-country">France</h2>
-                <h3 class="Region-container-title">A great potential</h3>
-                <h4 class="Region-container-subtitle">Europe is running out of fresh water and overexploit water supplies</h4>
-                <p class="Region-container-text">Europeans are extracting too much from rivers, lakes and underground water sources, which can take millennia to be replenished, according to an EEA report published at the World Water Forum in Istanbul. This has so far disguised the continent’s water shortage, but it is only a stop-gap as supplies will run out.</p>
-                <button class="Region-container-watchButton"><a></a>Watch</button>
-            </div>
-        </section>
-
-        <section id="section3" class="Region-container-section">
-            <h2 class="Region-container-continent">Europe</h2>
-            <div class="Region-container-info">
-                <h2 class="Region-container-country">UK</h2>
-                <h3 class="Region-container-title">A drinking water mess</h3>
-                <h4 class="Region-container-subtitle">Europe is running out of fresh water and overexploit water supplies</h4>
-                <p class="Region-container-text">Europeans are extracting too much from rivers, lakes and underground water sources, which can take millennia to be replenished, according to an EEA report published at the World Water Forum in Istanbul. This has so far disguised the continent’s water shortage, but it is only a stop-gap as supplies will run out.</p>
-                <button class="Region-container-watchButton"><a></a>Watch</button>
-            </div>
-        </section> -->
-*/
+        $(el).css({
+            '-webkit-transform': translate,
+            'transform': translate,
+            'moz-transform': translate
+        });
+    });
+});
