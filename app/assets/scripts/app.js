@@ -113,12 +113,6 @@ function map(){
     mapId = $(this).attr('id').split('-');
     console.log(mapId[0]+','+mapId[1]);
       initRegion();
-    getJSON("/datas/"+mapId[0]+".json", function(data) {
-      console.log(data.continent[0].id_continent);
-      for (var i=1; i <= (data.continent.length - 1); i++) {
-        console.log(data.continent[i].id_country);
-      }
-    });
   });
   $('.Map #world_map g').hover(
     function(){
@@ -142,8 +136,130 @@ function map(){
 
 // initialize region page with data
 function initRegion() {
-        $('.Region').addClass('Region--open');
-        $('.Map').hide();
+  $('.Region').addClass('Region--open');
+  $('.Map').hide();
+
+  getJSON("datas/"+mapId[0]+".json", function(data) {
+
+    // grab container
+    var container = document.querySelector('.Region-container');
+    // remove all
+    container.innerHTML = "";
+
+    // creation of section for continent
+    continent = document.createElement('section');
+    continent.setAttribute('id', 'section');
+    continent.classList.add('Region-container-section');
+    container.appendChild(continent);
+
+    // ID
+    var continentId = document.createElement('h2');
+    continentId.innerHTML = data.continent[0].id_continent;
+    continent.appendChild(continentId);
+
+    //INFO
+    var continentInfo = document.createElement('div');
+    continentInfo.classList.add('Region-container-info');
+    continent.appendChild(continentInfo);
+
+    //TITLE
+    var continentTitle = document.createElement('h3');
+    continentTitle.classList.add('Region-container-title');
+    continentTitle.innerHTML = data.continent[0].title;
+    continentInfo.appendChild(continentTitle);
+
+    //SUBTITLE
+    var continentSubtitle = document.createElement('h4');
+    continentSubtitle.classList.add('Region-container-subtitle');
+    continentSubtitle.innerHTML = data.continent[0].subtitle;
+    continentInfo.appendChild(continentSubtitle);
+
+    //TEXT CONTENT
+    var continentText = document.createElement('p');
+    continentText.classList.add('Region-container-text');
+    continentText.innerHTML = data.continent[0].content;
+    continentInfo.appendChild(continentText);
+
+    //BUTTON
+    var continentButton = document.createElement('button');
+    continentButton.classList.add('Region-container-watchButton');
+    continentButton.innerHTML = "Watch";
+    continentInfo.appendChild(continentButton);
+
+    // QUICK NAVIGATION
+      var region = document.querySelector('.Region');
+      var quickNav = document.createElement('nav');
+      quickNav.classList.add('Quick-navigation');
+      region.insertBefore(quickNav, container);
+      var scrollIndicator = document.createElement('div');
+      scrollIndicator.classList.add('Scroll-progress-indicator');
+      quickNav.appendChild(scrollIndicator);
+
+
+    for (var i=1; i <= (data.continent.length - 1); i++) {
+
+      // QUICK NAVIGATION ELEMENTS
+      var anchor = document.createElement('a');
+      anchor.setAttribute('href', '#section'+i);
+      anchor.classList.add('Quick-navigation-item');
+      quickNav.appendChild(anchor);
+
+      // SECTIONS
+      var country = document.createElement('section');
+      country.setAttribute('id', 'section'+i);
+      country.classList.add('Region-container-section');
+      container.appendChild(country);
+
+      // ID SECTIONS
+      var countryId = document.createElement('h2');
+      countryId.classList.add('Region-container-country');
+      countryId.innerHTML = data.continent[i].id_country;
+      country.appendChild(countryId);
+
+      // SUBTITLE SECTIONS
+      var countrySubtitle = document.createElement('h4');
+      countrySubtitle.classList.add('Region-container-subtitle');
+      countrySubtitle.innerHTML = data.continent[i].subtitle;
+      country.appendChild(countrySubtitle);
+
+      // TEXT CONTENT SECTIONS
+      var countryText = document.createElement('p');
+      countryText.classList.add('Region-container-text');
+      countryText.innerHTML = data.continent[i].content;
+      country.appendChild(countryText);
+
+      // KEY DATA SECTIONS
+      var countryData = document.createElement('div');
+      countryData.classList.add('Region-container-keyData');
+      country.appendChild(countryData);
+
+      var countryData1 = document.createElement('div'),
+          countryData2 = document.createElement('div');
+      countryData1.classList.add('Region-container-keyData-firstData');
+      countryData2.classList.add('Region-container-keyData-secondData');
+      countryData.appendChild(countryData1);
+      countryData.appendChild(countryData2);
+
+      var dataNumber1 = document.createElement('span'),
+          dataText1 = document.createElement('p'),
+          dataNumber2 = document.createElement('span'),
+          dataText2 = document.createElement('p');
+      dataNumber1.classList.add('Region-container-keyData-firstData-number');
+      dataNumber1.innerHTML = data.continent[i].keydata[0].number;
+      dataText1.classList.add('Region-container-keyData-firstData-details');
+      dataText1.innerHTML = data.continent[i].keydata[0].text;
+      countryData1.appendChild(dataNumber1);
+      countryData1.appendChild(dataText1);
+
+      dataNumber2.classList.add('Region-container-keyData-secondData-number');
+      dataNumber2.innerHTML = data.continent[i].keydata[1].number;
+      dataText1.classList.add('Region-container-keyData-secondData-details');
+      dataText2.innerHTML = data.continent[i].keydata[1].text;
+      countryData2.appendChild(dataNumber2);
+      countryData2.appendChild(dataText2);
+
+    }
+  });
 };
 
 /*move();
@@ -206,9 +322,9 @@ function hideContinent() {
     if($(window).width() < 768)
     {
         // stick continent name on top
-        $("#section1 .Region-container-continent").addClass('Region-container-continent--fixed');
+        $("#section .Region-container-continent").addClass('Region-container-continent--fixed');
         // adapt page
-        $("#section1 .Region-container-info").css("padding-top","90px");
+        $("#section .Region-container-info").css("padding-top","90px");
         $("section:last-child").css("margin-bottom","100px");
     } else {}
 };
@@ -237,7 +353,6 @@ function getJSON(url, callback) {
     xhr.send();
     console.log(mapId);
 } // End of getJSON function
-
 
 
 $(window).on('mousemove', function(e) {
