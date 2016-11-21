@@ -206,19 +206,19 @@ function initRegion() {
       anchor.classList.add('Quick-navigation-item');
       quickNav.appendChild(anchor);
 
-      //SECTIONS
+      // SECTIONS
       var country = document.createElement('section');
       country.setAttribute('id', 'section'+i);
       country.classList.add('Region-container-section');
       container.appendChild(country);
 
-      //ID SECTIONS
+      // ID SECTIONS
       var countryId = document.createElement('h2');
       countryId.classList.add('Region-container-country');
       countryId.innerHTML = data.continent[i].id_country;
       country.appendChild(countryId);
 
-      //SUBTITLE SECTIONS
+      // SUBTITLE SECTIONS
       var countrySubtitle = document.createElement('h4');
       countrySubtitle.classList.add('Region-container-subtitle');
       countrySubtitle.innerHTML = data.continent[i].subtitle;
@@ -230,9 +230,36 @@ function initRegion() {
       countryText.innerHTML = data.continent[i].content;
       country.appendChild(countryText);
 
+      // KEY DATA SECTIONS
+      var countryData = document.createElement('div');
+      countryData.classList.add('Region-container-keyData');
+      country.appendChild(countryData);
 
-      // document.getElementByClassName('Region-container').insertBefore(nav);
-      // var nav = document.createElement("nav").classList.add('Quick-navigation');
+      var countryData1 = document.createElement('div'),
+          countryData2 = document.createElement('div');
+      countryData1.classList.add('Region-container-keyData-firstData');
+      countryData2.classList.add('Region-container-keyData-secondData');
+      countryData.appendChild(countryData1);
+      countryData.appendChild(countryData2);
+
+      var dataNumber1 = document.createElement('span'),
+          dataText1 = document.createElement('p'),
+          dataNumber2 = document.createElement('span'),
+          dataText2 = document.createElement('p');
+      dataNumber1.classList.add('Region-container-keyData-firstData-number');
+      dataNumber1.innerHTML = data.continent[i].keydata[0].number;
+      dataText1.classList.add('Region-container-keyData-firstData-details');
+      dataText1.innerHTML = data.continent[i].keydata[0].text;
+      countryData1.appendChild(dataNumber1);
+      countryData1.appendChild(dataText1);
+
+      dataNumber2.classList.add('Region-container-keyData-secondData-number');
+      dataNumber2.innerHTML = data.continent[i].keydata[1].number;
+      dataText1.classList.add('Region-container-keyData-secondData-details');
+      dataText2.innerHTML = data.continent[i].keydata[1].text;
+      countryData2.appendChild(dataNumber2);
+      countryData2.appendChild(dataText2);
+
     }
   });
 };
