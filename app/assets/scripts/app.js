@@ -2,8 +2,6 @@ window.onload = function() {
     console.log('window loaded');
     backgroundMusic();
     introStory();
-    checkMenu();
-    scrollRegionSection();
     menu();
     regionNav();
     hideContinent();
