@@ -1,11 +1,16 @@
 window.onload = function() {
-    console.log('window loaded');
-    //introStory();
-    //checkMenu();
-    scrollRegionSection();
-    menu();
-    regionNav();
-    hideContinent();
+    if (window.location.href.indexOf("index.html") > -1) {
+      console.log('index loaded');
+      introStory();
+    }
+    if (window.location.href.indexOf("map.html") > -1) {
+      console.log('map loaded');
+      //checkMenu();
+      //scrollRegionSection();
+      menu();
+      regionNav();
+      hideContinent();
+    }
     backgroundMusic();
 };
 
