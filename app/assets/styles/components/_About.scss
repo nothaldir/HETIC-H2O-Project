@@ -1,0 +1,92 @@
+.About {
+    &-container {
+        width: rem(300);
+        margin: 0 auto;
+        text-align: center;
+        @media screen and (min-width: $mq-m) {
+          margin-left: rem(100);
+          width: rem(500);
+          text-align: inherit;
+        }
+        @media screen and (min-width: $mq-l) {
+          margin-left: rem(250);
+          width: rem(570);
+          text-align: inherit;
+        }
+        &-section {
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: rem(30);
+          padding-bottom: rem(0);
+          @media screen and (min-width: $mq-m) {
+            padding-top: rem(160);
+            padding-bottom: rem(200);
+          }
+        }
+        &-info{
+          padding-top: rem(40);
+        }
+        &-title {
+          //padding-top: rem(100);
+          color: $color-blue-turquoise;
+          font-size: rem(20);
+          text-align: center;
+          font-family: "Helvetica Neue";
+          letter-spacing: 1px;
+          margin-bottom: rem(20);
+          @media screen and (min-width: $mq-m) {
+            font-size: rem(48);
+            text-align: left;
+            font-family: "Helvetica Neue";
+            margin-bottom: rem(30);
+          }
+        }
+        &-subtitle {
+          color: #fff;
+          font-size: rem(17);
+          text-align: left;
+          font-family: "Helvetica Neue";
+          line-height: 20px;
+          margin-bottom: rem(10);
+          font-weight: 200;
+          @media screen and (min-width: $mq-m) {
+            font-size: rem(28);
+            text-align: left;
+            line-height: rem(40);
+            margin-bottom: rem(40);
+          }
+        }
+        &-text {
+          color: #fff;
+          font-size: rem(15);
+          font-family: "Helvetica Neue";
+          font-weight: 300;
+          text-align: left;
+          line-height: rem(30);
+          margin-bottom: rem(24);
+          opacity: 0.58;
+          @media screen and (min-width: $mq-m) {
+            font-size: rem(18);
+            line-height: rem(20);
+            margin-bottom: rem(24);
+            opacity: 0.58;
+          }
+        }
+        &-button{
+          width: rem(240);
+          height: rem(40);
+          text-align: center;
+          color: $color-blue-turquoise;
+          font-size: rem(20);
+          font-weight: 100;
+          letter-spacing: rem(2);
+          @media screen and (min-width: $mq-m) {
+            width: rem(225);
+            height: rem(54);
+            color: $color-blue-turquoise;
+            font-size: rem(24);
+          }
+        }
+    }
+
+}
