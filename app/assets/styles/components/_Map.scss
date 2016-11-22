@@ -1,4 +1,7 @@
 .Map {
+	@media screen and (max-width: $mq-m) {
+		display: none;
+	}
 	position: relative;
 	height: 100vh;
 	&-title {
@@ -78,6 +81,38 @@
 					transform: scale(1);
 				}
 			}
+		}
+	}
+}
+
+.SmallMap {
+	@media screen and (min-width: $mq-m) {
+		display: none;
+	}
+	.slick-slide {
+    height: 100vh !important;
+		position: relative;
+	}
+	svg {
+		width: 90%;
+		position: absolute;
+		left: 50%; top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+	#world_map {
+		overflow: unset;
+		g {
+			fill: #434F67 !important;
+			stroke: #434F67 !important;
+			cursor: pointer;
+			transform-origin: 50%;
+			transition: .3s ease;
+		}
+		g:hover {
+			stroke: #000 !important;
+			fill: red !important;
+			transform: scale(1.01);
+			fill: #5B6C8E !important;
 		}
 	}
 }

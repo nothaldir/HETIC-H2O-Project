@@ -1,11 +1,39 @@
 window.onload = function() {
+<<<<<<< HEAD
     console.log('window loaded');
     // backgroundMusic();
     introStory();
     menu();
     regionNav();
     hideContinent();
+=======
+    if (window.location.href.indexOf("index.html") > -1) {
+      console.log('index loaded');
+      introStory();
+    }
+    if (window.location.href.indexOf("map.html") > -1) {
+      console.log('map loaded');
+      //checkMenu();
+      //scrollRegionSection();
+      menu();
+      regionNav();
+      hideContinent();
+    }
+    backgroundMusic();
+>>>>>>> 7c2d23ab07ec7890a2e6be94bd486fa45e034cf7
 };
+
+smallMap();
+function smallMap() {
+  //$('.SmallMap-carousel').css('height', $(window).height() + 'px');
+  $('.SmallMap-carousel').slick({
+    infinite: true,
+    slidesToShow: 1,
+    vertical: true,
+    verticalSwiping: true,
+    adaptiveHeight: true
+  })
+}
 
 function backgroundMusic() {
   var audio = document.querySelector('.Audio-music');
