@@ -1,0 +1,26 @@
+.About {
+
+  &-title {
+    margin-top: rem(40);
+    margin-left: rem(60);
+    padding: 50px;
+    font-size: rem(27);
+    color: #fff;
+    font-family: $orbit;
+  }
+  &-synopsis {
+    width: 100%;
+    height: rem(220);
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-top:rem(30);
+    padding: rem(20);
+    color: #000;
+    font-family: "Helvetica Neue";
+    font-weight: 100;
+    line-height: rem(27);
+    letter-spacing: rem(1);
+    &-title {
+
+    }
+  }
+}
