@@ -75,16 +75,18 @@
         &-button{
           width: rem(240);
           height: rem(40);
-          text-align: center;
+          text-align: left;
+          text-transform: uppercase;
           color: $color-blue-turquoise;
-          font-size: rem(20);
+          font-family: 'Helvetica Neue';
+          font-size: rem(15);
           font-weight: 100;
           letter-spacing: rem(2);
           @media screen and (min-width: $mq-m) {
             width: rem(225);
             height: rem(54);
             color: $color-blue-turquoise;
-            font-size: rem(24);
+            font-size: rem(15);
           }
         }
     }
