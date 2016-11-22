@@ -5,8 +5,6 @@ window.onload = function() {
     }
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
-      checkMenu();
-      scrollRegionSection();
       menu();
       regionNav();
       hideContinent();
