@@ -1,6 +1,6 @@
 window.onload = function() {
     console.log('window loaded');
-    backgroundMusic();
+    // backgroundMusic();
     introStory();
     menu();
     regionNav();
@@ -106,6 +106,41 @@ function spaceBar() {
   });
 };
 
+
+// Displays menu and surrounding elements
+function menu() {
+    $('.Toolbar-backButton').on("click touchstart",function(){
+        if($('.Region').hasClass('Region--open')){
+            $('.Map').show();
+            $('.Region').removeClass('Region--open');
+        } else {
+        }
+    });
+
+    $('.Toolbar-menuIcon').on("click touchstart",function(){
+        $('.Toolbar-menu').removeClass('Toolbar-menu--closed');
+        $('.Toolbar-buttons').hide();
+        $('.Quick-navigation').hide();
+    });
+
+    $('.Toolbar-menu-closeButton').on("click touchstart",function(){
+        $('.Toolbar-menu').addClass('Toolbar-menu--closed');
+        $('.Toolbar-buttons').show();
+        $('.Quick-navigation').show();
+    });
+
+    if(!$('.Toolbar-menu').hasClass('Toolbar-menu--closed')) {
+        $('html,body').on("click",function () {
+            $('.Toolbar-menu').addClass('Toolbar-menu--closed');
+            $('.Toolbar-buttons').show();
+            $('.Quick-navigation').show();
+        })
+        $('.Toolbar-menu').click(function(event){
+            event.stopPropagation();
+        });
+    }
+};
+
 map();
 var mapId;
 function map(){
@@ -154,6 +189,7 @@ function initRegion() {
 
     // ID
     var continentId = document.createElement('h2');
+      continentId.classList.add('Region-container-continent');
     continentId.innerHTML = data.continent[0].id_continent;
     continent.appendChild(continentId);
 
@@ -276,39 +312,6 @@ function move(){
   });
 }*/
 
-// Displays menu and surrounding elements
-function menu() {
-    $('.Toolbar-backButton').on("click touchstart",function(){
-        if($('.Region').hasClass('Region--open')){
-            $('.Map').show();
-            $('.Region').removeClass('Region--open');
-        } else {
-        }
-    });
-
-    $('.Toolbar-menuIcon').on("click touchstart",function(){
-      $('.Toolbar-menu').removeClass('Toolbar-menu--closed');
-      $('.Toolbar-buttons').hide();
-      $('.Quick-navigation').hide();
-    });
-
-    $('.Toolbar-menu-closeButton').on("click touchstart",function(){
-      $('.Toolbar-menu').addClass('Toolbar-menu--closed');
-      $('.Toolbar-buttons').show();
-      $('.Quick-navigation').show();
-    });
-
-    if(!$('.Toolbar-menu').hasClass('Toolbar-menu--closed')) {
-        $('html,body').on("click",function () {
-            $('.Toolbar-menu').addClass('Toolbar-menu--closed');
-            $('.Toolbar-buttons').show();
-            $('.Quick-navigation').show();
-        })
-        $('.Toolbar-menu').click(function(event){
-            event.stopPropagation();
-        });
-    }
-};
 
 // Highlights the position on navigation bar
 function regionNav(){
