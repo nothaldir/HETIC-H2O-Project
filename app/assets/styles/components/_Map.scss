@@ -4,15 +4,17 @@
 	}
 	position: relative;
 	height: 100vh;
+	margin-top: rem(50);
 	&-title {
 		color: #fff;
 		font-size: rem(20);
 		font-family: $orbit;
 		font-weight: 100;
 		position: absolute;
-		top: rem(75); left: rem(50);
+		top: rem(15); left: rem(50);
 	}
 	&-location {
+
 		position: absolute;
 		bottom: rem(75); left: 50%;
 		transform: translateX(-50%);

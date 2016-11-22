@@ -37,16 +37,16 @@
 
   }
     &-container {
-        width: rem(300);
+        width: rem(750);
         margin: 0 auto;
         text-align: center;
         @media screen and (min-width: $mq-m) {
-          margin-left: rem(100);
+          margin-left: rem(150);
           width: rem(500);
           text-align: inherit;
         }
         @media screen and (min-width: $mq-l) {
-          margin-left: rem(250);
+          margin-left: rem(300);
           width: rem(570);
           text-align: inherit;
         }
@@ -56,11 +56,17 @@
           padding-top: rem(30);
           padding-bottom: rem(30);
           @media screen and (min-width: $mq-m) {
-            padding-top: rem(160);
-            padding-bottom: rem(200);
+            padding-top: rem(180);
+            //padding-bottom: rem(200);
+          }
+          &:last-child {
+            @media screen and (min-width: $mq-m) {
+              margin-bottom: rem(150);
+            }
           }
         }
         &-continent {
+          width:100px;
           display: none;
           color: #fff;
           font-size: rem(38);
@@ -70,11 +76,10 @@
           font-weight: 100;
           margin-bottom: rem(34);
           @media screen and (min-width: $mq-m) {
-            margin-left: rem(-200);
+            margin-left: rem(-250);
             margin-top: rem(-100);
             position: fixed;
             display: block;
-            //position: inherit;
             text-transform: capitalize;
             text-align: left;
             font-size: rem(38);
@@ -138,13 +143,13 @@
           font-size: rem(17);
           text-align: left;
           font-family: "Helvetica Neue";
-          line-height: 20px;
+          line-height: éàpx;
           margin-bottom: rem(10);
           font-weight: 200;
           @media screen and (min-width: $mq-m) {
-            font-size: rem(28);
+            font-size: rem(24);
             text-align: left;
-            line-height: rem(40);
+            line-height: rem(34);
             margin-bottom: rem(40);
           }
         }
@@ -190,7 +195,7 @@
           text-align: left;
           font-family:$orbit;
           &-firstData {
-            float:left;
+
             display: inline;
             margin-bottom: rem(30);
              &-number {
@@ -201,7 +206,7 @@
             }
            }
           &-secondData {
-            float:left;
+
             display: inline;
             &-number {
               color: $color-red;

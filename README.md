@@ -1,5 +1,8 @@
 # HETIC-P2019-18
 
+## About
+School project made in 2016.
+
 ## Installation
 
 ### Install NodeJs
@@ -56,11 +59,10 @@ gulp
 type(scope): subject
 
 Allowed <type> values:
-  feat (new feature for the user, not a new feature for build script)
-  add (new elements (fonts, images ...))
-  change/update (change/update to an existing feature)
-  fix (bug fix for the user, not a fix to a build script)
-  docs (changes to the documentation)
+* feat (new feature)
+* fix (bug fix)
+* change (changes/updates to an existing feature)
+* docs (changes to the documentation) 
 
 ### CSS naming convention
 

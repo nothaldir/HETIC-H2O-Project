@@ -74,13 +74,11 @@
         }
         &-button {
           height:auto;
-          border: 1px solid green;
+          width: rem(105);
         }
-
         &-buttonText{
           width: rem(150);
           height: rem(40);
-          border:1px solid red;
           float:left;
           text-align: left;
           text-transform: uppercase;
@@ -97,8 +95,12 @@
           }
         }
         &-arrow {
-          border: 1px solid red;
           float:right;
+          fill: $color-blue-turquoise;
+          margin-top:rem(-5);
+          transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -webkit-transform: rotate(180deg); 
 
         }
     }
