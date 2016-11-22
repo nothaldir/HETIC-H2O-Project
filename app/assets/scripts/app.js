@@ -5,8 +5,6 @@ window.onload = function() {
     }
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
-      checkMenu();
-      scrollRegionSection();
       menu();
       regionNav();
       hideContinent();
@@ -347,7 +345,9 @@ function hideContinent() {
         // adapt page
         $("#section .Region-container-info").css("padding-top","90px");
         $("section:last-child").css("margin-bottom","100px");
-    } else {}
+    } else {
+        $("section:last-child").css("margin-bottom","100px");
+    }
 };
 
 
