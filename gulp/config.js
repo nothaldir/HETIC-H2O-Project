@@ -10,7 +10,11 @@ module.exports = {
   styles: {
     watchSrc: appSrc + '/assets/styles/**/*.scss',
     src: appSrc + '/assets/styles/main.scss',
-    vendorSrc: appSrc + '/assets/styles/vendors/**/*',
+    vendorSrc: [
+      appSrc + '/assets/styles/vendors/**/*',
+      'node_modules/slick-carousel/slick/slick.scss',
+      'node_modules/slick-carousel/slick/slick-theme.scss'
+    ],
     dest: appDest + '/css/',
     sassOpts: {
       includePaths: [
@@ -37,6 +41,7 @@ module.exports = {
     vendorSrc: [
       'node_modules/jquery/dist/jquery.min.js',
       'node_modules/countup.js/dist/countUp.min.js',
+      'node_modules/slick-carousel/slick/slick.min.js',
       appSrc + '/assets/scripts/vendors/*.js',
       appSrc + '/assets/scripts/vendors/**/*.js'
     ],
