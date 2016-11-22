@@ -1,0 +1,135 @@
+.Toolbar {
+  width:100%;
+  top:0;
+  font-size: 0;
+  position: fixed;
+  z-index: 300;
+  @media screen and (min-width: $mq-m) {
+    width: auto;
+    right:rem(75);
+    top:0;
+    right: 0;
+    font-size: 0;
+    position: fixed;
+  }
+  &-buttons {
+    margin-top: rem(20);
+    @media screen and (min-width: $mq-m) {
+      margin-top: rem(50);
+      margin-right: rem(50);
+    }
+  }
+  &-backButton {
+    float: left;
+    padding-left: rem(25);
+    opacity: 0.26;
+    transition: 0.2s;
+    @media screen and (min-width: $mq-m) {
+      position: relative;
+      padding-right: rem(20);
+      opacity: 0.26;
+      transition: 0.2s;
+    }
+    &:hover {
+      opacity: 1;
+      transition: 0.2s;
+    }
+  }
+  &-menuIcon {
+    float: right;
+    padding-right: rem(25);
+    opacity: 0.26;
+    transition: 0.2s;
+    @media screen and (min-width: $mq-m) {
+      position: relative;
+    }
+    &:hover {
+      opacity: 1;
+      transition: 0.2s;
+    }
+  }
+
+  &-menu {
+    position: absolute;
+    text-align: center;
+    top:0;
+    right:0px;
+    height:1000px;
+    width: 100%;
+    background-color: rgba(91, 108, 142, 0.95);
+    font-size: rem(30);
+    transition: .3s ease;
+    font-family: $orbit;
+    font-weight: 200;
+    opacity: 1;
+    z-index:99;
+    @media screen and (min-width: $mq-m) {
+      height:2000px;
+      width: rem(337);
+      background-color: rgba(91, 108, 142, 0.7);
+      font-size: rem(40);
+    }
+    &--closed{
+      transition: .3s ease;
+      opacity: 1;
+      right:rem(-400);
+      @media screen and (min-width: $mq-m) {
+        transition: .3s ease;
+        opacity: 1;
+        right:rem(-337);
+      }
+    }
+    &-closeButton {
+      text-align: center;
+      margin-top: rem(90);
+      opacity: .5;
+      transition: 0.2s;
+      @media screen and (min-width: $mq-m) {
+        float: right;
+        margin-right: rem(75);
+        margin-top: rem(90);
+        opacity: .26;
+        transition: 0.2s;
+      }
+      &:hover {
+        opacity: .9;
+        transition: 0.2s;
+      }
+    }
+    &-list {
+      margin-top: rem(80);
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      line-height: rem(70);
+      @media screen and (min-width: $mq-m) {
+        margin-top: rem(300);
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        line-height: rem(70);
+      }
+      &-item{
+        line-height: 20px;
+        color: #fff;
+        text-decoration: none;
+        margin: 10px;
+        &:hover {
+          color: $color-blue-turquoise;
+          border-bottom: 4px solid $color-blue-turquoise;
+          padding-bottom: rem(3);
+        }
+      }
+    }
+    &-nasa {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      bottom: rem(12);
+      text-align: center;
+      &-img {
+        width:rem(80);
+      }
+    }
+  }
+}

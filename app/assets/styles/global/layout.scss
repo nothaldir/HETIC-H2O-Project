@@ -1,9 +1,11 @@
 body {
   background-color: $color-background;
+  background-image: url(../img/skin/bg.png);
+  background-repeat: repeat;
+  background-size: cover;
   color: $color-grey;
-  font-family: $roboto;
-
-
+  font-family: $ocra;
+  min-height: 100%;
 }
 
 .character-accent {

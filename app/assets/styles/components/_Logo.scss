@@ -1,0 +1,68 @@
+.Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  @media screen and (min-width: $mq-m) {
+    margin: rem(100) auto;
+  }
+  &-title {
+    font-size: rem(100);
+    letter-spacing: rem(10);
+    font-family: $gotham-ultr;
+    color: $color-blue-lighter;
+    font-weight: 700;
+    position: relative;
+    @media screen and (min-width: $mq-m) {
+      font-size: rem(250);
+      letter-spacing: rem(20);
+    }
+  }
+  &-subtitle {
+    letter-spacing: rem(0);
+    font-weight: 400;
+    font-size: rem(20);
+    position: absolute;
+    bottom: rem(-10);
+    color: $color-blue-lighter;
+    font-family: $gotham-med;
+    @media screen and (min-width: $mq-m) {
+      letter-spacing: rem(2);
+      font-size: rem(24);
+      margin-left: rem(50);
+    }
+  }
+  &-waves {
+    width: rem(70); height: rem(70);
+    overflow: hidden;
+    position: relative;
+    border-radius: 100%;
+    @media screen and (min-width: $mq-m) {
+      width: rem(200); height: rem(200);
+    }
+  }
+  &-wave--front {
+    position: absolute;
+    width: rem(70); height: rem(70);
+    background-size: 100%;
+    background-image: url("../img/skin/wave-one.png");
+    background-repeat: repeat-x;
+    animation: waving 4.5s linear forwards;
+    @media screen and (min-width: $mq-m) {
+      animation: waving-large 4.5s linear forwards;
+      width: rem(200); height: rem(200);
+    }
+  }
+  &-wave--back {
+    position: absolute;
+    width: rem(70); height: rem(70);
+    background-size: 100%;
+    background-image: url("../img/skin/wave-two.png");
+    background-repeat: repeat-x;
+    animation: waving-reverse 4.5s linear forwards;
+    @media screen and (min-width: $mq-m) {
+      animation: waving-reverse-large 4.5s linear forwards;
+      width: rem(200); height: rem(200);
+    }
+  }
+}

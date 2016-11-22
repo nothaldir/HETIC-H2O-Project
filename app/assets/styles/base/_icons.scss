@@ -26,8 +26,14 @@
   @if $filename == check {
     $char: "\E001";
   }
-  @if $filename == keyboard {
+  @if $filename == fingerprint {
     $char: "\E002";
+  }
+  @if $filename == keyboard {
+    $char: "\E003";
+  }
+  @if $filename == speaker {
+    $char: "\E004";
   }
 
   @return $char;
@@ -51,6 +57,15 @@
   @include icon(check);
 }
 
+.icon-fingerprint{
+  &::before {
+    @include icon(fingerprint);
+  }
+}
+%icon-fingerprint {
+  @include icon(fingerprint);
+}
+
 .icon-keyboard{
   &::before {
     @include icon(keyboard);
@@ -59,4 +74,12 @@
 %icon-keyboard {
   @include icon(keyboard);
 }
-
+
+.icon-speaker{
+  &::before {
+    @include icon(speaker);
+  }
+}
+%icon-speaker {
+  @include icon(speaker);
+}

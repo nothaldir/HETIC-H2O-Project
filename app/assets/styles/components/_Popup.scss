@@ -1,0 +1,63 @@
+.Home-popup {
+	transition: .3s ease;
+	overflow: hidden;
+	position: absolute;
+	width: 0%; height: 0%;
+	background-color: $color-grey-darker;
+	top: 50%; left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	&-content {
+		color: #fff;
+		display: block;
+		width: 80%;
+		line-height: rem(23);
+		margin: auto;
+		padding: rem(50) rem(20);
+		@media screen and (min-width: $mq-m) {
+			padding: rem(100) rem(50);
+		}
+	}
+	&-skip {
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		bottom: 100px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #fff;
+		text-decoration: none;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	&-countdown {
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		color: #fff;
+		font-size: rem(75);
+		@media screen and (min-width: $mq-m) {
+			font-size: rem(130);
+		}
+	}
+}
+
+.Home-popup--open {
+	height: 100%; width: 100%;
+	overflow-x: hidden; overflow-y: hidden;
+	@media screen and (min-width: $mq-m) {
+		//padding: rem(200) rem(350) rem(200) rem(50);
+		width: 80%;
+		height: 70%;
+	}
+	@media screen and (min-width: $mq-l) {
+		width: 50%;
+		height: 60%;
+	}
+}
+
+.intro-story{
+	display: none;
+}

@@ -1,8 +1,25 @@
 @font-face {
-  src: url(../fonts/Waterlily.ttf);
-  font-family: "Waterlily";
+  src: url(../fonts/gotham-ultra.ttf);
+  font-family: "gotham-ultra";
 }
+
+@font-face {
+  src: url(../fonts/gotham-medium.ttf);
+  font-family: "gotham-medium";
+}
+
+@font-face {
+  src: url(../fonts/ocra.ttf);
+  font-family: "ocra";
+}
+
+@font-face {
+  src: url(../fonts/Tungsten-Book.otf);
+  font-family: "tung-book";
+}
+
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700');
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');

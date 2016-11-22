@@ -14,7 +14,7 @@ var gulp          = require('gulp'),
 
 gulp.task('styles:vendors', function(){
   return gulp.src(config.vendorSrc)
-    .pipe(concat('app.css'))
+    .pipe(concat('vendors.css'))
     .pipe(options.production ? gutil.noop() : sourcemaps.init())
     .pipe(plumber({
       errorHandler: notify.onError('SASS Error : <%= error.message %>')

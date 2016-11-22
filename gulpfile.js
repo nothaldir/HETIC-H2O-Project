@@ -15,11 +15,14 @@ gulp.task('default', function(){
 gulp.task('build', function(){
   runSequence('clean',
               'iconfont',
-              'copy:root',
               'copy:fonts',
+              'copy:datas', 
+              'copy:medias',
+              'views',
               'styles:vendors',
               'styles:app',
               'scripts:vendors',
               'scripts:app',
               'images');
 });
+
