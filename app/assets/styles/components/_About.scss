@@ -72,9 +72,14 @@
             opacity: 0.58;
           }
         }
-        &-button{
-          width: rem(240);
+        &-button {
+          height:auto;
+          width: rem(105);
+        }
+        &-buttonText{
+          width: rem(150);
           height: rem(40);
+          float:left;
           text-align: left;
           text-transform: uppercase;
           color: $color-blue-turquoise;
@@ -83,11 +88,20 @@
           font-weight: 100;
           letter-spacing: rem(2);
           @media screen and (min-width: $mq-m) {
-            width: rem(225);
-            height: rem(54);
+            width: rem(75);
+            height: rem(24);
             color: $color-blue-turquoise;
             font-size: rem(15);
           }
+        }
+        &-arrow {
+          float:right;
+          fill: $color-blue-turquoise;
+          margin-top:rem(-5);
+          transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -webkit-transform: rotate(180deg); 
+
         }
     }
 }
