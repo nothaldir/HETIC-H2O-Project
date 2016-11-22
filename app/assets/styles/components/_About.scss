@@ -40,6 +40,12 @@
             font-family: "Helvetica Neue";
             margin-bottom: rem(30);
           }
+          @media screen and (max-width: $mq-m) {
+            font-size: rem(38);
+            text-align: center;
+            margin-bottom: rem(10);
+            margin-top: rem(15);
+          }
         }
         &-subtitle {
           color: #fff;
@@ -77,7 +83,7 @@
           width: rem(105);
         }
         &-buttonText{
-          width: rem(150);
+          width: rem(50);
           height: rem(40);
           float:left;
           text-align: left;
@@ -93,6 +99,7 @@
             color: $color-blue-turquoise;
             font-size: rem(15);
           }
+          
         }
         &-arrow {
           float:right;
@@ -101,7 +108,9 @@
           transform: rotate(180deg);
           -ms-transform: rotate(180deg);
           -webkit-transform: rotate(180deg); 
-
+          @media screen and (max-width: $mq-m) {
+            width: rem(45);
+          }
         }
     }
 }
