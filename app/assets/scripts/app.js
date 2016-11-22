@@ -160,10 +160,12 @@ function menu() {
 map();
 var mapId;
 function map(){
-  $('.Map #world_map g, .Map #countries g').click(function(){
+  $('.Map #world_map g, .Map #countries g, .SmallMap #world_map g, .SmallMap #countries g').click(function(){
     mapId = $(this).attr('id').split('-');
     console.log(mapId[0]+','+mapId[1]);
+    if (mapId[0] !== "groenland_no_data") {
       initRegion();
+    }
   });
   $('.Map #world_map g').hover(
     function(){
@@ -176,14 +178,14 @@ function map(){
       function(e) {
         $id = $(this).attr('id').split('-');
         $('.Map-location').html('[ '+$id[1]+' ]');
-        $('.Map-popup').css('left',e.pageX);
+        /*$('.Map-popup').css('left',e.pageX);
         $('.Map-popup').css('top',e.pageY);
         setTimeout(function(){
           $('.Map-popup').addClass('Map-popup--open');
-        },200)
+        },200)*/
       }, function(){
         $('.Map-location').html('[ ]');
-        $('.Map-popup').removeClass('Map-popup--open');
+        //$('.Map-popup').removeClass('Map-popup--open');
       }
     )
 };
