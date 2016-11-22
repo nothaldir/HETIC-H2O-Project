@@ -54,7 +54,7 @@
           padding-left: 20px;
           padding-right: 20px;
           padding-top: rem(30);
-          padding-bottom: rem(0);
+          padding-bottom: rem(30);
           @media screen and (min-width: $mq-m) {
             padding-top: rem(160);
             padding-bottom: rem(200);
@@ -63,19 +63,22 @@
         &-continent {
           display: none;
           color: #fff;
-          font-size: rem(28);
+          font-size: rem(38);
           text-align: center;
           text-transform: uppercase;
           font-family: "Helvetica Neue";
           font-weight: 100;
           margin-bottom: rem(34);
           @media screen and (min-width: $mq-m) {
+            margin-left: rem(-200);
+            margin-top: rem(-100);
+            position: fixed;
             display: block;
-            position: inherit;
+            //position: inherit;
             text-transform: capitalize;
             text-align: left;
-            font-size: rem(28);
-            margin-bottom: rem(34);
+            font-size: rem(38);
+            margin-bottom: rem(14);
           }
         }
         &-continent--fixed {
@@ -83,6 +86,10 @@
           top:0;
           padding-top: rem(35);
           padding-bottom: rem(35);
+          font-size: rem(38);
+          text-align: center;
+          text-transform: uppercase;
+          font-family: "Helvetica Neue";
           display: block;
           position: fixed;
           line-height: rem(28);
@@ -94,6 +101,9 @@
         }
         &-info{
           padding-top: rem(40);
+          @media screen and (min-width: $mq-m) {
+            padding-top:0;
+          }
         }
         &-country {
           color: #fff;
@@ -142,16 +152,17 @@
           color: #fff;
           font-size: rem(15);
           font-family: "Helvetica Neue";
-          font-weight: 300;
+          font-weight: 100;
           text-align: left;
           line-height: rem(30);
           margin-bottom: rem(24);
-          opacity: 0.58;
+          letter-spacing: 1px;
+          //opacity: 0.58;
           @media screen and (min-width: $mq-m) {
             font-size: rem(18);
-            line-height: rem(20);
+            line-height: rem(27);
             margin-bottom: rem(24);
-            opacity: 0.58;
+            //opacity: 0.58;
           }
         }
         &-watchButton {
@@ -176,10 +187,12 @@
         }
         &-keyData {
           margin-top: rem(30);
+          text-align: left;
           font-family:$orbit;
           &-firstData {
-             float:left;
-             display: inline;
+            float:left;
+            display: inline;
+            margin-bottom: rem(30);
              &-number {
                color: $color-red;
                font-size: rem(45);
