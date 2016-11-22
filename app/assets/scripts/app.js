@@ -5,18 +5,17 @@ window.onload = function() {
     }
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
-      //checkMenu();
-      //scrollRegionSection();
+      checkMenu();
+      scrollRegionSection();
       menu();
       regionNav();
       hideContinent();
+      smallMap();
     }
     backgroundMusic();
 };
 
-smallMap();
 function smallMap() {
-  //$('.SmallMap-carousel').css('height', $(window).height() + 'px');
   $('.SmallMap-carousel').slick({
     infinite: true,
     slidesToShow: 1,
