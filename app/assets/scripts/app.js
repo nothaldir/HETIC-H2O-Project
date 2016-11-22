@@ -1,12 +1,4 @@
 window.onload = function() {
-<<<<<<< HEAD
-    console.log('window loaded');
-    // backgroundMusic();
-    introStory();
-    menu();
-    regionNav();
-    hideContinent();
-=======
     if (window.location.href.indexOf("index.html") > -1) {
       console.log('index loaded');
       introStory();
@@ -21,7 +13,6 @@ window.onload = function() {
       smallMap();
     }
     backgroundMusic();
->>>>>>> 7c2d23ab07ec7890a2e6be94bd486fa45e034cf7
 };
 
 function smallMap() {
