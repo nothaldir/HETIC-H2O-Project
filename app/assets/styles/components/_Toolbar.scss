@@ -3,7 +3,7 @@
   top:0;
   font-size: 0;
   position: fixed;
-  z-index: 300;
+  z-index: 1000;
   @media screen and (min-width: $mq-m) {
     width: auto;
     right:rem(75);

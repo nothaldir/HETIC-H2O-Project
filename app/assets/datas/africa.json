@@ -1,15 +1,17 @@
 {
   "continent" : [
     {
-      "id_continent" : "Africa",
+      "id" : "africa",
+      "name_continent" : "Africa",
       "title" : "Water, source of inequality",
       "subtitle" : "Almost half the African population did not have access to clean water.",
       "content" : "Africa, the poorest continent in the world, had significant water resources. But people could not access to clean water because of the lack of supply and sanitation infrastructures. Therefore, water was the subject of many important tensions between states but also between urban and rural areas."
     },
     
     {
-        "id_continent" : "Africa",
-    	"id_country" : "Ethiopia",
+        "id" : "ethiopia",
+        "name_continent" : "Africa",
+    	"name_country" : "Ethiopia",
     	"subtitle" : "There was not a lot of bad harvests in Ethiopia caused by global warming.",
     	"content" : "Drinking water supplies were a major problem in Ethiopia. The country was among the most backwards in the world. People suffered from conflicts consequences and had difficulties getting water supply systems.",
     	"keydata" : [
@@ -25,8 +27,9 @@
     },
 
     {
-        "id_continent" : "Africa",
-    	"id_country" : "South Africa",
+        "id" : "south_africa",
+        "name_continent" : "Africa",
+    	"name_country" : "South Africa",
     	"subtitle" : "South Africa suffered at once from poor rainfall and aging infrastructure.",
     	"content" : "In South Africa, tap water was safe to drink. It was even among the safest and cleanest in the world. It could sometimes appear as the contrary because of its brown tint caused by humic acid; but it was absolutely harmless and did not affect the water quality at all.",
     	"keydata" : [
@@ -42,8 +45,9 @@
     },
 
     {
-        "id_continent" : "Africa",
-    	"id_country" : "Ivory Coast",
+        "id" : "ivory_coast",
+        "name_continent" : "Africa",
+    	"name_country" : "Ivory Coast",
     	"subtitle" : "Children and especially girls had their right to education denied because they had to spend a huge amount of time fetching water. ",
     	"content" : "In addition to that, there were pirate networks of sales and distribution of water, it was grafted clandestinely facilities to distribute water. These actions diverted the flow of water and its rise to households.",
     	"keydata" : [

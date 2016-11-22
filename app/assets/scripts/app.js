@@ -198,6 +198,8 @@ function initRegion() {
   $('.Region').addClass('Region--open');
   $('.Map').hide();
 
+  console.log(mapId[1]);
+
   getJSON("datas/"+mapId[0]+".json", function(data) {
 
     // grab container
@@ -214,7 +216,7 @@ function initRegion() {
     // ID
     var continentId = document.createElement('h2');
       continentId.classList.add('Region-container-continent');
-    continentId.innerHTML = data.continent[0].id_continent;
+    continentId.innerHTML = data.continent[0].name_continent;
     continent.appendChild(continentId);
 
     //INFO
@@ -266,14 +268,15 @@ function initRegion() {
 
       // SECTIONS
       var country = document.createElement('section');
-      country.setAttribute('id', 'section'+i);
+      //country.setAttribute('id', 'section'+i+' '+data.continent[i].id);
+      country.setAttribute('id', data.continent[i].id);
       country.classList.add('Region-container-section');
       container.appendChild(country);
 
       // ID SECTIONS
       var countryId = document.createElement('h2');
       countryId.classList.add('Region-container-country');
-      countryId.innerHTML = data.continent[i].id_country;
+      countryId.innerHTML = data.continent[i].name_country;
       country.appendChild(countryId);
 
       // SUBTITLE SECTIONS
@@ -320,6 +323,17 @@ function initRegion() {
 
     }
   });
+  setTimeout(function(){
+    goTo();
+  }, 100)
+};
+
+function goTo() {
+  console.log($(".Region #"+mapId[1]));
+
+  $('html, body').animate({
+     scrollTop: $(".Region #"+mapId[1]).offset().top
+   }, 600);
 };
 
 /*move();

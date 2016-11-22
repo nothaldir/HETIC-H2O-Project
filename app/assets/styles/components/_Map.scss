@@ -1,6 +1,6 @@
 .Map {
 	@media screen and (max-width: $mq-m) {
-		display: none;
+		display: none !important;
 	}
 	position: relative;
 	height: 100vh;
@@ -100,14 +100,13 @@
 		text-align: center;
 		font-size: rem(20);
 		left: 50%;
-		transform: translateX(-50%);
 		&--prev {
 			top: 10%; 
-			transform: rotate(-90deg);
+			transform: translateX(-50%) rotate(-90deg);
 		}
 		&--next {
 			bottom: 10%;
-			transform: rotate(90deg);
+			transform: translateX(-50%) rotate(90deg);
 		}
 	}
 	.slick-slide {
@@ -115,7 +114,7 @@
 		position: relative;
 	}
 	svg {
-		width: 90%;
+		width: 90%; height: 90%;
 		position: absolute;
 		left: 50%; top: 50%;
 		transform: translateX(-50%) translateY(-50%);
