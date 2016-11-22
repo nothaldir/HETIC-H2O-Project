@@ -167,19 +167,22 @@ function map(){
   });
   $('.Map #world_map g').hover(
     function(){
-      $id = $(this).attr('id');
-      $('.Map-location').html('[ '+$id+' ]');
+      $id = $(this).attr('id').split('-');
+      $('.Map-location').html('[ '+$id[0]+' ]');
     }, function(){
       $('.Map-location').html('[ ]');
     });
     $('.Map #countries g').hover(
       function(e) {
+        $id = $(this).attr('id').split('-');
+        $('.Map-location').html('[ '+$id[1]+' ]');
         $('.Map-popup').css('left',e.pageX);
         $('.Map-popup').css('top',e.pageY);
         setTimeout(function(){
           $('.Map-popup').addClass('Map-popup--open');
         },200)
       }, function(){
+        $('.Map-location').html('[ ]');
         $('.Map-popup').removeClass('Map-popup--open');
       }
     )
