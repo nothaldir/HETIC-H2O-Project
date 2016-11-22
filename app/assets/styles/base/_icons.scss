@@ -23,17 +23,20 @@
 @function icon-char($filename) {
   $char: "";
 
-  @if $filename == check {
+  @if $filename == arrow {
     $char: "\E001";
   }
-  @if $filename == fingerprint {
+  @if $filename == check {
     $char: "\E002";
   }
-  @if $filename == keyboard {
+  @if $filename == fingerprint {
     $char: "\E003";
   }
-  @if $filename == speaker {
+  @if $filename == keyboard {
     $char: "\E004";
+  }
+  @if $filename == speaker {
+    $char: "\E005";
   }
 
   @return $char;
@@ -47,6 +50,15 @@
   @extend %icon;
 }
 
+
+.icon-arrow{
+  &::before {
+    @include icon(arrow);
+  }
+}
+%icon-arrow {
+  @include icon(arrow);
+}
 
 .icon-check{
   &::before {
