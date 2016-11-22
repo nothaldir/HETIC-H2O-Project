@@ -358,7 +358,6 @@ function hideContinent() {
     }
 };
 
-
 function getJSON(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);

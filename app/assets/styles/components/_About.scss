@@ -51,6 +51,7 @@
           color: #fff;
           font-size: rem(17);
           text-align: left;
+          letter-spacing: 0.5px;
           font-family: "Helvetica Neue";
           line-height: 20px;
           margin-bottom: rem(10);
@@ -66,9 +67,10 @@
           color: #fff;
           font-size: rem(15);
           font-family: "Helvetica Neue";
-          font-weight: 300;
+          font-weight: 100;
           text-align: left;
           line-height: rem(30);
+          letter-spacing: 0.5px;
           margin-bottom: rem(24);
           opacity: 0.58;
           @media screen and (min-width: $mq-m) {
@@ -81,6 +83,7 @@
         &-button {
           height:auto;
           width: rem(105);
+          float:left;
         }
         &-buttonText{
           width: rem(50);
@@ -109,7 +112,65 @@
           -ms-transform: rotate(180deg);
           -webkit-transform: rotate(180deg); 
           @media screen and (max-width: $mq-m) {
-            width: rem(45);
+            width: rem(40);
+          }
+        }
+        &-credits {
+          width: rem(750);
+          @media screen and (max-width: $mq-m) {
+            width: rem(270);
+            margin-bottom: rem(20);
+          }
+        }
+
+        &-creditsList {
+          width: rem(640);
+          display:none;
+          flex-flow: wrap;
+          -webkit-flex-flow: wrap;
+          justify-content: center;
+          float:right;
+          @media screen and (max-width: $mq-m) {
+            float:none;
+            width: rem(270);
+            margin-top: rem(10);
+          }
+          &--open {
+            display:flex!important;
+            transition: .3s ease;
+            opacity: 1;
+
+          }
+        }
+
+
+        &-creditsElements {
+          width: rem(300);
+          margin-bottom: rem(10);
+          display:flex;
+          @media screen and (max-width: $mq-m) {
+            width: rem(270);
+          }
+        }
+        &-creditsName {
+          font-size: rem(15);
+          font-family: 'Helvetica Neue';
+          font-weight:400;
+          text-align:left;
+          color: #fff;
+          opacity: 0.78;
+           @media screen and (max-width: $mq-m) {
+            width: rem(170);
+          }
+        }
+        &-creditsRole {
+          margin-left: rem(10);
+          font-size: rem(15);
+          color: $color-blue-turquoise;
+          font-family: 'Helvetica Neue';
+          font-weight: 500;
+           @media screen and (max-width: $mq-m) {
+            width: rem(90);
           }
         }
     }
