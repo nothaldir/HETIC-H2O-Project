@@ -2,7 +2,7 @@ window.onload = function() {
     if (window.location.href.indexOf("index.html") > -1) {
       console.log('index loaded');
       introStory();
-    }
+    };
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
       menu();
@@ -19,13 +19,16 @@ function smallMap() {
     slidesToShow: 1,
     vertical: true,
     verticalSwiping: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    arrows: true,
+    nextArrow: '<span class="icon-arrow SmallMap-arrow SmallMap-arrow--next"></span>',
+    prevArrow: '<span class="icon-arrow SmallMap-arrow SmallMap-arrow--prev"></span>'
   })
 }
 
 function backgroundMusic() {
   var audio = document.querySelector('.Audio-music');
-  audio.volume = 0.2;
+  audio.volume = 0.5;
   audio.play();
   document.querySelector('.Audio-controls').addEventListener('click', function() {
     this.classList.toggle('Audio-controls--paused');
