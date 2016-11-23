@@ -101,11 +101,11 @@
 		font-size: rem(20);
 		left: 50%;
 		&--prev {
-			top: 10%; 
+			top: 15%; 
 			transform: translateX(-50%) rotate(-90deg);
 		}
 		&--next {
-			bottom: 10%;
+			bottom: 15%;
 			transform: translateX(-50%) rotate(90deg);
 		}
 	}

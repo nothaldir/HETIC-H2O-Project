@@ -4,23 +4,31 @@
   right:rem(20);
   margin-top: rem(360);
   font-size: 0;
+  border-left: 1px solid #90969A;
   @media screen and (min-width: $mq-m) {
     display: block;
   }
     &-item {
       @media screen and (min-width: $mq-l) {
         display: block;
-        width:rem(12);
-        height:rem(12);
-        margin: 10px;
+        width:rem(18); height:rem(18);
+        transition: .2s ease;
+        margin-left: rem(-9.6);
+        margin-bottom: rem(30);
+        margin-right: rem(50);
         border-radius: 100%;
-        background-color: #fff;
-        opacity: .5;
+        background-color: #90969A;
         cursor:pointer;
       }
       &--active {
-        opacity: 1;
+        background-color: #fff;
       }
+      &:hover {
+        background-color: #fff;
+      }
+    }
+    &-item:last-child {
+      margin-bottom: 0 !important;
     }
 }
 
@@ -34,7 +42,6 @@
     display: block;
     transition: .3s ease;
     opacity: 1;
-
   }
     &-container {
         width: 80%;
@@ -64,7 +71,6 @@
             @media screen and (min-width: $mq-m) {
               height: 570px; 
             }
-
           }
         }
         &-continent {
@@ -111,7 +117,6 @@
           right: 0;
           background-color: $color-background;
           z-index: 99;
-
         }
         &-info{
           padding-top: rem(40);
@@ -151,7 +156,7 @@
           }
         }
         &-subtitle {
-          color: #fff;
+          color: $color-white-web;
           font-size: rem(17);
           text-align: left;
           font-family: $helvetica;
@@ -166,10 +171,10 @@
           }
         }
         &-text {
-          color: #fff;
+          color: $color-text-main;
           font-size: rem(15);
           font-family: $helvetica;
-          //font-weight: 500;
+          //font-weight: 100;
           text-align: left;
           line-height: rem(30);
           margin-bottom: rem(24);
@@ -203,28 +208,34 @@
           }
         }
         &-keyData {
+          //position: absolute;
           margin-top: rem(30);
           text-align: left;
-          font-family:$orbit;
+          font-family:$lato;
           &-firstData {
-
-            display: inline;
-            margin-bottom: rem(30);
+            margin-bottom: rem(10);
+            @media screen and (min-width: $mq-m) {
+              margin-bottom: rem(40);
+            }
              &-number {
                color: $color-red;
-               font-size: rem(45);
+               font-size: rem(50);
              }
             &-details {
+              display: inline;
+              width: rem(100);
             }
            }
           &-secondData {
-            display: inline;
             &-number {
               color: $color-red;
               font-size: rem(45);
             }
+            &-details {
+              display: inline;
+              width: rem(100);
+            }
           }
-
         }
     }
 }

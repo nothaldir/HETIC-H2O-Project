@@ -10,13 +10,13 @@ window.onload = function() {
       regionNav();
       hideContinent();
       smallMap();
+      map();
     }
-    backgroundMusic();
     if (window.location.href.indexOf("about.html") > -1) {
       menu();
       credits();
     }
-    //backgroundMusic();
+    backgroundMusic();
 };
 
 function logoWave() {
@@ -143,7 +143,7 @@ function spaceBar() {
 function menu() {
     $('.Toolbar-backButton').on("click touchstart",function(){
         if($('.Region').hasClass('Region--open')){
-            $('.Map').show();
+            $('.Map, .SmallMap').show();
             $('.Region').removeClass('Region--open');
         } else {
         }
@@ -184,9 +184,6 @@ function credits(){
   });
 };
 
-
-
-map();
 var mapId;
 function map(){
   $('.Map #world_map g, .Map #countries g, .SmallMap #world_map g, .SmallMap #countries g').click(function(){
@@ -222,11 +219,12 @@ function map(){
 // initialize region page with data
 function initRegion() {
   $('.Region').addClass('Region--open');
-  $('.Map').hide();
+  $('.Region').addClass('Region--open');
+  $('.Map, .SmallMap').hide();
 
   console.log(mapId[1]);
 
-  getJSON("datas/"+mapId[0]+".json", function(data) {
+    getJSON("datas/"+mapId[0]+".json", function(data) {
 
     // grab container
     var container = document.querySelector('.Region-container');
@@ -234,9 +232,9 @@ function initRegion() {
     container.innerHTML = "";
 
     // creation of section for continent
-    continent = document.createElement('section');
+    continent = document.createElement('div');
     continent.setAttribute('id', 'section');
-    continent.classList.add('Region-container-section');
+    continent.classList.add('Region-container-section', 'section');
     container.appendChild(continent);
 
     // ID
@@ -298,10 +296,10 @@ function initRegion() {
       quickNav.appendChild(anchor);
 
       // SECTIONS
-      var country = document.createElement('section');
+      var country = document.createElement('div');
       //country.setAttribute('id', 'section'+i+' '+data.continent[i].id);
       country.setAttribute('id', data.continent[i].id);
-      country.classList.add('Region-container-section');
+      country.classList.add('Region-container-section', 'section');
       container.appendChild(country);
 
       // ID SECTIONS
@@ -353,6 +351,7 @@ function initRegion() {
       countryData2.appendChild(dataText2);
     }
   });
+<<<<<<< HEAD
   setTimeout(function(){
     goTo();
   }, 100)
@@ -361,6 +360,20 @@ function initRegion() {
 function goTo() {
   console.log($(".Region #"+mapId[1]));
 
+=======
+  if (mapId[1] !== "info" ) {
+    setTimeout(function(){
+      goTo(); 
+    }, 100)
+  };
+  scrollTo();
+  quickNav();
+};
+
+function goTo() {
+  console.log('goto')
+  $(".Region .Quick-navigation a[href$='#"+mapId[1]+"']");
+>>>>>>> ce05715e220d135b6c73e9b76ad192438f72ec69
   $('html, body').animate({
      scrollTop: $(".Region #"+mapId[1]).offset().top
    }, 600);
@@ -388,6 +401,36 @@ function regionNav(){
     $('.Quick-navigation-item').on("click",function(){
         $(this).addClass('Quick-navigation-item-active').siblings().removeClass('Quick-navigation-item-active')
     })
+
+function scrollTo() {
+  setTimeout(function(){
+  console.log('scrollTo');
+    $(".Quick-navigation-item").click( function() {
+      console.log('scroll');
+      var page = $(this).attr('href'); 
+      var speed = 650; // Animation duration
+      $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
+      return false;
+    });
+  }, 200);
+};
+
+function quickNav() {
+  console.log('quickNav');
+  $(window).scroll(function() {
+    var top = $(document).scrollTop();
+    var height = $(window).height();
+    $(".Region-container-section").each(function() {
+      var id = $(this).attr("id");
+      //console.log(id)
+      if (top < ($(this).offset().top + 299) && $(this).offset().top < (top + height - 301)) {
+        $('.Quick-navigation-item[href$="#'+id+'"]').addClass('Quick-navigation-item--active');
+      }
+      else {
+        $('.Quick-navigation-item[href$="#'+id+'"]').removeClass('Quick-navigation-item--active');
+      }
+    });
+  });
 };
 
 // Modifies features' display on smaller devices
@@ -428,7 +471,6 @@ function getJSON(url, callback) {
     xhr.send();
     console.log(mapId);
 } // End of getJSON function
-
 
 $(window).on('mousemove', function(e) {
     var w = $(window).width();
