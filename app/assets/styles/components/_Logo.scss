@@ -41,28 +41,36 @@
       width: rem(200); height: rem(200);
     }
   }
-  &-wave--front {
+  &-wave {
     position: absolute;
     width: rem(70); height: rem(70);
     background-size: 100%;
+    transition: 4s ease-out;
+    top: 0px;
+  }
+  &-wave--front {
     background-image: url("../img/skin/wave-one.png");
     background-repeat: repeat-x;
-    animation: waving 4.5s linear forwards;
+    animation: waving 1s linear infinite;
     @media screen and (min-width: $mq-m) {
-      animation: waving-large 4.5s linear forwards;
+      animation: waving-large 1s linear infinite;
       width: rem(200); height: rem(200);
     }
   }
   &-wave--back {
-    position: absolute;
-    width: rem(70); height: rem(70);
-    background-size: 100%;
     background-image: url("../img/skin/wave-two.png");
     background-repeat: repeat-x;
-    animation: waving-reverse 4.5s linear forwards;
+    animation: waving-reverse 1s linear infinite;
+    transition: 4s ease-out;
     @media screen and (min-width: $mq-m) {
-      animation: waving-reverse-large 4.5s linear forwards;
+      animation: waving-reverse-large 1s linear infinite;
       width: rem(200); height: rem(200);
+    }
+  }
+  &-wave--transition {
+    top: 50px;
+    @media screen and (min-width: $mq-m) {
+      top: 150px;
     }
   }
 }
