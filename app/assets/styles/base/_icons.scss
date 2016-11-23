@@ -26,37 +26,27 @@
   @if $filename == arrow {
     $char: "\E001";
   }
-<<<<<<< HEAD
-  @if $filename == cloud {
-    $char: "\E002";
-  }
-  @if $filename == fireman {
-=======
   @if $filename == check {
     $char: "\E002";
   }
-  @if $filename == fingerprint {
->>>>>>> 5a35585e838796024881a9c96192061f97a74651
+  @if $filename == cloud {
     $char: "\E003";
   }
-  @if $filename == keyboard {
+  @if $filename == fireman {
     $char: "\E004";
   }
-<<<<<<< HEAD
-  @if $filename == robinet {
+  @if $filename == keyboard {
     $char: "\E005";
   }
-  @if $filename == shower-2 {
+  @if $filename == robinet {
     $char: "\E006";
   }
-  @if $filename == shower {
+  @if $filename == shower-2 {
     $char: "\E007";
   }
-=======
-  @if $filename == speaker {
-    $char: "\E005";
+  @if $filename == shower {
+    $char: "\E008";
   }
->>>>>>> 5a35585e838796024881a9c96192061f97a74651
 
   @return $char;
 }

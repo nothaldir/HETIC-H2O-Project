@@ -72,11 +72,11 @@
           font-size: rem(38);
           text-align: center;
           text-transform: uppercase;
-          font-family: $helvetica;
+          font-family: $lato;
           font-weight: 100;
           margin-bottom: rem(34);
           @media screen and (min-width: $mq-m) {
-            margin-left: rem(-250);
+            margin-left: rem(-100);
             margin-top: rem(-10);
             position: fixed;
             display: block;
@@ -85,12 +85,15 @@
             font-size: rem(38);
             margin-bottom: rem(14);
           }
-          @media screen and (max-width: $mq-m) {
-            margin-left: rem(10);
+          @media screen and (min-width: $mq-l) {
+            margin-left: rem(-250);
+            margin-top: rem(10);
+            position: fixed;
             display: block;
-            margin-top: rem(50);
-            text-align: center;
-            width: rem(250);
+            text-transform: capitalize;
+            text-align: left;
+            font-size: rem(38);
+            margin-bottom: rem(14);
           }
         }
         &-continent--fixed {
@@ -101,7 +104,7 @@
           font-size: rem(38);
           text-align: center;
           text-transform: uppercase;
-          font-family: $helvetica;
+          font-family: $lato;
           display: block;
           position: fixed;
           line-height: rem(28);
@@ -112,17 +115,17 @@
         }
         &-info{
           padding-top: rem(40);
-          @media screen and (max-width: $mq-m) {
+          @media screen and (min-width: $mq-m) {
             padding-top:rem(0);
           }
         }
         &-country {
           color: #fff;
-          font-size: rem(28);
+          font-size: rem(30);
           font-family: $lato;
           text-align: center;
           font-weight: 100;
-          margin-bottom: rem(14);
+          margin-bottom: rem(30);
           @media screen and (min-width: $mq-m) {
             font-size: rem(28);
             text-align: left;
@@ -140,7 +143,7 @@
           @media screen and (min-width: $mq-m) {
             font-size: rem(48);
             text-align: left;
-            font-family: $helvetica;
+            font-family: $lato;
             margin-bottom: rem(30);
           }
           @media screen and (max-width: $mq-m) {
@@ -152,7 +155,7 @@
           font-size: rem(17);
           text-align: left;
           font-family: $lato;
-          line-height: éàpx;
+          line-height: rem(25);
           margin-bottom: rem(10);
           font-weight: 200;
           @media screen and (min-width: $mq-m) {
@@ -169,7 +172,7 @@
           font-weight: 500;
           text-align: left;
           line-height: rem(30);
-          margin-bottom: rem(24);
+          margin-bottom: rem(30);
           letter-spacing: 1px;
           @media screen and (min-width: $mq-m) {
             font-size: rem(18);
@@ -200,43 +203,85 @@
           }
         }
         &-keyData {
-          margin-top: rem(30);
-          text-align: left;
+          width: 100%;
+          margin-top: rem(10);
           font-family:$lato;
+          @media screen and (min-width: $mq-m) {
+            margin-top: rem(30);
+            text-align: left;
+            padding-left:0;
+            padding-right:0;
+          }
           &-firstData {
-            margin-bottom: rem(10);
+            margin-bottom: rem(60);
             @media screen and (min-width: $mq-m) {
               margin-bottom: rem(40);
             }
              &-number {
                color: $color-red;
                font-size: rem(50);
-
+               text-align: center;
+               @media screen and (min-width: $mq-m) {
+                 color: $color-red;
+                 font-size: rem(50);
+                 text-align: inherit;
+               }
              }
             &-details {
-              position: absolute;
-              width: rem(600);
-              padding-left: rem(3);
+              display: block;
+              text-align: center;
+              width: 100%;
               padding-top: rem(23);
+              line-height: rem(18);
               color: #fff;
               font-size: rem(18);
               font-weight: 100;
-
+              @media screen and (min-width: $mq-m) {
+                display: inline;
+                position: absolute;
+                text-align: left;
+                width: 100%;
+                padding-left: rem(3);
+                padding-top: rem(23);
+                line-height: rem(24);
+                color: #fff;
+                font-size: rem(18);
+                font-weight: 100;
+              }
             }
            }
           &-secondData {
             &-number {
               color: $color-red;
-              font-size: rem(45);
+              font-size: rem(50);
+              text-align: center;
+              @media screen and (min-width: $mq-m) {
+                color: $color-red;
+                font-size: rem(50);
+                text-align: inherit;
+              }
             }
             &-details {
-              position: absolute;
-              width: rem(600);
-              padding-left: rem(3);
+              display: block;
+              text-align: center;
+              width: 100%;
               padding-top: rem(23);
+              line-height: rem(24);
               color: #fff;
               font-size: rem(18);
               font-weight: 100;
+              @media screen and (min-width: $mq-m) {
+                display: inline;
+                position: absolute;
+                width: 100%;
+                text-align: left;
+                padding-left: rem(3);
+                padding-top: rem(23);
+                line-height: rem(18);
+                color: #fff;
+                font-size: rem(18);
+                font-weight: 100;
+              }
             }
           }
         }

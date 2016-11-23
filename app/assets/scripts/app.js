@@ -3,6 +3,7 @@ window.onload = function() {
       console.log('index loaded');
       introStory();
       logoWave();
+        hideContinent();
     };
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
@@ -12,6 +13,7 @@ window.onload = function() {
     }
     backgroundMusic();
     if (window.location.href.indexOf("about.html") > -1) {
+        hideContinent();
       menu();
       credits();
     }
@@ -235,7 +237,7 @@ function initRegion() {
     // creation of section for continent
     continent = document.createElement('div');
     continent.setAttribute('id', 'section');
-    continent.classList.add('Region-container-section', 'section');
+    continent.classList.add('Region-container-section');
     container.appendChild(continent);
 
     // ID
@@ -296,7 +298,7 @@ function initRegion() {
       var country = document.createElement('div');
       //country.setAttribute('id', 'section'+i+' '+data.continent[i].id);
       country.setAttribute('id', data.continent[i].id);
-      country.classList.add('Region-container-section', 'section');
+      country.classList.add('Region-container-section');
       container.appendChild(country);
 
       // ID SECTIONS
@@ -394,8 +396,10 @@ function move(){
 
 // Modifies features' display on smaller devices
 function hideContinent() {
+    console.log('hide');
     if($(window).width() < 768)
     {
+        console.log('in <760');
         // stick continent name on top
         $("#section .Region-container-continent").addClass('Region-container-continent--fixed');
         // adapt page
