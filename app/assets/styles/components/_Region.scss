@@ -119,7 +119,7 @@
         &-country {
           color: #fff;
           font-size: rem(28);
-          font-family: $helvetica;
+          font-family: $lato;
           text-align: center;
           font-weight: 100;
           margin-bottom: rem(14);
@@ -134,7 +134,7 @@
           color: $color-blue-turquoise;
           font-size: rem(20);
           text-align: center;
-          font-family: $helvetica;
+          font-family: $lato;
           letter-spacing: 1px;
           margin-bottom: rem(20);
           @media screen and (min-width: $mq-m) {
@@ -151,7 +151,7 @@
           color: #fff;
           font-size: rem(17);
           text-align: left;
-          font-family: $helvetica;
+          font-family: $lato;
           line-height: éàpx;
           margin-bottom: rem(10);
           font-weight: 200;
@@ -165,8 +165,8 @@
         &-text {
           color: #fff;
           font-size: rem(15);
-          font-family: $helvetica;
-          //font-weight: 100;
+          font-family: $lato-light;
+          font-weight: 500;
           text-align: left;
           line-height: rem(30);
           margin-bottom: rem(24);
@@ -176,6 +176,7 @@
             line-height: rem(27);
             font-weight: 100;
             margin-bottom: rem(24);
+            opacity: 0.58;
           }
         }
         &-watchButton {
@@ -199,7 +200,6 @@
           }
         }
         &-keyData {
-          //position: absolute;
           margin-top: rem(30);
           text-align: left;
           font-family:$lato;
@@ -211,10 +211,17 @@
              &-number {
                color: $color-red;
                font-size: rem(50);
+
              }
             &-details {
-              display: inline;
-              width: rem(100);
+              position: absolute;
+              width: rem(600);
+              padding-left: rem(3);
+              padding-top: rem(23);
+              color: #fff;
+              font-size: rem(18);
+              font-weight: 100;
+
             }
            }
           &-secondData {
@@ -223,8 +230,13 @@
               font-size: rem(45);
             }
             &-details {
-              display: inline;
-              width: rem(100);
+              position: absolute;
+              width: rem(600);
+              padding-left: rem(3);
+              padding-top: rem(23);
+              color: #fff;
+              font-size: rem(18);
+              font-weight: 100;
             }
           }
         }

@@ -330,9 +330,9 @@ function initRegion() {
       countryData.appendChild(countryData2);
 
       var dataNumber1 = document.createElement('span'),
-          dataText1 = document.createElement('p'),
+          dataText1 = document.createElement('span'),
           dataNumber2 = document.createElement('span'),
-          dataText2 = document.createElement('p');
+          dataText2 = document.createElement('span');
       dataNumber1.classList.add('Region-container-keyData-firstData-number');
       dataNumber1.innerHTML = data.continent[i].keydata[0].number;
       dataText1.classList.add('Region-container-keyData-firstData-details');
