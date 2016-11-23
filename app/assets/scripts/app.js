@@ -343,11 +343,10 @@ function initRegion() {
 
       dataNumber2.classList.add('Region-container-keyData-secondData-number');
       dataNumber2.innerHTML = data.continent[i].keydata[1].number;
-      dataText1.classList.add('Region-container-keyData-secondData-details');
+      dataText2.classList.add('Region-container-keyData-secondData-details');
       dataText2.innerHTML = data.continent[i].keydata[1].text;
       countryData2.appendChild(dataNumber2);
       countryData2.appendChild(dataText2);
-
     }
   });
   setTimeout(function(){
