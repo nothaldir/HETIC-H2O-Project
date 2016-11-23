@@ -10,14 +10,16 @@ window.onload = function() {
       menu();
       hideContinent();
       smallMap();
+      map();
     }
-    backgroundMusic();
     if (window.location.href.indexOf("about.html") > -1) {
-        hideContinent();
       menu();
       credits();
     }
-    //backgroundMusic();
+    if (window.location.href.indexOf("act.html") > -1) {
+        menu();
+    }
+    backgroundMusic();
 };
 
 function logoWave() {
@@ -143,7 +145,7 @@ function spaceBar() {
 function menu() {
     $('.Toolbar-backButton').on("click touchstart",function(){
         if($('.Region').hasClass('Region--open')){
-            $('.Map').show();
+            $('.Map, .SmallMap').show();
             $('.Region').removeClass('Region--open');
         } else {
         }
@@ -184,9 +186,6 @@ function credits(){
   });
 };
 
-
-
-map();
 var mapId;
 function map(){
   $('.Map #world_map g, .Map #countries g, .SmallMap #world_map g, .SmallMap #countries g').click(function(){
@@ -222,8 +221,8 @@ function map(){
 // initialize region page with data
 function initRegion() {
   $('.Region').addClass('Region--open');
-    $('.Region').addClass('Region--open');
-  $('.Map').hide();
+  $('.Region').addClass('Region--open');
+  $('.Map, .SmallMap').hide();
 
   console.log(mapId[1]);
 
@@ -269,12 +268,16 @@ function initRegion() {
     continentText.innerHTML = data.continent[0].content;
     continentInfo.appendChild(continentText);
 
-    //BUTTON
-    var continentButton = document.createElement('button');
-    continentButton.classList.add('Region-container-watchButton');
-    // continent.setAttribute('href', data.continent[0].id_video);
-    continentButton.innerHTML = "Watch";
-    continentInfo.appendChild(continentButton);
+     //BUTTON
+     var continentLien = document.createElement('a'),
+         continentButton = document.createElement('button');
+     continentButton.classList.add('Region-container-watchButton');
+     continentLien.setAttribute('href', data.continent[0].id_video);
+     continentLien.setAttribute('target', '_blank');
+     continentLien.style.textDecoration = "none";
+     continentButton.innerHTML = "Watch";
+     continentInfo.appendChild(continentLien);
+     continentLien.appendChild(continentButton);
 
     // QUICK NAVIGATION
       var region = document.querySelector('.Region');
@@ -350,27 +353,45 @@ function initRegion() {
       countryData2.appendChild(dataText2);
     }
   });
+  if (mapId[1] !== "info" ) {
+    setTimeout(function(){
+      goTo(); 
+    }, 100)
+  };
+  scrollTo();
   quickNav();
-  setTimeout(function(){
-    goTo();
-  }, 100)
-
 };
+
 function goTo() {
+  console.log('goto')
   $(".Region .Quick-navigation a[href$='#"+mapId[1]+"']");
   $('html, body').animate({
      scrollTop: $(".Region #"+mapId[1]).offset().top
    }, 600);
 };
 
+function scrollTo() {
+  setTimeout(function(){
+  console.log('scrollTo');
+    $(".Quick-navigation-item").click( function() {
+      console.log('scroll');
+      var page = $(this).attr('href'); 
+      var speed = 650; // Animation duration
+      $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
+      return false;
+    });
+  }, 200);
+};
+
 function quickNav() {
+  console.log('quickNav');
   $(window).scroll(function() {
     var top = $(document).scrollTop();
     var height = $(window).height();
     $(".Region-container-section").each(function() {
       var id = $(this).attr("id");
-      console.log(id)
-      if (top < ($(this).offset().top + 300) && $(this).offset().top < (top + height - 300)) {
+      //console.log(id)
+      if (top < ($(this).offset().top + 299) && $(this).offset().top < (top + height - 301)) {
         $('.Quick-navigation-item[href$="#'+id+'"]').addClass('Quick-navigation-item--active');
       }
       else {
@@ -379,20 +400,6 @@ function quickNav() {
     });
   });
 };
-
-/*move();
-function move(){
-  $("#world_map").mousemove(function ( e ) {
-      var pos   = $(this).offset();
-      var elPos = { X:pos.left , Y:pos.top };
-      var mPos  = { X:e.clientX-elPos.X, Y:e.clientY-elPos.Y };
-      var mapX = $(this).get(0).getBBox().width;
-      var mapY = $(this).get(0).getBBox().height;
-      console.log(mapX + ' ' + mapY),
-
-      console.log("Mouse position x:"+ mPos.X +" y:"+ mPos.Y);
-  });
-}*/
 
 // Modifies features' display on smaller devices
 function hideContinent() {
@@ -433,7 +440,6 @@ function getJSON(url, callback) {
     xhr.send();
     console.log(mapId);
 } // End of getJSON function
-
 
 $(window).on('mousemove', function(e) {
     var w = $(window).width();
