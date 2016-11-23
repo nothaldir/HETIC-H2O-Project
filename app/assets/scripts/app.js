@@ -7,7 +7,6 @@ window.onload = function() {
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
       menu();
-      regionNav();
       hideContinent();
       smallMap();
     }
@@ -61,7 +60,6 @@ function introStory() {
       backSpeed: 0, // backspacing speed
       backDelay: 1000, // time before backspacing-
       showCursor: false,
-      cursorChar: "|",
       callback: function() {
         introCountdown();
       }
@@ -289,7 +287,7 @@ function initRegion() {
 
       // QUICK NAVIGATION ELEMENTS
       var anchor = document.createElement('a');
-      anchor.setAttribute('href', '#section'+i);
+      anchor.setAttribute('href', '#'+data.continent[i].id);
       anchor.classList.add('Quick-navigation-item');
       quickNav.appendChild(anchor);
 
@@ -349,17 +347,34 @@ function initRegion() {
       countryData2.appendChild(dataText2);
     }
   });
+  quickNav();
   setTimeout(function(){
     goTo();
   }, 100)
 };
 
 function goTo() {
-  console.log($(".Region #"+mapId[1]));
-
+  $(".Region .Quick-navigation a[href$='#"+mapId[1]+"']");
   $('html, body').animate({
      scrollTop: $(".Region #"+mapId[1]).offset().top
    }, 600);
+};
+
+function quickNav() {
+  $(window).scroll(function() {
+    var top = $(document).scrollTop();
+    var height = $(window).height();
+    $(".Region-container-section").each(function() {
+      var id = $(this).attr("id");
+      console.log(id)
+      if (top < ($(this).offset().top + 300) && $(this).offset().top < (top + height - 300)) {
+        $('.Quick-navigation-item[href$="#'+id+'"]').addClass('Quick-navigation-item--active');
+      }
+      else {
+        $('.Quick-navigation-item[href$="#'+id+'"]').removeClass('Quick-navigation-item--active');
+      }
+    });
+  });
 };
 
 /*move();
@@ -375,16 +390,6 @@ function move(){
       console.log("Mouse position x:"+ mPos.X +" y:"+ mPos.Y);
   });
 }*/
-
-
-
-
-// Highlights the position on navigation bar
-function regionNav(){
-    $('.Quick-navigation-item').on("click",function(){
-        $(this).addClass('Quick-navigation-item-active').siblings().removeClass('Quick-navigation-item-active')
-    })
-};
 
 // Modifies features' display on smaller devices
 function hideContinent() {
