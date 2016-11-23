@@ -7,6 +7,7 @@ window.onload = function() {
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
       menu();
+      regionNav();
       hideContinent();
       smallMap();
     }
@@ -60,6 +61,7 @@ function introStory() {
       backSpeed: 0, // backspacing speed
       backDelay: 1000, // time before backspacing-
       showCursor: false,
+      cursorChar: "|",
       callback: function() {
         introCountdown();
       }
@@ -267,11 +269,15 @@ function initRegion() {
     continentInfo.appendChild(continentText);
 
     //BUTTON
-    var continentButton = document.createElement('button');
+    var continentLien = document.createElement('a'),
+        continentButton = document.createElement('button');
     continentButton.classList.add('Region-container-watchButton');
-    // continent.setAttribute('href', data.continent[0].id_video);
+    continentLien.setAttribute('href', data.continent[0].id_video);
+    continentLien.setAttribute('target', '_blank');
+    continentLien.style.textDecoration = "none";
     continentButton.innerHTML = "Watch";
-    continentInfo.appendChild(continentButton);
+    continentInfo.appendChild(continentLien);
+    continentLien.appendChild(continentButton);
 
     // QUICK NAVIGATION
       var region = document.querySelector('.Region');
@@ -287,7 +293,7 @@ function initRegion() {
 
       // QUICK NAVIGATION ELEMENTS
       var anchor = document.createElement('a');
-      anchor.setAttribute('href', '#'+data.continent[i].id);
+      anchor.setAttribute('href', '#section'+i);
       anchor.classList.add('Quick-navigation-item');
       quickNav.appendChild(anchor);
 
@@ -347,34 +353,17 @@ function initRegion() {
       countryData2.appendChild(dataText2);
     }
   });
-  quickNav();
   setTimeout(function(){
     goTo();
   }, 100)
 };
 
 function goTo() {
-  $(".Region .Quick-navigation a[href$='#"+mapId[1]+"']");
+  console.log($(".Region #"+mapId[1]));
+
   $('html, body').animate({
      scrollTop: $(".Region #"+mapId[1]).offset().top
    }, 600);
-};
-
-function quickNav() {
-  $(window).scroll(function() {
-    var top = $(document).scrollTop();
-    var height = $(window).height();
-    $(".Region-container-section").each(function() {
-      var id = $(this).attr("id");
-      console.log(id)
-      if (top < ($(this).offset().top + 300) && $(this).offset().top < (top + height - 300)) {
-        $('.Quick-navigation-item[href$="#'+id+'"]').addClass('Quick-navigation-item--active');
-      }
-      else {
-        $('.Quick-navigation-item[href$="#'+id+'"]').removeClass('Quick-navigation-item--active');
-      }
-    });
-  });
 };
 
 /*move();
@@ -391,12 +380,23 @@ function move(){
   });
 }*/
 
+
+
+
+// Highlights the position on navigation bar
+function regionNav(){
+    $('.Quick-navigation-item').on("click",function(){
+        $(this).addClass('Quick-navigation-item-active').siblings().removeClass('Quick-navigation-item-active')
+    })
+};
+
 // Modifies features' display on smaller devices
 function hideContinent() {
     if($(window).width() < 768)
     {
         // stick continent name on top
         $("#section .Region-container-continent").addClass('Region-container-continent--fixed');
+        console.log("hey");
         // adapt page
         $("#section .Region-container-info").css("padding-top","90px");
         $("section:last-child").css("margin-bottom","100px");
