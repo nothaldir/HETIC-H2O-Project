@@ -1,15 +1,17 @@
 { 
   "continent" : [
     {
-      "id_continent" : "Asia",
+      "id" : "asia",
+      "name_continent" : "Asia",
       "title" : "The continent ran out of time",
       "subtitle" : "Food production essentially depended on agriculture, a sector that consumed a lot of water.",
       "content" : "There was a strong expansion of irrigated crops: their area doubled between 1961 and 2003.  Asia was particularly affected because the Himalayan glaciers - the source of most Asian rivers - melted extremely quickly."
     },
 
     {
-      "id_continent" : "Asia",
-      "id_country" : "South Asia",
+      "id" : "south_asia",
+      "name_continent" : "Asia",
+      "name_country" : "South Asia",
       "subtitle" : "The largest water tower on the planet",
       "content" : "Global warming and its impact on the melting of Himalayan glaciers has increased the risk of flooding in the short term, but not just the rise of geopolitical conflicts fueled by the scarcity of water resources.",
       "keydata" :
@@ -20,8 +22,9 @@
     },
 
     {
-      "id_continent" : "Asia",
-      "id_country" : "Central Asia",
+      "id" : "central_asia",
+      "name_continent" : "Asia",
+      "name_country" : "Central Asia",
       "subtitle" : "National egoism overrided considerations of economic rationality and regional security.",
       "content" : "The states of Central Asia have declared themselves capable of solving these problems themselves, the fact is that since their attainment of independence they have not been able to get closer to the creation of a common regime of self-use of water.",
       "keydata" :
@@ -32,8 +35,9 @@
     },
 
     {
-      "id_continent" : "Asia",
-      "id_country" : "South East Asia",
+      "id" : "south_east_asia",
+      "name_continent" : "Asia",
+      "name_country" : "South East Asia",
       "subtitle" : "In Asia, the stakes of blue gold are reflected in a geopolitics marked by the emergence of potential economic powers.",
       "content" : "The rice fields have long been an integral part of the monsoon landscapes of Southeast Asia, which develops to the consumption of water. Agriculture is the sector where most of the water is used.",
       "keydata" : [

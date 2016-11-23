@@ -2,7 +2,7 @@ window.onload = function() {
     if (window.location.href.indexOf("index.html") > -1) {
       console.log('index loaded');
       introStory();
-    }
+    };
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
       menu();
@@ -19,13 +19,16 @@ function smallMap() {
     slidesToShow: 1,
     vertical: true,
     verticalSwiping: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    arrows: true,
+    nextArrow: '<span class="icon-arrow SmallMap-arrow SmallMap-arrow--next"></span>',
+    prevArrow: '<span class="icon-arrow SmallMap-arrow SmallMap-arrow--prev"></span>'
   })
 }
 
 function backgroundMusic() {
   var audio = document.querySelector('.Audio-music');
-  audio.volume = 0.2;
+  audio.volume = 0.5;
   audio.play();
   document.querySelector('.Audio-controls').addEventListener('click', function() {
     this.classList.toggle('Audio-controls--paused');
@@ -160,27 +163,32 @@ function menu() {
 map();
 var mapId;
 function map(){
-  $('.Map #world_map g, .Map #countries g').click(function(){
+  $('.Map #world_map g, .Map #countries g, .SmallMap #world_map g, .SmallMap #countries g').click(function(){
     mapId = $(this).attr('id').split('-');
     console.log(mapId[0]+','+mapId[1]);
+    if (mapId[0] !== "groenland_no_data") {
       initRegion();
+    }
   });
   $('.Map #world_map g').hover(
     function(){
-      $id = $(this).attr('id');
-      $('.Map-location').html('[ '+$id+' ]');
+      $id = $(this).attr('id').split('-');
+      $('.Map-location').html('[ '+$id[0]+' ]');
     }, function(){
       $('.Map-location').html('[ ]');
     });
     $('.Map #countries g').hover(
       function(e) {
-        $('.Map-popup').css('left',e.pageX);
+        $id = $(this).attr('id').split('-');
+        $('.Map-location').html('[ '+$id[1]+' ]');
+        /*$('.Map-popup').css('left',e.pageX);
         $('.Map-popup').css('top',e.pageY);
         setTimeout(function(){
           $('.Map-popup').addClass('Map-popup--open');
-        },200)
+        },200)*/
       }, function(){
-        $('.Map-popup').removeClass('Map-popup--open');
+        $('.Map-location').html('[ ]');
+        //$('.Map-popup').removeClass('Map-popup--open');
       }
     )
 };
@@ -189,6 +197,8 @@ function map(){
 function initRegion() {
   $('.Region').addClass('Region--open');
   $('.Map').hide();
+
+  console.log(mapId[1]);
 
   getJSON("datas/"+mapId[0]+".json", function(data) {
 
@@ -206,7 +216,7 @@ function initRegion() {
     // ID
     var continentId = document.createElement('h2');
       continentId.classList.add('Region-container-continent');
-    continentId.innerHTML = data.continent[0].id_continent;
+    continentId.innerHTML = data.continent[0].name_continent;
     continent.appendChild(continentId);
 
     //INFO
@@ -258,14 +268,15 @@ function initRegion() {
 
       // SECTIONS
       var country = document.createElement('section');
-      country.setAttribute('id', 'section'+i);
+      //country.setAttribute('id', 'section'+i+' '+data.continent[i].id);
+      country.setAttribute('id', data.continent[i].id);
       country.classList.add('Region-container-section');
       container.appendChild(country);
 
       // ID SECTIONS
       var countryId = document.createElement('h2');
       countryId.classList.add('Region-container-country');
-      countryId.innerHTML = data.continent[i].id_country;
+      countryId.innerHTML = data.continent[i].name_country;
       country.appendChild(countryId);
 
       // SUBTITLE SECTIONS
@@ -312,6 +323,17 @@ function initRegion() {
 
     }
   });
+  setTimeout(function(){
+    goTo();
+  }, 100)
+};
+
+function goTo() {
+  console.log($(".Region #"+mapId[1]));
+
+  $('html, body').animate({
+     scrollTop: $(".Region #"+mapId[1]).offset().top
+   }, 600);
 };
 
 /*move();
@@ -349,7 +371,6 @@ function hideContinent() {
         $("section:last-child").css("margin-bottom","100px");
     }
 };
-
 
 function getJSON(url, callback) {
     var xhr = new XMLHttpRequest();
