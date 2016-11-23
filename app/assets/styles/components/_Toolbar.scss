@@ -121,13 +121,17 @@
       }
     }
     &-nasa {
-      position: absolute;
+      position: relative;
+      margin-top: rem(450);
+      bottom: 100px;
       width: 100%;
       height: auto;
-      bottom: rem(12);
       text-align: center;
       &-img {
         width:rem(80);
+      }
+      @media screen and (min-width: $mq-m) {
+        margin-top: rem(580);
       }
     }
   }

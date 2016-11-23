@@ -1,6 +1,6 @@
 .Act {
     &-container {
-        font-family: "Helvetica Neue";
+        font-family: $lato;
         width: rem(300);
         margin: 0 auto;
         text-align: center;
@@ -32,13 +32,13 @@
           color: $color-blue-turquoise;
           font-size: rem(20);
           text-align: center;
-          font-family: "Helvetica Neue";
+          font-family: $lato;
           letter-spacing: 6px;
           margin-bottom: rem(20);
           @media screen and (min-width: $mq-m) {
             font-size: rem(48);
             text-align: left;
-            font-family: "Helvetica Neue";
+            font-family: $lato;
             margin-bottom: rem(30);
             font-weight: 500;
             letter-spacing: 6px;
@@ -98,14 +98,14 @@
           color: $color-white-web;
           font-size: rem(10);
           text-align: center;
-          font-family: "Helvetica Neue";
+          font-family: $lato;
           font-weight: 100;
           letter-spacing: 1px;
           text-align: center;
           @media screen and (min-width: $mq-m) {
             font-size: rem(10);
             text-align: left;
-            font-family: "Helvetica Neue";
+            font-family: $lato;
             margin-top: rem(200);
             text-align: center;
           }
@@ -116,7 +116,7 @@
           color: $color-white-web;
           font-size: rem(20);
           text-align: center;
-          font-family: "Helvetica Neue";
+          font-family: $lato;
           letter-spacing: 1px;
           margin-bottom: rem(20);
           margin-top: rem(30);
@@ -124,7 +124,7 @@
             color: $color-white-web;
             font-size: rem(45);
             text-align: center;
-            font-family: "Helvetica Neue";
+            font-family: $lato;
             margin-bottom: rem(30);
             margin-top: rem(30);
           }
@@ -137,7 +137,7 @@
           color: $color-white-web;
           font-size: rem(17);
           text-align: left;
-          font-family: "Helvetica Neue";
+          font-family: $lato;
           line-height: 20px;
           margin-bottom: rem(10);
           font-weight: 200;
@@ -151,7 +151,7 @@
         &-text {
           color: $color-text-main;
           font-size: rem(15);
-          font-family: "Helvetica Neue";
+          font-family: $lato;
           font-weight: 300;
           text-align: left;
           line-height: rem(30);
@@ -173,7 +173,7 @@
           text-align: left;
           text-transform: uppercase;
           color: $color-blue-turquoise;
-          font-family: 'Helvetica Neue';
+          font-family: $lato;
           font-size: rem(15);
           font-weight: 100;
           letter-spacing: rem(2);
@@ -197,7 +197,7 @@
             color: $color-white-web;
             font-size: rem(17);
             text-align: left;
-            font-family: "Helvetica Neue";
+            font-family: $lato;
             line-height: 20px;
             margin-bottom: rem(5);
             font-weight: 200;
@@ -214,7 +214,7 @@
             &-text{
             color: $color-text-main;
             font-size: rem(15);
-            font-family: "Helvetica Neue";
+            font-family: $lato;
             font-weight: 300;
             text-align: left;
             line-height: rem(20);
@@ -329,7 +329,7 @@
           &-text{
             color: $color-text-main;
           font-size: rem(15);
-          font-family: "Helvetica Neue";
+          font-family: $lato;
           font-weight: 300;
           line-height: rem(20);
           margin-bottom: rem(24);
@@ -353,7 +353,7 @@
             &-text2{
               color: $color-text-main;
               font-size: em(14);
-              font-family: "Helvetica Neue";
+              font-family: $lato;
               margin-top: em(15); 
               height: em(15);
               @media screen and (min-width: $mq-m){
@@ -365,7 +365,7 @@
            &-title{
               color: $color-white-web;
               font-size: rem(17);
-              font-family: "Helvetica Neue";
+              font-family: $lato;
               line-height: 20px;
               margin-top: em(30);
               margin-bottom: rem(5);
