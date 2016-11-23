@@ -14,6 +14,7 @@ window.onload = function() {
     backgroundMusic();
     if (window.location.href.indexOf("about.html") > -1) {
       menu();
+      credits();
     }
     //backgroundMusic();
 };
@@ -173,20 +174,17 @@ function menu() {
 };
 
 
-function openCredits(){
-  var credits = document.querySelector('.About-container-creditsList');
-  credits.style.display = "flex";
-  var arrow = document.querySelector('.About-container-arrow');
-  arrow.style.transform = "rotate(0deg)";
-  arrow.style.transition = "transform .3s ease";
-}
+function credits(){
+  var credits = document.querySelector('.About-container-credits'),
+      creditsList = document.querySelector('.About-container-creditsList'),
+      arrow = document.querySelector('.About-container-arrow');
+  credits.addEventListener('click', function() {
+    creditsList.classList.toggle('About-container-creditsList--open');
+    arrow.classList.toggle('About-container-arrow--open');
+  });
+};
 
-function closeCredits(){
-  var credits = document.querySelector('.About-container-creditsList');
-  credits.style.display = "none";
-  var arrow = document.querySelector('.About-container-arrow');
-  arrow.style.transform = "rotate(180deg)";
-}
+
 
 map();
 var mapId;
@@ -273,6 +271,7 @@ function initRegion() {
     //BUTTON
     var continentButton = document.createElement('button');
     continentButton.classList.add('Region-container-watchButton');
+    // continent.setAttribute('href', data.continent[0].id_video);
     continentButton.innerHTML = "Watch";
     continentInfo.appendChild(continentButton);
 
