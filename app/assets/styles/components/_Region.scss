@@ -18,7 +18,7 @@
         opacity: .5;
         cursor:pointer;
       }
-      &-active {
+      &--active {
         opacity: 1;
       }
     }
@@ -218,5 +218,4 @@
 
         }
     }
-
 }
