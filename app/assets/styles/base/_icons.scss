@@ -26,18 +26,37 @@
   @if $filename == arrow {
     $char: "\E001";
   }
+<<<<<<< HEAD
+  @if $filename == cloud {
+    $char: "\E002";
+  }
+  @if $filename == fireman {
+=======
   @if $filename == check {
     $char: "\E002";
   }
   @if $filename == fingerprint {
+>>>>>>> 5a35585e838796024881a9c96192061f97a74651
     $char: "\E003";
   }
   @if $filename == keyboard {
     $char: "\E004";
   }
+<<<<<<< HEAD
+  @if $filename == robinet {
+    $char: "\E005";
+  }
+  @if $filename == shower-2 {
+    $char: "\E006";
+  }
+  @if $filename == shower {
+    $char: "\E007";
+  }
+=======
   @if $filename == speaker {
     $char: "\E005";
   }
+>>>>>>> 5a35585e838796024881a9c96192061f97a74651
 
   @return $char;
 }
@@ -69,13 +88,22 @@
   @include icon(check);
 }
 
-.icon-fingerprint{
+.icon-cloud{
   &::before {
-    @include icon(fingerprint);
+    @include icon(cloud);
   }
 }
-%icon-fingerprint {
-  @include icon(fingerprint);
+%icon-cloud {
+  @include icon(cloud);
+}
+
+.icon-fireman{
+  &::before {
+    @include icon(fireman);
+  }
+}
+%icon-fireman {
+  @include icon(fireman);
 }
 
 .icon-keyboard{
@@ -87,11 +115,29 @@
   @include icon(keyboard);
 }
 
-.icon-speaker{
+.icon-robinet{
   &::before {
-    @include icon(speaker);
+    @include icon(robinet);
   }
 }
-%icon-speaker {
-  @include icon(speaker);
+%icon-robinet {
+  @include icon(robinet);
+}
+
+.icon-shower-2{
+  &::before {
+    @include icon(shower-2);
+  }
+}
+%icon-shower-2 {
+  @include icon(shower-2);
+}
+
+.icon-shower{
+  &::before {
+    @include icon(shower);
+  }
+}
+%icon-shower {
+  @include icon(shower);
 }

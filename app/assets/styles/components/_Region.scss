@@ -148,7 +148,7 @@
           }
         }
         &-subtitle {
-          color: #fff;
+          color: $color-white-web;
           font-size: rem(17);
           text-align: left;
           font-family: $lato;
@@ -163,7 +163,7 @@
           }
         }
         &-text {
-          color: #fff;
+          color: $color-text-main;
           font-size: rem(15);
           font-family: $lato-light;
           font-weight: 500;

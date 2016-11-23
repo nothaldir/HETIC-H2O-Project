@@ -8,7 +8,6 @@
 @import 'base/animations';
 @import 'base/fonts';
 @import 'base/icons';
-@import 'base/mixins';
 @import 'base/variables';
 
 // Vendors
@@ -17,15 +16,13 @@
 @import 'global/layout';
 
 // Components
-@import 'components/Component';
 @import 'components/Audio';
 @import 'components/Home';
-@import 'components/Header';
 @import 'components/Logo';
-@import 'components/Glitch';
 @import 'components/Popup';
 @import 'components/Map';
 @import 'components/Region';
 @import 'components/Toolbar';
 @import 'components/About';
+@import 'components/Act';
 
