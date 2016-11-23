@@ -11,6 +11,9 @@ window.onload = function() {
       smallMap();
     }
     backgroundMusic();
+    if (window.location.href.indexOf("about.html") > -1) {
+      menu();
+    }
 };
 
 function smallMap() {
@@ -159,6 +162,22 @@ function menu() {
         });
     }
 };
+
+
+function openCredits(){
+  var credits = document.querySelector('.About-container-creditsList');
+  credits.style.display = "flex";
+  var arrow = document.querySelector('.About-container-arrow');
+  arrow.style.transform = "rotate(0deg)";
+  arrow.style.transition = "transform .3s ease";
+}
+
+function closeCredits(){
+  var credits = document.querySelector('.About-container-creditsList');
+  credits.style.display = "none";
+  var arrow = document.querySelector('.About-container-arrow');
+  arrow.style.transform = "rotate(180deg)";
+}
 
 map();
 var mapId;
@@ -349,6 +368,8 @@ function move(){
       console.log("Mouse position x:"+ mPos.X +" y:"+ mPos.Y);
   });
 }*/
+
+
 
 
 // Highlights the position on navigation bar

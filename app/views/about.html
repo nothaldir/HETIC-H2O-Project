@@ -15,7 +15,7 @@
                     </g>
                 </g>
             </g>
-            <a class="Toolbar-backButton-link" href="index.html"></a>
+            <a class="Toolbar-backButton-link" href="map.html"></a>
         </svg>
         <svg class="Toolbar-menuIcon" width="60px" height="60px" viewBox="0 0 76 76">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -45,9 +45,9 @@
             </g>
         </svg>
         <ul class="Toolbar-menu-list">
-            <li><a class="Toolbar-menu-list-item" href="">Home</a></li>
-            <li><a class="Toolbar-menu-list-item" href="">Act</a></li>
-            <li><a class="Toolbar-menu-list-item" href="">About</a></li>
+            <li><a class="Toolbar-menu-list-item" href="map.html">Home</a></li>
+            <li><a class="Toolbar-menu-list-item" href="act.html">Act</a></li>
+            <li><a class="Toolbar-menu-list-item" href="about.html">About</a></li>
         </ul>
         <div class="Toolbar-menu-nasa">
             <a  href="https://www.nasa.gov/">
@@ -68,7 +68,7 @@
     			<h4 class="About-container-text"> The aim of this project is to fight for equal access to the vital resource that is clean drinking water in order to raise public awareness of the issues at stake: Fight against global warming. This site has been designed with the aim of presenting the most clearly complex data by making it intelligible and easy to access.The future of our planet requires knowledge of the issues and the facts. It is therefore important to make them accessible to all.</h4>
     		</div>
     		<div class="About-container-credits">
-    			<div class="About-container-button" onmouseover="openCredits();">
+    			<div class="About-container-button" onmouseover="openCredits();" onmouseout="closeCredits();">
 	    			<p class="About-container-buttonText">Credits</p>
 	    			<svg class="About-container-arrow" width="25px" height="25px" viewBox="0 0 76 76">
 	            		<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -96,6 +96,17 @@
     		</div>
     	</section>
     </div>
+
+
+
+<audio
+    class="Audio-music"
+    src="medias/background.mp3">
+    Your browser doesn't support audio API
+</audio>
+
+<div class="Audio-controls"><a><span class="icon-speaker"></span></a></div>
+
 </div>
 
 <!-- build:include ./inc/footer.html -->

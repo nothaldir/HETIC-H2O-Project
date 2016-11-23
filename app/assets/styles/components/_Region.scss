@@ -124,7 +124,7 @@
           }
         }
         &-title {
-          //padding-top: rem(100);
+          padding-top: rem(100);
           color: $color-blue-turquoise;
           font-size: rem(20);
           text-align: center;
@@ -206,7 +206,6 @@
             }
            }
           &-secondData {
-
             display: inline;
             &-number {
               color: $color-red;
