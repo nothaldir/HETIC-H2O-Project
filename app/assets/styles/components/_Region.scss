@@ -34,7 +34,6 @@
     display: block;
     transition: .3s ease;
     opacity: 1;
-
   }
     &-container {
         width: rem(750);
@@ -59,13 +58,11 @@
           @media screen and (min-width: $mq-m) {
             padding-top: rem(210);
             height: 800px;
-            //padding-bottom: rem(200);
           }
           &:last-child {
             @media screen and (min-width: $mq-m) {
               margin-bottom: rem(160);
             }
-
           }
         }
         &-continent {
@@ -105,7 +102,6 @@
           right: 0;
           background-color: $color-background;
           z-index: 99;
-
         }
         &-info{
           padding-top: rem(40);
@@ -160,7 +156,7 @@
           color: #fff;
           font-size: rem(15);
           font-family: $helvetica;
-          //font-weight: 500;
+          //font-weight: 100;
           text-align: left;
           line-height: rem(30);
           margin-bottom: rem(24);
@@ -193,29 +189,34 @@
           }
         }
         &-keyData {
+          //position: absolute;
           margin-top: rem(30);
           text-align: left;
-          font-family:$orbit;
+          font-family:$lato;
           &-firstData {
-
-            display: inline;
-            margin-bottom: rem(30);
+            margin-bottom: rem(10);
+            @media screen and (min-width: $mq-m) {
+              margin-bottom: rem(40);
+            }
              &-number {
                color: $color-red;
-               font-size: rem(45);
+               font-size: rem(50);
              }
             &-details {
+              display: inline;
+              width: rem(100);
             }
            }
           &-secondData {
-
-            display: inline;
             &-number {
               color: $color-red;
               font-size: rem(45);
             }
+            &-details {
+              display: inline;
+              width: rem(100);
+            }
           }
-
         }
     }
 
