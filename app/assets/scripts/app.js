@@ -7,6 +7,7 @@ window.onload = function() {
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
       menu();
+      regionNav();
       hideContinent();
       smallMap();
       map();
@@ -60,6 +61,7 @@ function introStory() {
       backSpeed: 0, // backspacing speed
       backDelay: 1000, // time before backspacing-
       showCursor: false,
+      cursorChar: "|",
       callback: function() {
         introCountdown();
       }
@@ -265,11 +267,15 @@ function initRegion() {
     continentInfo.appendChild(continentText);
 
     //BUTTON
-    var continentButton = document.createElement('button');
+    var continentLien = document.createElement('a'),
+        continentButton = document.createElement('button');
     continentButton.classList.add('Region-container-watchButton');
-    // continent.setAttribute('href', data.continent[0].id_video);
+    continentLien.setAttribute('href', data.continent[0].id_video);
+    continentLien.setAttribute('target', '_blank');
+    continentLien.style.textDecoration = "none";
     continentButton.innerHTML = "Watch";
-    continentInfo.appendChild(continentButton);
+    continentInfo.appendChild(continentLien);
+    continentLien.appendChild(continentButton);
 
     // QUICK NAVIGATION
       var region = document.querySelector('.Region');
@@ -285,7 +291,7 @@ function initRegion() {
 
       // QUICK NAVIGATION ELEMENTS
       var anchor = document.createElement('a');
-      anchor.setAttribute('href', '#'+data.continent[i].id);
+      anchor.setAttribute('href', '#section'+i);
       anchor.classList.add('Quick-navigation-item');
       quickNav.appendChild(anchor);
 
@@ -345,6 +351,16 @@ function initRegion() {
       countryData2.appendChild(dataText2);
     }
   });
+<<<<<<< HEAD
+  setTimeout(function(){
+    goTo();
+  }, 100)
+};
+
+function goTo() {
+  console.log($(".Region #"+mapId[1]));
+
+=======
   if (mapId[1] !== "info" ) {
     setTimeout(function(){
       goTo(); 
@@ -357,10 +373,34 @@ function initRegion() {
 function goTo() {
   console.log('goto')
   $(".Region .Quick-navigation a[href$='#"+mapId[1]+"']");
+>>>>>>> ce05715e220d135b6c73e9b76ad192438f72ec69
   $('html, body').animate({
      scrollTop: $(".Region #"+mapId[1]).offset().top
    }, 600);
 };
+
+/*move();
+function move(){
+  $("#world_map").mousemove(function ( e ) {
+      var pos   = $(this).offset();
+      var elPos = { X:pos.left , Y:pos.top };
+      var mPos  = { X:e.clientX-elPos.X, Y:e.clientY-elPos.Y };
+      var mapX = $(this).get(0).getBBox().width;
+      var mapY = $(this).get(0).getBBox().height;
+      console.log(mapX + ' ' + mapY),
+
+      console.log("Mouse position x:"+ mPos.X +" y:"+ mPos.Y);
+  });
+}*/
+
+
+
+
+// Highlights the position on navigation bar
+function regionNav(){
+    $('.Quick-navigation-item').on("click",function(){
+        $(this).addClass('Quick-navigation-item-active').siblings().removeClass('Quick-navigation-item-active')
+    })
 
 function scrollTo() {
   setTimeout(function(){
@@ -399,6 +439,7 @@ function hideContinent() {
     {
         // stick continent name on top
         $("#section .Region-container-continent").addClass('Region-container-continent--fixed');
+        console.log("hey");
         // adapt page
         $("#section .Region-container-info").css("padding-top","90px");
         $("section:last-child").css("margin-bottom","100px");

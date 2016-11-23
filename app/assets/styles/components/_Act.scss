@@ -46,7 +46,6 @@
         }
 
         &-more {
-          border:1px solid green;
           width: rem(30);
           height: rem(40);
           margin:auto;
@@ -61,9 +60,34 @@
           transform: rotate(270deg);
           color:$color-text-main;
           position: relative;
-          border:1px solid red;
           width: 10px;
           height: 10px;
+          @media screen and (min-width: $mq-m) {
+
+
+          }
+        }
+
+        &-moreArrow2 {
+          transform: rotate(0deg);
+          color:$color-text-main;
+          position: relative;
+          margin-top: em(10);
+          width: 12px;
+          height: 12px;
+          @media screen and (min-width: $mq-m) {
+
+
+          }
+        }
+        &-moreArrow3 {
+          transform: rotate(180deg);
+          color:$color-text-main;
+          position: relative;
+          margin-top: em(10);
+          width: 12px;
+          height: 12px;
+          color: $color-blue-turquoise;
           @media screen and (min-width: $mq-m) {
 
 
@@ -74,7 +98,6 @@
           color: $color-white-web;
           font-size: rem(10);
           text-align: center;
-          border:1px solid red;
           font-family: "Helvetica Neue";
           font-weight: 100;
           letter-spacing: 1px;
@@ -163,7 +186,6 @@
         }
 
         &-practicies{
-          border:1px solid green;
           position: center;
           position: relative;
           margin: 0;
@@ -205,7 +227,6 @@
             }
             &-block{
             margin-top: rem(60);
-            order:1px solid red;
             display: inline-flex;
             flex-direction: row;
             @media screen and (min-width: $mq-m){
@@ -214,7 +235,6 @@
             
 
             &-square1{
-            border: 1px solid orange;
             font-size: rem(60);
             color: $color-blue-turquoise;
             padding-left: em(2);
@@ -226,13 +246,11 @@
             }
             &-square2{
             margin-top: rem(30);
-            border: 1px solid yellow;
             @media screen and (min-width: $mq-m){
               margin-top: rem(20) 
             }
             }
             &-square3{
-            border: 1px solid purple;
             .icon-shower {
               font-size: 60px;
               margin-top: em(5);
@@ -303,7 +321,6 @@
         }
 
         &-apps{
-          border:1px solid green;
           position: center;
           position: relative;
           margin: 0;
@@ -317,13 +334,12 @@
           font-size: rem(15);
           font-family: "Helvetica Neue";
           font-weight: 300;
-          text-align: left;
           line-height: rem(20);
           margin-bottom: rem(24);
           margin-top: rem(10);
           @media screen and (min-width: $mq-m) {
             margin-top: rem(15);
-            font-size: rem(18);
+            font-size: rem(15);
             line-height: rem(20);
             margin-bottom: rem(24);
             }
@@ -336,22 +352,32 @@
 
               }
             }
+
+            &-text2{
+              color: $color-text-main;
+              font-size: em(14);
+              font-family: "Helvetica Neue";
+              margin-top: em(15); 
+              height: em(15);
+              @media screen and (min-width: $mq-m){
+
+              }
+
+            }
           
 
            &-title{
               color: $color-white-web;
               font-size: rem(17);
-              text-align: left;
               font-family: "Helvetica Neue";
               line-height: 20px;
-              margin-top: em(15);
+              margin-top: em(30);
               margin-bottom: rem(5);
               font-weight: 200;
               @media screen and (min-width: $mq-m) {
-              margin-top: em(15);
+              margin-top: em(30);
               padding-top: rem(10);
               font-size: rem(20);
-              text-align: left;
               line-height: rem(20);
               margin-bottom: rem(0);
 
@@ -362,7 +388,13 @@
             }
           
           &-block-1{
+            text-align: left;
+            margin-top: em(100);
+          }
 
+          &-block-2{
+          margin-top: em(100);
+          text-align: right;
 
            
           }

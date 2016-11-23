@@ -1,12 +1,13 @@
 .Audio{
 	&-controls {
-		position: absolute;
 		right: 10px;
 		top: 10px;
+		margin:auto;
 		height: 50px; width: 50px;
 		display: block;
+		margin-top: rem(530);
 		color: #fff;
-		i.icon-speaker {
+		span.icon-speaker {
 			cursor: pointer;
 			font-size: rem(30);
 		}
