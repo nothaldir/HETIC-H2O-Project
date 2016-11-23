@@ -141,7 +141,7 @@ function spaceBar() {
 function menu() {
     $('.Toolbar-backButton').on("click touchstart",function(){
         if($('.Region').hasClass('Region--open')){
-            $('.Map').show();
+            $('.Map, .SmallMap').show();
             $('.Region').removeClass('Region--open');
         } else {
         }
@@ -217,8 +217,8 @@ function map(){
 // initialize region page with data
 function initRegion() {
   $('.Region').addClass('Region--open');
-    $('.Region').addClass('Region--open');
-  $('.Map').hide();
+  $('.Region').addClass('Region--open');
+  $('.Map, .SmallMap').hide();
 
   console.log(mapId[1]);
 
@@ -353,6 +353,7 @@ function initRegion() {
   scrollTo();
   quickNav();
 };
+
 function goTo() {
   console.log('goto')
   $(".Region .Quick-navigation a[href$='#"+mapId[1]+"']");
