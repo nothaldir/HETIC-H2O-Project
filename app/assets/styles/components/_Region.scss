@@ -4,23 +4,31 @@
   right:rem(20);
   margin-top: rem(360);
   font-size: 0;
+  border-left: 1px solid #90969A;
   @media screen and (min-width: $mq-m) {
     display: block;
   }
     &-item {
       @media screen and (min-width: $mq-l) {
         display: block;
-        width:rem(12);
-        height:rem(12);
-        margin: 10px;
+        width:rem(18); height:rem(18);
+        transition: .2s ease;
+        margin-left: rem(-9.6);
+        margin-bottom: rem(30);
+        margin-right: rem(50);
         border-radius: 100%;
-        background-color: #fff;
-        opacity: .5;
+        background-color: #90969A;
         cursor:pointer;
       }
       &--active {
-        opacity: 1;
+        background-color: #fff;
       }
+      &:hover {
+        background-color: #fff;
+      }
+    }
+    &-item:last-child {
+      margin-bottom: 0 !important;
     }
 }
 

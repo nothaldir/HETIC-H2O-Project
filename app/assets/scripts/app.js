@@ -9,13 +9,14 @@ window.onload = function() {
       menu();
       hideContinent();
       smallMap();
+      map();
+      document.querySelector('body').classList.add('body-map');
     }
-    backgroundMusic();
     if (window.location.href.indexOf("about.html") > -1) {
       menu();
       credits();
     }
-    //backgroundMusic();
+    backgroundMusic();
 };
 
 function logoWave() {
@@ -182,9 +183,6 @@ function credits(){
   });
 };
 
-
-
-map();
 var mapId;
 function map(){
   $('.Map #world_map g, .Map #countries g, .SmallMap #world_map g, .SmallMap #countries g').click(function(){
@@ -348,27 +346,45 @@ function initRegion() {
 
     }
   });
+  if (mapId[1] !== "info" ) {
+    setTimeout(function(){
+      goTo(); 
+    }, 100)
+  };
+  scrollTo();
   quickNav();
-  setTimeout(function(){
-    goTo();
-  }, 100)
 };
 
 function goTo() {
+  console.log('goto')
   $(".Region .Quick-navigation a[href$='#"+mapId[1]+"']");
   $('html, body').animate({
      scrollTop: $(".Region #"+mapId[1]).offset().top
    }, 600);
 };
 
+function scrollTo() {
+  setTimeout(function(){
+  console.log('scrollTo');
+    $(".Quick-navigation-item").click( function() {
+      console.log('scroll');
+      var page = $(this).attr('href'); 
+      var speed = 650; // Animation duration
+      $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
+      return false;
+    });
+  }, 200);
+};
+
 function quickNav() {
+  console.log('quickNav');
   $(window).scroll(function() {
     var top = $(document).scrollTop();
     var height = $(window).height();
     $(".Region-container-section").each(function() {
       var id = $(this).attr("id");
-      console.log(id)
-      if (top < ($(this).offset().top + 300) && $(this).offset().top < (top + height - 300)) {
+      //console.log(id)
+      if (top < ($(this).offset().top + 299) && $(this).offset().top < (top + height - 301)) {
         $('.Quick-navigation-item[href$="#'+id+'"]').addClass('Quick-navigation-item--active');
       }
       else {
@@ -377,20 +393,6 @@ function quickNav() {
     });
   });
 };
-
-/*move();
-function move(){
-  $("#world_map").mousemove(function ( e ) {
-      var pos   = $(this).offset();
-      var elPos = { X:pos.left , Y:pos.top };
-      var mPos  = { X:e.clientX-elPos.X, Y:e.clientY-elPos.Y };
-      var mapX = $(this).get(0).getBBox().width;
-      var mapY = $(this).get(0).getBBox().height;
-      console.log(mapX + ' ' + mapY),
-
-      console.log("Mouse position x:"+ mPos.X +" y:"+ mPos.Y);
-  });
-}*/
 
 // Modifies features' display on smaller devices
 function hideContinent() {
@@ -429,7 +431,6 @@ function getJSON(url, callback) {
     xhr.send();
     console.log(mapId);
 } // End of getJSON function
-
 
 $(window).on('mousemove', function(e) {
     var w = $(window).width();
