@@ -56,10 +56,11 @@
     right:0px;
     height:1000px;
     width: 100%;
-    background-color: rgba(91, 108, 142, 0.95);
+    text-transform: uppercase;
+    background-color: #4A5974;
     font-size: rem(30);
     transition: .3s ease;
-    font-family: $orbit;
+    font-family: $lato;
     font-weight: 200;
     opacity: 1;
     z-index:99;
@@ -85,8 +86,6 @@
       opacity: .5;
       transition: 0.2s;
       @media screen and (min-width: $mq-m) {
-        float: right;
-        margin-right: rem(75);
         margin-top: rem(90);
         opacity: .26;
         transition: 0.2s;
@@ -103,17 +102,17 @@
       text-align: center;
       line-height: rem(70);
       @media screen and (min-width: $mq-m) {
-        margin-top: rem(300);
+        margin-top: rem(130);
         width: 100%;
         position: absolute;
         text-align: center;
-        line-height: rem(70);
+        line-height: rem(80);
       }
       &-item{
-        line-height: 20px;
+        line-height: rem(10);
         color: #fff;
         text-decoration: none;
-        margin: 10px;
+        margin: rem(10);
         &:hover {
           color: $color-blue-turquoise;
           border-bottom: 4px solid $color-blue-turquoise;

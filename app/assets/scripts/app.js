@@ -3,6 +3,7 @@ window.onload = function() {
       console.log('index loaded');
       introStory();
       logoWave();
+        hideContinent();
     };
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
@@ -14,6 +15,9 @@ window.onload = function() {
     if (window.location.href.indexOf("about.html") > -1) {
       menu();
       credits();
+    }
+    if (window.location.href.indexOf("act.html") > -1) {
+        menu();
     }
     backgroundMusic();
 };
@@ -232,7 +236,7 @@ function initRegion() {
     // creation of section for continent
     continent = document.createElement('div');
     continent.setAttribute('id', 'section');
-    continent.classList.add('Region-container-section', 'section');
+    continent.classList.add('Region-container-section');
     container.appendChild(continent);
 
     // ID
@@ -297,7 +301,7 @@ function initRegion() {
       var country = document.createElement('div');
       //country.setAttribute('id', 'section'+i+' '+data.continent[i].id);
       country.setAttribute('id', data.continent[i].id);
-      country.classList.add('Region-container-section', 'section');
+      country.classList.add('Region-container-section');
       container.appendChild(country);
 
       // ID SECTIONS
@@ -331,9 +335,9 @@ function initRegion() {
       countryData.appendChild(countryData2);
 
       var dataNumber1 = document.createElement('span'),
-          dataText1 = document.createElement('p'),
+          dataText1 = document.createElement('span'),
           dataNumber2 = document.createElement('span'),
-          dataText2 = document.createElement('p');
+          dataText2 = document.createElement('span');
       dataNumber1.classList.add('Region-container-keyData-firstData-number');
       dataNumber1.innerHTML = data.continent[i].keydata[0].number;
       dataText1.classList.add('Region-container-keyData-firstData-details');
@@ -399,8 +403,10 @@ function quickNav() {
 
 // Modifies features' display on smaller devices
 function hideContinent() {
+    console.log('hide');
     if($(window).width() < 768)
     {
+        console.log('in <760');
         // stick continent name on top
         $("#section .Region-container-continent").addClass('Region-container-continent--fixed');
         // adapt page

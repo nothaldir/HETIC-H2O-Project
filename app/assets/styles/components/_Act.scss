@@ -223,17 +223,14 @@
             line-height: rem(20);
             margin-bottom: rem(24);
           }
-
             }
             &-block{
             margin-top: rem(60);
             display: inline-flex;
             flex-direction: row;
             @media screen and (min-width: $mq-m){
-
+              margin-top: rem(120);
             }
-            
-
             &-square1{
             font-size: rem(60);
             color: $color-blue-turquoise;
@@ -364,7 +361,6 @@
               }
 
             }
-          
 
            &-title{
               color: $color-white-web;
@@ -388,6 +384,7 @@
             }
           
           &-block-1{
+
             text-align: left;
             margin-top: em(100);
           }
@@ -396,7 +393,6 @@
           margin-top: em(100);
           text-align: right;
 
-           
           }
         }
     }
