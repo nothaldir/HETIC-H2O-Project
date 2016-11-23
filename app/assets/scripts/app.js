@@ -10,6 +10,11 @@ window.onload = function() {
       hideContinent();
       smallMap();
     }
+    backgroundMusic();
+    if (window.location.href.indexOf("about.html") > -1) {
+      menu();
+      credits();
+    }
     //backgroundMusic();
 };
 
@@ -166,6 +171,19 @@ function menu() {
     }
 };
 
+
+function credits(){
+  var credits = document.querySelector('.About-container-credits'),
+      creditsList = document.querySelector('.About-container-creditsList'),
+      arrow = document.querySelector('.About-container-arrow');
+  credits.addEventListener('click', function() {
+    creditsList.classList.toggle('About-container-creditsList--open');
+    arrow.classList.toggle('About-container-arrow--open');
+  });
+};
+
+
+
 map();
 var mapId;
 function map(){
@@ -251,6 +269,7 @@ function initRegion() {
     //BUTTON
     var continentButton = document.createElement('button');
     continentButton.classList.add('Region-container-watchButton');
+    // continent.setAttribute('href', data.continent[0].id_video);
     continentButton.innerHTML = "Watch";
     continentInfo.appendChild(continentButton);
 
@@ -358,8 +377,6 @@ function quickNav() {
     });
   });
 };
-
-
 
 /*move();
 function move(){

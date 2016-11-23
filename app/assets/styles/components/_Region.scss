@@ -57,7 +57,7 @@
           padding-bottom: rem(30);
           height: 800px;
           @media screen and (min-width: $mq-m) {
-            padding-top: rem(210);
+            padding-top: rem(80);
             height: 800px;
             //padding-bottom: rem(200);
           }
@@ -80,7 +80,7 @@
           margin-bottom: rem(34);
           @media screen and (min-width: $mq-m) {
             margin-left: rem(-250);
-            margin-top: rem(-130);
+            margin-top: rem(-10);
             position: fixed;
             display: block;
             text-transform: capitalize;
@@ -127,7 +127,7 @@
           }
         }
         &-title {
-          //padding-top: rem(100);
+          padding-top: rem(100);
           color: $color-blue-turquoise;
           font-size: rem(20);
           text-align: center;
@@ -208,7 +208,6 @@
             }
            }
           &-secondData {
-
             display: inline;
             &-number {
               color: $color-red;

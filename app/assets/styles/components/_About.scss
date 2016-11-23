@@ -19,7 +19,7 @@
           padding-top: rem(30);
           padding-bottom: rem(0);
           @media screen and (min-width: $mq-m) {
-            padding-top: rem(160);
+            padding-top: rem(120);
             padding-bottom: rem(200);
           }
         }
@@ -114,6 +114,14 @@
           @media screen and (max-width: $mq-m) {
             width: rem(40);
           }
+          &--open {
+            transform: rotate(0deg);
+            transition: transform .3s ease;
+          }
+          &--close {
+            transform: rotate(180deg);
+            transition: transform .3s ease;
+          }
         }
         &-credits {
           width: rem(750);
@@ -136,10 +144,7 @@
             margin-top: rem(10);
           }
           &--open {
-            display:flex!important;
-            transition: .3s ease;
-            opacity: 1;
-
+          display:flex;
           }
         }
 
