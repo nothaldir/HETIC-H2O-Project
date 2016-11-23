@@ -10,7 +10,6 @@ window.onload = function() {
       hideContinent();
       smallMap();
       map();
-      document.querySelector('body').classList.add('body-map');
     }
     if (window.location.href.indexOf("about.html") > -1) {
       menu();
