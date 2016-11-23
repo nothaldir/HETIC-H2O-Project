@@ -18,7 +18,7 @@
         opacity: .5;
         cursor:pointer;
       }
-      &-active {
+      &--active {
         opacity: 1;
       }
     }
@@ -36,7 +36,7 @@
     opacity: 1;
   }
     &-container {
-        width: rem(750);
+        width: 80%;
         margin: 0 auto;
         text-align: center;
         @media screen and (min-width: $mq-m) {
@@ -53,15 +53,15 @@
           padding-left: 20px;
           padding-right: 20px;
           padding-top: rem(30);
-          padding-bottom: rem(30);
+          padding-bottom: rem(0);
           height: 800px;
           @media screen and (min-width: $mq-m) {
-            padding-top: rem(210);
+            padding-top: rem(40);
             height: 800px;
           }
           &:last-child {
             @media screen and (min-width: $mq-m) {
-              margin-bottom: rem(160);
+              height: 570px; 
             }
           }
         }
@@ -77,13 +77,20 @@
           margin-bottom: rem(34);
           @media screen and (min-width: $mq-m) {
             margin-left: rem(-250);
-            margin-top: rem(-130);
+            margin-top: rem(-10);
             position: fixed;
             display: block;
             text-transform: capitalize;
             text-align: left;
             font-size: rem(38);
             margin-bottom: rem(14);
+          }
+          @media screen and (max-width: $mq-m) {
+            margin-left: rem(10);
+            display: block;
+            margin-top: rem(50);
+            text-align: center;
+            width: rem(250);
           }
         }
         &-continent--fixed {
@@ -105,8 +112,8 @@
         }
         &-info{
           padding-top: rem(40);
-          @media screen and (min-width: $mq-m) {
-            padding-top:0;
+          @media screen and (max-width: $mq-m) {
+            padding-top:rem(0);
           }
         }
         &-country {
@@ -123,7 +130,7 @@
           }
         }
         &-title {
-          //padding-top: rem(100);
+          padding-top: rem(100);
           color: $color-blue-turquoise;
           font-size: rem(20);
           text-align: center;
@@ -135,6 +142,9 @@
             text-align: left;
             font-family: $helvetica;
             margin-bottom: rem(30);
+          }
+          @media screen and (max-width: $mq-m) {
+            padding-top: rem(20);
           }
         }
         &-subtitle {
@@ -219,5 +229,4 @@
           }
         }
     }
-
 }
