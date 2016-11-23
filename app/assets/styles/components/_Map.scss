@@ -89,7 +89,7 @@
 
 .SmallMap {
 	@media screen and (min-width: $mq-m) {
-		display: none;
+		display: none !important;
 	}
 	&-arrow {
 		position: absolute;
