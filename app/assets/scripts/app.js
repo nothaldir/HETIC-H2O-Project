@@ -2,6 +2,7 @@ window.onload = function() {
     if (window.location.href.indexOf("index.html") > -1) {
       console.log('index loaded');
       introStory();
+      logoWave();
     };
     if (window.location.href.indexOf("map.html") > -1) {
       console.log('map loaded');
@@ -10,7 +11,12 @@ window.onload = function() {
       hideContinent();
       smallMap();
     }
-    backgroundMusic();
+    //backgroundMusic();
+};
+
+function logoWave() {
+  var waves = $('.Logo-wave');
+  waves.addClass('Logo-wave--transition');
 };
 
 function smallMap() {
@@ -23,8 +29,8 @@ function smallMap() {
     arrows: true,
     nextArrow: '<span class="icon-arrow SmallMap-arrow SmallMap-arrow--next"></span>',
     prevArrow: '<span class="icon-arrow SmallMap-arrow SmallMap-arrow--prev"></span>'
-  })
-}
+  });
+};
 
 function backgroundMusic() {
   var audio = document.querySelector('.Audio-music');
@@ -38,8 +44,7 @@ function backgroundMusic() {
 };
 
 function introStory() {
-  $('.Logo-wave--back').bind('webkitAnimationEnd', function() {
-
+  setTimeout(function(){
     console.log('start introStory');
     $('.Home-popup-skip').addClass('fadeIn');
     $('.Home-popup').addClass('Home-popup--open');
@@ -62,8 +67,11 @@ function introStory() {
       // TO-DO : break countdown
       introCountdown();
     });
+  }, 4300);
 
-  });
+  //$('.Logo-wave--back').bind('webkitAnimationEnd', function() {
+  //});
+
 };
 
 function introCountdown() {
