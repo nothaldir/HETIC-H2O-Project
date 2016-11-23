@@ -218,11 +218,12 @@ function map(){
 // initialize region page with data
 function initRegion() {
   $('.Region').addClass('Region--open');
+    $('.Region').addClass('Region--open');
   $('.Map').hide();
 
   console.log(mapId[1]);
 
-  getJSON("datas/"+mapId[0]+".json", function(data) {
+    getJSON("datas/"+mapId[0]+".json", function(data) {
 
     // grab container
     var container = document.querySelector('.Region-container');
@@ -230,9 +231,9 @@ function initRegion() {
     container.innerHTML = "";
 
     // creation of section for continent
-    continent = document.createElement('section');
+    continent = document.createElement('div');
     continent.setAttribute('id', 'section');
-    continent.classList.add('Region-container-section');
+    continent.classList.add('Region-container-section', 'section');
     container.appendChild(continent);
 
     // ID
@@ -290,10 +291,10 @@ function initRegion() {
       quickNav.appendChild(anchor);
 
       // SECTIONS
-      var country = document.createElement('section');
+      var country = document.createElement('div');
       //country.setAttribute('id', 'section'+i+' '+data.continent[i].id);
       country.setAttribute('id', data.continent[i].id);
-      country.classList.add('Region-container-section');
+      country.classList.add('Region-container-section', 'section');
       container.appendChild(country);
 
       // ID SECTIONS
@@ -339,11 +340,10 @@ function initRegion() {
 
       dataNumber2.classList.add('Region-container-keyData-secondData-number');
       dataNumber2.innerHTML = data.continent[i].keydata[1].number;
-      dataText1.classList.add('Region-container-keyData-secondData-details');
+      dataText2.classList.add('Region-container-keyData-secondData-details');
       dataText2.innerHTML = data.continent[i].keydata[1].text;
       countryData2.appendChild(dataNumber2);
       countryData2.appendChild(dataText2);
-
     }
   });
   if (mapId[1] !== "info" ) {
@@ -354,7 +354,6 @@ function initRegion() {
   scrollTo();
   quickNav();
 };
-
 function goTo() {
   console.log('goto')
   $(".Region .Quick-navigation a[href$='#"+mapId[1]+"']");
