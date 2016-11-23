@@ -8,6 +8,12 @@ body {
   min-height: 100%;
 }
 
+.body-map {
+	@media screen and (min-width: $mq-m) {
+		overflow: hidden;
+	}
+}
+
 .character-accent {
   color: $color-accent;
 }
