@@ -1,7 +1,8 @@
 { 
   "continent" : [
     {
-      "id_continent" : "Asia",
+      "id" : "asia",
+      "name_continent" : "Asia",
       "id_video" : "https://youtu.be/sGYCL4N_5j0",
       "title" : "Running out of time",
       "subtitle" : "Food production beats around agriculture, a sector that consume a lot of water.",
@@ -9,8 +10,9 @@
     },
 
     {
-      "id_continent" : "Asia",
-      "id_country" : "South",
+      "id" : "south_asia",
+      "name_continent" : "Asia",
+      "name_country" : "South",
       "subtitle" : "The part of the continent that is the more put at risk by natural disasters",
       "content" : "Global warming and its impact on the melting of Himalayan glaciers has increased not just the rise of geopolitical conflicts fueled by the scarcity of water resources, but in short term, the risk of flooding that puts thousand of lives in danger possibly.",
       "keydata" :
@@ -21,8 +23,9 @@
     },
 
     {
-      "id_continent" : "Asia",
-      "id_country" : "Central",
+      "id" : "central_asia",
+      "name_continent" : "Asia",
+      "name_country" : "Central",
       "subtitle" : "National egoism overrided considerations of economic rationality and regional security.",
       "content" : "Since their attainment of independence, the states of Central Asia have not been able to set up a practicable system of self-use water. This remained a curb to the development of their economies and in fine, the comfort of its inhabitants.",
       "keydata" :
@@ -33,8 +36,9 @@
     },
 
     {
-      "id_continent" : "Asia",
-      "id_country" : "South East",
+      "id" : "south_east_asia",
+      "name_continent" : "Asia",
+      "name_country" : "South East",
       "subtitle" : "How can populations can deal with mother nature, when she is being more and more rushed by climate change ?",
       "content" : "Agriculture is the sector where most of the water is used. The monsoon landscapes are a strong part of the countries in South Asia and are affected by global warming. In few words, flows are becoming bigger and bigger.",
       "keydata" : [
