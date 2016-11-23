@@ -23,18 +23,26 @@
 @function icon-char($filename) {
   $char: "";
 
-  @if $filename == check {
+  @if $filename == arrow {
     $char: "\E001";
   }
+<<<<<<< HEAD
   @if $filename == cloud {
     $char: "\E002";
   }
   @if $filename == fireman {
+=======
+  @if $filename == check {
+    $char: "\E002";
+  }
+  @if $filename == fingerprint {
+>>>>>>> 5a35585e838796024881a9c96192061f97a74651
     $char: "\E003";
   }
   @if $filename == keyboard {
     $char: "\E004";
   }
+<<<<<<< HEAD
   @if $filename == robinet {
     $char: "\E005";
   }
@@ -44,6 +52,11 @@
   @if $filename == shower {
     $char: "\E007";
   }
+=======
+  @if $filename == speaker {
+    $char: "\E005";
+  }
+>>>>>>> 5a35585e838796024881a9c96192061f97a74651
 
   @return $char;
 }
@@ -56,6 +69,15 @@
   @extend %icon;
 }
 
+
+.icon-arrow{
+  &::before {
+    @include icon(arrow);
+  }
+}
+%icon-arrow {
+  @include icon(arrow);
+}
 
 .icon-check{
   &::before {

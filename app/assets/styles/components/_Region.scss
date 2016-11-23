@@ -18,7 +18,7 @@
         opacity: .5;
         cursor:pointer;
       }
-      &-active {
+      &--active {
         opacity: 1;
       }
     }
@@ -34,19 +34,18 @@
     display: block;
     transition: .3s ease;
     opacity: 1;
-
   }
     &-container {
-        width: rem(300);
+        width: 80%;
         margin: 0 auto;
         text-align: center;
         @media screen and (min-width: $mq-m) {
-          margin-left: rem(100);
+          margin-left: rem(150);
           width: rem(500);
           text-align: inherit;
         }
         @media screen and (min-width: $mq-l) {
-          margin-left: rem(250);
+          margin-left: rem(300);
           width: rem(570);
           text-align: inherit;
         }
@@ -54,31 +53,44 @@
           padding-left: 20px;
           padding-right: 20px;
           padding-top: rem(30);
-          padding-bottom: rem(30);
+          padding-bottom: rem(0);
+          height: 800px;
           @media screen and (min-width: $mq-m) {
-            padding-top: rem(160);
-            padding-bottom: rem(200);
+            padding-top: rem(40);
+            height: 800px;
+          }
+          &:last-child {
+            @media screen and (min-width: $mq-m) {
+              height: 570px; 
+            }
           }
         }
         &-continent {
+          width:100px;
           display: none;
           color: #fff;
           font-size: rem(38);
           text-align: center;
           text-transform: uppercase;
-          font-family: "Helvetica Neue";
+          font-family: $helvetica;
           font-weight: 100;
           margin-bottom: rem(34);
           @media screen and (min-width: $mq-m) {
-            margin-left: rem(-200);
-            margin-top: rem(-100);
+            margin-left: rem(-250);
+            margin-top: rem(-10);
             position: fixed;
             display: block;
-            //position: inherit;
             text-transform: capitalize;
             text-align: left;
             font-size: rem(38);
             margin-bottom: rem(14);
+          }
+          @media screen and (max-width: $mq-m) {
+            margin-left: rem(10);
+            display: block;
+            margin-top: rem(50);
+            text-align: center;
+            width: rem(250);
           }
         }
         &-continent--fixed {
@@ -89,7 +101,7 @@
           font-size: rem(38);
           text-align: center;
           text-transform: uppercase;
-          font-family: "Helvetica Neue";
+          font-family: $helvetica;
           display: block;
           position: fixed;
           line-height: rem(28);
@@ -97,18 +109,17 @@
           right: 0;
           background-color: $color-background;
           z-index: 99;
-
         }
         &-info{
           padding-top: rem(40);
-          @media screen and (min-width: $mq-m) {
-            padding-top:0;
+          @media screen and (max-width: $mq-m) {
+            padding-top:rem(0);
           }
         }
         &-country {
           color: #fff;
           font-size: rem(28);
-          font-family: "Helvetica Neue";
+          font-family: $helvetica;
           text-align: center;
           font-weight: 100;
           margin-bottom: rem(14);
@@ -119,50 +130,52 @@
           }
         }
         &-title {
-          //padding-top: rem(100);
+          padding-top: rem(100);
           color: $color-blue-turquoise;
           font-size: rem(20);
           text-align: center;
-          font-family: "Helvetica Neue";
+          font-family: $helvetica;
           letter-spacing: 1px;
           margin-bottom: rem(20);
           @media screen and (min-width: $mq-m) {
             font-size: rem(48);
             text-align: left;
-            font-family: "Helvetica Neue";
+            font-family: $helvetica;
             margin-bottom: rem(30);
+          }
+          @media screen and (max-width: $mq-m) {
+            padding-top: rem(20);
           }
         }
         &-subtitle {
           color: $color-white-web;
           font-size: rem(17);
           text-align: left;
-          font-family: "Helvetica Neue";
-          line-height: 20px;
+          font-family: $helvetica;
+          line-height: éàpx;
           margin-bottom: rem(10);
           font-weight: 200;
           @media screen and (min-width: $mq-m) {
-            font-size: rem(28);
+            font-size: rem(24);
             text-align: left;
-            line-height: rem(40);
+            line-height: rem(34);
             margin-bottom: rem(40);
           }
         }
         &-text {
           color: $color-text-main;
           font-size: rem(15);
-          font-family: "Helvetica Neue";
-          font-weight: 100;
+          font-family: $helvetica;
+          //font-weight: 100;
           text-align: left;
           line-height: rem(30);
           margin-bottom: rem(24);
           letter-spacing: 1px;
-          //opacity: 0.58;
           @media screen and (min-width: $mq-m) {
             font-size: rem(18);
             line-height: rem(27);
+            font-weight: 100;
             margin-bottom: rem(24);
-            //opacity: 0.58;
           }
         }
         &-watchButton {
@@ -186,30 +199,34 @@
           }
         }
         &-keyData {
+          //position: absolute;
           margin-top: rem(30);
           text-align: left;
-          font-family:$orbit;
+          font-family:$lato;
           &-firstData {
-            float:left;
-            display: inline;
-            margin-bottom: rem(30);
+            margin-bottom: rem(10);
+            @media screen and (min-width: $mq-m) {
+              margin-bottom: rem(40);
+            }
              &-number {
                color: $color-red;
-               font-size: rem(45);
+               font-size: rem(50);
              }
             &-details {
+              display: inline;
+              width: rem(100);
             }
            }
           &-secondData {
-            float:left;
-            display: inline;
             &-number {
               color: $color-red;
               font-size: rem(45);
             }
+            &-details {
+              display: inline;
+              width: rem(100);
+            }
           }
-
         }
     }
-
 }

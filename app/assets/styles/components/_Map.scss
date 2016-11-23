@@ -1,18 +1,20 @@
 .Map {
 	@media screen and (max-width: $mq-m) {
-		display: none;
+		display: none !important;
 	}
 	position: relative;
 	height: 100vh;
+	margin-top: rem(50);
 	&-title {
 		color: #fff;
 		font-size: rem(20);
 		font-family: $orbit;
 		font-weight: 100;
 		position: absolute;
-		top: rem(75); left: rem(50);
+		top: rem(15); left: rem(50);
 	}
 	&-location {
+
 		position: absolute;
 		bottom: rem(75); left: 50%;
 		transform: translateX(-50%);
@@ -89,12 +91,30 @@
 	@media screen and (min-width: $mq-m) {
 		display: none;
 	}
+	&-arrow {
+		position: absolute;
+		z-index: 999;
+		width: rem(20);
+		height: rem(20);
+		color: #fff;
+		text-align: center;
+		font-size: rem(20);
+		left: 50%;
+		&--prev {
+			top: 10%; 
+			transform: translateX(-50%) rotate(-90deg);
+		}
+		&--next {
+			bottom: 10%;
+			transform: translateX(-50%) rotate(90deg);
+		}
+	}
 	.slick-slide {
     height: 100vh !important;
 		position: relative;
 	}
 	svg {
-		width: 90%;
+		width: 90%; height: 90%;
 		position: absolute;
 		left: 50%; top: 50%;
 		transform: translateX(-50%) translateY(-50%);
@@ -102,17 +122,16 @@
 	#world_map {
 		overflow: unset;
 		g {
-			fill: #434F67 !important;
-			stroke: #434F67 !important;
+			fill: #434F67;
+			stroke: #434F67;
 			cursor: pointer;
 			transform-origin: 50%;
 			transition: .3s ease;
 		}
 		g:hover {
-			stroke: #000 !important;
-			fill: red !important;
-			transform: scale(1.01);
+			stroke: #000;
 			fill: #5B6C8E !important;
+			transform: scale(1.01);
 		}
 	}
 }

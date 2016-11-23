@@ -2,15 +2,18 @@
   "continent" : [
     
     {
-      "id_continent" : "North America",
+      "id" : "north_america",
+      "id_video" : "https://youtu.be/hKbB_y9cIns",
+      "name_continent" : "North America",
       "title" : "A ressource in profusion",
       "subtitle" : "If you lived in North America, turns out you’d have been much more likely to have access to clean water if you were wealthy, white and didn’t live in a rural area or a First Nations’s community. ",
       "content" : "As North America was considered as one of the richest part of earth, the notion of a community without access to clean water seemed like something that would only exist in a far-off, undeveloped country in the eyes of the rest of the world."
     },
 
     {
-        "id_continent" : "North America",
-    	"id_country" : "Canada",
+        "id" : "canada",
+        "name_continent" : "North America",
+    	"name_country" : "Canada",
     	"subtitle" : "Did you know that Canada was one of the largest per capita users of fresh water in the world ?",
     	"content" : "Canada's water ressources represented about 7% of renewable water in the world. Yet thousands of individuals from Native communities did not have access to drinking water in Canada, sometimes for decades, due to defective processing plants or contaminated sources.",
     	"keydata" : [
@@ -26,8 +29,9 @@
     },
 
     {
-        "id_continent" : "North America",
-    	"id_country" : "The US",
+        "id" : "usa",
+        "name_continent" : "North America",
+    	"name_country" : "The US",
     	"subtitle" : "Because of massive industries releasing toxic chemicals, water was extremely contaminated in certain regions of the country, leading to serious illnesses.",
     	"content" : "Individual american citizens used more water than anyone else on the planet. The average American used 80-100 gallons of water per day, from cooking to cleaning to flushing the toilet.",
     	"keydata" : [
@@ -43,8 +47,9 @@
     },
 
     {
-        "id_continent" : "North America",
-    	"id_country" : "Mexico",
+        "id" : "mexico",
+        "name_continent" : "North America",
+    	"name_country" : "Mexico",
     	"subtitle" : "Mexico was the second highest bottled water consumer.",
     	"content" : "Agriculture is the major water consumer of Mexico, in fact it uses up to 78% of the country’s resources. As for consumption, it was recommended in this country to disinfect water before using it in order to be safe from poisoning.",
     	"keydata" : [
