@@ -51,6 +51,7 @@
           margin-left: rem(150);
           width: rem(500);
           text-align: inherit;
+          padding-bottom: rem(200);
         }
         @media screen and (min-width: $mq-l) {
           margin-left: rem(300);
@@ -69,7 +70,7 @@
           }
           &:last-child {
             @media screen and (min-width: $mq-m) {
-              height: 570px; 
+              height: 570px;
             }
           }
         }
@@ -215,6 +216,7 @@
           width: 100%;
           margin-top: rem(10);
           font-family:$lato;
+          position: relative;
           @media screen and (min-width: $mq-m) {
             margin-top: rem(30);
             text-align: left;
