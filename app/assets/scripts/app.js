@@ -1,23 +1,25 @@
 window.onload = function() {
-    if (window.location.href.indexOf("index.html") || window.location.href.indexOf("index") > -1) {
+    if (window.location.href.indexOf("index.html") > -1 || window.location.href.indexOf("index") > -1) {
       console.log('index loaded');
       introStory();
       logoWave();
     };
-    if (window.location.href.indexOf("map.html") || window.location.href.indexOf("map") > -1) {
+    if (window.location.href.indexOf("map.html") > -1 || window.location.href.indexOf("map") > -1) {
       console.log('map loaded');
       menu();
       hideContinent();
       smallMap();
       map();
-    }
-    if (window.location.href.indexOf("about.html") || window.location.href.indexOf("about") > -1) {
+    };
+    if (window.location.href.indexOf("about.html") > -1 || window.location.href.indexOf("about") > -1) {
+      console.log('about');
       menu();
       credits();
-    }
-    if (window.location.href.indexOf("act.html") || window.location.href.indexOf("act") > -1) {
+    };
+    if (window.location.href.indexOf("act.html") > -1 || window.location.href.indexOf("act") > -1) {
+      console.log('act');
         menu();
-    }
+    };
     backgroundMusic();
 };
 
