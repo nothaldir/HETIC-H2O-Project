@@ -32,23 +32,26 @@
   @if $filename == cloud {
     $char: "\E003";
   }
-  @if $filename == fireman {
+  @if $filename == fingerprint {
     $char: "\E004";
   }
-  @if $filename == keyboard {
+  @if $filename == fireman {
     $char: "\E005";
   }
-  @if $filename == robinet {
+  @if $filename == keyboard {
     $char: "\E006";
   }
-  @if $filename == shower-2 {
+  @if $filename == robinet {
     $char: "\E007";
   }
-  @if $filename == shower {
+  @if $filename == shower-2 {
     $char: "\E008";
   }
-  @if $filename == speaker {
+  @if $filename == shower {
     $char: "\E009";
+  }
+  @if $filename == speaker {
+    $char: "\E00A";
   }
 
   @return $char;
@@ -88,6 +91,15 @@
 }
 %icon-cloud {
   @include icon(cloud);
+}
+
+.icon-fingerprint{
+  &::before {
+    @include icon(fingerprint);
+  }
+}
+%icon-fingerprint {
+  @include icon(fingerprint);
 }
 
 .icon-fireman{
