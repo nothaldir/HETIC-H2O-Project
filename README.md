@@ -11,6 +11,9 @@ Go to [NodeJS.org](http://NodeJS.org) for installation.
 ### Install Sass
 Go to [sass-lang.com/install](http://sass-lang.com/install) for installation in command line.
 
+### Install Python
+Install Python for the font icon.
+
 ### Install Bourbon
 
 In your terminal :
@@ -62,10 +65,11 @@ Allowed <type> values:
 * feat (new feature)
 * fix (bug fix)
 * change (changes/updates to an existing feature)
-* docs (changes to the documentation) 
+* docs (changes to the documentation)
 
 ### CSS naming convention
 
 BEM with a modified syntax for Windows compatibility
-
+```
 Block-element--modifier
+```
