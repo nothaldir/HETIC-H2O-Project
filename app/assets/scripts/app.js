@@ -1,22 +1,21 @@
 window.onload = function() {
-    if (window.location.href.indexOf("index.html") > -1) {
+    if (window.location.href.indexOf("index.html") || window.location.href.indexOf("index") > -1) {
       console.log('index loaded');
       introStory();
       logoWave();
-        hideContinent();
     };
-    if (window.location.href.indexOf("map.html") > -1) {
+    if (window.location.href.indexOf("map.html") || window.location.href.indexOf("map") > -1) {
       console.log('map loaded');
       menu();
       hideContinent();
       smallMap();
       map();
     }
-    if (window.location.href.indexOf("about.html") > -1) {
+    if (window.location.href.indexOf("about.html") || window.location.href.indexOf("about") > -1) {
       menu();
       credits();
     }
-    if (window.location.href.indexOf("act.html") > -1) {
+    if (window.location.href.indexOf("act.html") || window.location.href.indexOf("act") > -1) {
         menu();
     }
     backgroundMusic();
@@ -355,7 +354,7 @@ function initRegion() {
   });
   if (mapId[1] !== "info" ) {
     setTimeout(function(){
-      goTo(); 
+      goTo();
     }, 100)
   };
   scrollTo();
@@ -375,7 +374,7 @@ function scrollTo() {
   console.log('scrollTo');
     $(".Quick-navigation-item").click( function() {
       console.log('scroll');
-      var page = $(this).attr('href'); 
+      var page = $(this).attr('href');
       var speed = 650; // Animation duration
       $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
       return false;
