@@ -31,13 +31,13 @@
           color: $color-blue-turquoise;
           font-size: rem(20);
           text-align: center;
-          font-family: "Helvetica Neue";
+          font-family: $lato;
           letter-spacing: 1px;
           margin-bottom: rem(20);
           @media screen and (min-width: $mq-m) {
             font-size: rem(48);
             text-align: left;
-            font-family: "Helvetica Neue";
+            font-family: $lato;
             margin-bottom: rem(30);
           }
           @media screen and (max-width: $mq-m) {
@@ -52,7 +52,7 @@
           font-size: rem(17);
           text-align: left;
           letter-spacing: 0.5px;
-          font-family: "Helvetica Neue";
+          font-family: $lato;
           line-height: 20px;
           margin-bottom: rem(10);
           font-weight: 200;
@@ -66,7 +66,7 @@
         &-text {
           color: #fff;
           font-size: rem(15);
-          font-family: "Helvetica Neue";
+          font-family: $lato;
           font-weight: 100;
           text-align: left;
           line-height: rem(30);
@@ -102,7 +102,7 @@
             color: $color-blue-turquoise;
             font-size: rem(15);
           }
-          
+
         }
         &-arrow {
           float:right;
@@ -110,7 +110,7 @@
           margin-top:rem(-5);
           transform: rotate(180deg);
           -ms-transform: rotate(180deg);
-          -webkit-transform: rotate(180deg); 
+          -webkit-transform: rotate(180deg);
           @media screen and (max-width: $mq-m) {
             width: rem(40);
           }
