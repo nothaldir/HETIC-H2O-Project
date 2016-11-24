@@ -1,23 +1,23 @@
 window.onload = function() {
-    if (window.location.href.indexOf("index.html") > -1 || window.location.href.indexOf("index") > -1) {
-      console.log('index loaded');
+    if (window.location.href.indexOf("index.html") > -1 || window.location.href.indexOf("index") > -1 || window.location.href.indexOf("index") ) {
+      //console.log('index loaded');
       introStory();
       logoWave();
     };
     if (window.location.href.indexOf("map.html") > -1 || window.location.href.indexOf("map") > -1) {
-      console.log('map loaded');
+      //console.log('map loaded');
       menu();
       hideContinent();
       smallMap();
       map();
     };
     if (window.location.href.indexOf("about.html") > -1 || window.location.href.indexOf("about") > -1) {
-      console.log('about');
+      //console.log('about');
       menu();
       credits();
     };
     if (window.location.href.indexOf("act.html") > -1 || window.location.href.indexOf("act") > -1) {
-      console.log('act');
+      //console.log('act');
         menu();
     };
     backgroundMusic();
@@ -54,7 +54,7 @@ function backgroundMusic() {
 
 function introStory() {
   setTimeout(function(){
-    console.log('start introStory');
+    //console.log('start introStory');
     $('.Home-popup-skip').addClass('fadeIn');
     $('.Home-popup').addClass('Home-popup--open');
 
@@ -99,7 +99,7 @@ function introCountdown() {
     var countdown = new CountUp("countdown", 2084, 2016, 0, 7, countdownOptions);
     setTimeout(function() {
       countdown.start(function() {
-        console.log('countdown complete');
+        //console.log('countdown complete');
         introBegin();
       });
     }, 1000)
@@ -124,16 +124,16 @@ function spaceBar() {
   $(document).keyup(function(evt) {
     if (evt.keyCode == 32) {
       space = space - space;
-      console.log(space);
+      //console.log(space);
       $('.Home-spacebar').removeClass('Home-spacebar--filling');
     }
   }).keydown(function(evt) {
     if (evt.keyCode == 32) {
       space++;
-      console.log(space);
+      //console.log(space);
       $('.Home-spacebar').addClass('Home-spacebar--filling');
       if (space >= 25) {
-        console.log('spaceBar filled');
+        //console.log('spaceBar filled');
         $('.Home-spacebar').addClass('Home-spacebar--filled');
         window.location.href = 'map.html';
       }
@@ -191,7 +191,7 @@ var mapId;
 function map(){
   $('.Map #world_map g, .Map #countries g, .SmallMap #world_map g, .SmallMap #countries g').click(function(){
     mapId = $(this).attr('id').split('-');
-    console.log(mapId[0]+','+mapId[1]);
+    //console.log(mapId[0]+','+mapId[1]);
     if (mapId[0] !== "groenland_no_data") {
       initRegion();
     }
@@ -225,7 +225,7 @@ function initRegion() {
   $('.Region').addClass('Region--open');
   $('.Map, .SmallMap').hide();
 
-  console.log(mapId[1]);
+  //console.log(mapId[1]);
 
     getJSON("datas/"+mapId[0]+".json", function(data) {
 
@@ -364,7 +364,7 @@ function initRegion() {
 };
 
 function goTo() {
-  console.log('goto')
+  //console.log('goto')
   $(".Region .Quick-navigation a[href$='#"+mapId[1]+"']");
   $('html, body').animate({
      scrollTop: $(".Region #"+mapId[1]).offset().top
@@ -373,9 +373,9 @@ function goTo() {
 
 function scrollTo() {
   setTimeout(function(){
-  console.log('scrollTo');
+  //console.log('scrollTo');
     $(".Quick-navigation-item").click( function() {
-      console.log('scroll');
+      //console.log('scroll');
       var page = $(this).attr('href');
       var speed = 650; // Animation duration
       $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
@@ -385,7 +385,7 @@ function scrollTo() {
 };
 
 function quickNav() {
-  console.log('quickNav');
+  //console.log('quickNav');
   $(window).scroll(function() {
     var top = $(document).scrollTop();
     var height = $(window).height();
@@ -404,10 +404,10 @@ function quickNav() {
 
 // Modifies features' display on smaller devices
 function hideContinent() {
-    console.log('hide');
+    //console.log('hide');
     if($(window).width() < 768)
     {
-        console.log('in <760');
+        //console.log('in <760');
         // stick continent name on top
         $("#section .Region-container-continent").addClass('Region-container-continent--fixed');
         // adapt page
@@ -439,7 +439,7 @@ function getJSON(url, callback) {
     }; // End of error handling
     // Send the request to the server
     xhr.send();
-    console.log(mapId);
+    //console.log(mapId);
 } // End of getJSON function
 
 $(window).on('mousemove', function(e) {
