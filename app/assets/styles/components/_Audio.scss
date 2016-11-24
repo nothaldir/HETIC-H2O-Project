@@ -1,16 +1,20 @@
 .Audio{
 
 	&-controls {
-		right: 10px;
-		top: 10px;
+		right: rem(20);
+		top: rem(20);
 		margin:auto;
-		height: 50px; width: 50px;
+		height: rem(50); width: rem(50);
 		display: block;
-		margin-top: rem(530);
 		color: #fff;
+		position: absolute;
 		span.icon-speaker {
 			cursor: pointer;
-			font-size: rem(30);
+			font-size: rem(25);
+		}
+		&--toolbar {
+			position: static;
+			margin-top: rem(30);
 		}
 	}
 	&-controls--paused {

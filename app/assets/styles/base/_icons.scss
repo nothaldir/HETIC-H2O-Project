@@ -47,6 +47,9 @@
   @if $filename == shower {
     $char: "\E008";
   }
+  @if $filename == speaker {
+    $char: "\E009";
+  }
 
   @return $char;
 }
@@ -131,3 +134,13 @@
 %icon-shower {
   @include icon(shower);
 }
+
+.icon-speaker{
+  &::before {
+    @include icon(speaker);
+  }
+}
+%icon-speaker {
+  @include icon(speaker);
+}
+

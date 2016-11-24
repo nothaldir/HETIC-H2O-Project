@@ -82,11 +82,11 @@
     }
     &-closeButton {
       text-align: center;
-      margin-top: rem(90);
+      margin-top: rem(50);
       opacity: .5;
       transition: 0.2s;
       @media screen and (min-width: $mq-m) {
-        margin-top: rem(90);
+        margin-top: rem(50);
         opacity: .26;
         transition: 0.2s;
       }
