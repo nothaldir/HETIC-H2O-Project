@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "countup.js": "^1.7.1",
-    "jquery": "^2.1.4",
+    "jquery": "^3.5.1",
     "reset-css": "^2.2.0",
     "slick-carousel": "^1.6.0"
   }
